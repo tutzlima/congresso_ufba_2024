@@ -1,0 +1,5 @@
+"0","qrcode::qr_code(url, file = ""referencias_qr.png"")
+"
+"2","Error in qrcode::qr_code(url, file = ""referencias_qr.png"") : 
+  unused argument (file = ""referencias_qr.png"")
+"

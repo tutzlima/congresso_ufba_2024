@@ -1,0 +1,74 @@
+.slide.level2 .fragment img {
+  width: 100%;
+  height: auto;
+}
+."slide level2 present"{
+  
+}
+#slide-refratados{
+  display: flex;
+}
+#title-slide{
+  text-align: center;
+  font-size: 18px;
+}
+#title-slide > p{
+  font-size: 24px;
+}
+body {
+  margin: 1in 1in 3in 1in; /* Margem de 1 polegada */
+}
+#públicos-refratados {
+  display: none;
+}
+.slide.level2 .fragment {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.quarto-figure.quarto-figure-center{
+  margin-right: 20px;
+  max-width: 70%;
+}
+.quarto-figure.quarto-figure-center figcaption {
+  display: none;
+}
+.quarto-figure.quarto-figure-center img {
+  width: 100%;
+  height: auto;
+}
+.quarto-figure.quarto-figure-center blockquote {
+  max-width: 40%;
+}
+#atlas-img {
+  display: auto;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 80%; /* Ajuste a largura máxima conforme necessário */
+  height: auto;
+}
+#atlas.ti {
+  display: none;
+}
+#fonte-id{
+  font-size: 20px;
+  margin: 0 0 0 0px;
+}
+#referências blockquote{
+  size: flex;
+}
+.left-gif 
+.p-px{
+  margin: 0px 0px 0px 0px;
+}
+.fragment visible current-fragment > p{
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+}
+#imgs-to-center{
+  display: center;
+}
+.obrigado-pela-atenção h2{
+  text-align: center;
+}

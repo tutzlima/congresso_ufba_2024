@@ -1,0 +1,29 @@
+## Referências
+
+AGGARWAL, Charu C. *Data Mining: The Textbook*. Springer, 2015. Disponível em: <https://books.google.com.br/books?id=cfNICAAAQBAJ&printsec=copyright&redir_esc=y#v=onepage&q&f=true>. Acesso em: 24 jul. 2024.
+
+ATLAS.TI. *What is Atlas.ti?*. Disponível em: <https://www.atlasti.com/>. Acesso em: 24 jul. 2024.
+
+CHARMAZ, Kathy. *A construção da teoria fundamentada: Guia Prático para Análise Qualitativa*. Disponível em: <https://books.google.com.br/books?id=offC0wDYzC4C&hl=pt-BR&source=gbs_book_other_versions>. Acesso em: 24 jul. 2024.
+
+DATA CHANNEL. *What is ETL and How the ETL Process Works*. Disponível em: <https://www.datachannel.co/blogs/what-is-etl-and-how-the-etl-process-works>. Acesso em: 24 jul. 2024.
+
+ELASTIC. *Kibana Dashboard*. Disponível em: <https://www.elastic.co/pt/kibana/kibana-dashboard>. Acesso em: 24 jul. 2024.
+
+GLASER, Barney G.; STRAUSS, Anselm L. *The Discovery of Grounded Theory: Strategies for Qualitative Research* [arquivo PDF]. Aldine Transaction, 1967. Disponível em: <http://www.sxf.uevora.pt/wp-content/uploads/2013/03/Glaser_1967.pdf>. Acesso em: 01 ago. 2024.
+
+MEDIUM. *O que é Grounded Theory e como aplicar em UX Research*. Disponível em: <https://medium.com/creditas-tech/o-que-%C3%A9-grounded-theory-e-como-aplicar-em-ux-research-f4c405a6d54a>. Acesso em: 24 jul. 2024.
+
+MEDIUM. *What's Behind Elasticsearch: Unlocking the Power of Data Visualization*. Disponível em: <https://medium.com/databites/whats-behind-elasticsearch-unlocking-the-power-of-data-visualization-23001ecfc4a2>. Acesso em: 24 jul. 2024.
+
+NASCIMENTO, Leonardo; PEREIRA DE JESUS, Juciane; VASCONCELOS, Emily Caroline; MACEDO, Guilherme Kauan Santos de; SANTOS, Ruan Arthur Lima. *Relatório sobre desinformação e teorias da conspiração relacionadas à vacinação em grupos e canais extremistas do Telegram*. Disponível em: <https://drive.google.com/file/d/1OWrhQFYah651cyMC0IfQ-Wgrc8I06xH2/view?usp=sharing>. Acesso em: 24 jul. 2024.
+
+NASCIMENTO, L. F.; ALECRIM, M.; COSTA, S.; OLIVEIRA, J.; OLIVEIRA, M. *“Não falo o que o povo quer, sou o que o povo quer”: 30 anos (1987-2017) de pautas políticas de Jair Bolsonaro nos jornais brasileiros*. Plural: Revista De Ciências Sociais, v. 25, n. 1, p. 135-171, 2018. Disponível em: <https://www.revistas.usp.br/plural/article/view/149019/146180>. Acesso em: 24 jul. 2024.
+
+NASCIMENTO, L. F.; CESARINO, L.; FONSECA, P.; WEDDERBURN, R.; BARRETO, T.; JESUS, J. *“Intankáveis contra o Bostil”: racismo, misoginia e antisemitismo em chats do Telegram (2020-2023)*. In: 4ª Coletânea de Artigos - TIC, Governança da Internet, Gênero, Raça e Diversidade - Tendências e Desafios. São Paulo: Núcleo de Informação e Coordenação do Ponto BR, 2024. p. 153-198. Disponível em: <https://cgi.br/media/docs/publicacoes/1/20240522075208/4-coletanea-artigos-tic-governanca-genero-raca-diversidade.pdf>. Acesso em: 01 ago. 2024.
+
+R PROJECT. *What is R?*. Disponível em: <https://www.r-project.org/about.html>. Acesso em: 24 jul. 2024.
+
+SCHEREN, M. L.; RODRIGUES, V. S.; LÓPEZ ZAMORA, G. D.; CESARINO, L.; NASCIMENTO, L. F.; FONSECA, P.; BARRETO, T. *Métodos mistos para a antropologia digital: um relato de experiência sobre a análise de grupos bolsonaristas na plataforma Telegram*. Horizontes Antropológicos, v. 30, p. e680407, 12 fev. 2024. Disponível em: <https://doi.org/10.1590/1806-9983e680407>. Acesso em: 24 jul. 2024.
+
+---

@@ -1,0 +1,8 @@
+"0","library(qrcode)"
+"0","library(grid)"
+"0",""
+"0","# Gerar o QR code"
+"0","qr <- qrcode::qr_code(""referencias.html"")"
+"0",""
+"0","# Plotar o QR code diretamente no documento"
+"0","grid::grid.raster(qr)"
