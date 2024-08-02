@@ -9,6 +9,7 @@ format:
     code-overflow: wrap
     code-copy: hover
     logo: https://www.inscricaocongresso2024.ufba.br/modulos/gerenciamentodeconteudo/imagens/724_Logo_Congresso.png
+    output-file: index.html
 editor: source
 lang: pt-BR
 jupyter: python3
@@ -242,6 +243,15 @@ ggplot(top10_grupos) +
 :::
 
 ---
+<div class="fragment visible current-fragment" style="">
+
+<h5 style="display: none;">Grafico em R</h5>
+
+::: fragment
+<img src="dados/top_10_grupos.png" style="width=120%">
+:::
+
+---
 
 <h5 style="display: none;">Imagem ElasticSearch</h5>
 
@@ -286,7 +296,7 @@ ggplot(top10_grupos) +
 :::
 
 ::: fragment
-- [Intankáveis contra o Bostil”: racismo, misoginia e antisemitismo em chats do Telegram (2020-2023)](https://cgi.br/media/docs/publicacoes/1/20240522075208/4-coletanea-artigos-tic-governanca-genero-raca-diversidade.pdf) 
+- ["Intankáveis contra o Bostil”: racismo, misoginia e antisemitismo em chats do Telegram (2020-2023)](https://cgi.br/media/docs/publicacoes/1/20240522075208/4-coletanea-artigos-tic-governanca-genero-raca-diversidade.pdf) 
 :::
 
 ::: fragment
@@ -321,3 +331,15 @@ ggplot(top10_grupos) +
 <img src="qrcode_referencias.svg" style="width=90%">
 
 Acesse o Qr Code ou [clique aqui](referencias.html)!
+
+---
+
+## Excluir ou não dps
+
+# Exportar gráfico como SVG
+
+svg("top_10_grupos.svg", width = 10, height = 7)
+
+print(p)
+
+dev.off()

@@ -1,9 +1,0 @@
-"0","library(qrcode)"
-"0","library(tidyverse)"
-"0",""
-"0","url <- ""http://localhost:8000/referencias.html"""
-"0",""
-"0","qrcode::qr_code(url, file = ""referencias_qr.png"")"
-"2","Error in qrcode::qr_code(url, file = ""referencias_qr.png"") : 
-  unused argument (file = ""referencias_qr.png"")
-"
