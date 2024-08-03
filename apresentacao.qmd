@@ -76,7 +76,7 @@ jupyter: python3
 <p class="p-px">
 
 ::: fragment
--   *The discovery of grounded theory (1967)*, de Glaser G. Barney (1930-2022) e Strauss L. Anselm (1916-1996)
+-   *The discovery of grounded theory (1967)*, de Barney Glaser (1930-2022) e Anselm Strauss (1916-1996)
 :::
 
 ::: fragment
@@ -240,15 +240,6 @@ ggplot(top10_grupos) +
         axis.text.x = element_text(angle = 45, hjust = 1),
         panel.background = element_blank())
 ```
-:::
-
----
-<div class="fragment visible current-fragment" style="">
-
-<h5 style="display: none;">Grafico em R</h5>
-
-::: fragment
-<img src="dados/top_10_grupos.png" style="width=120%">
 :::
 
 ---
