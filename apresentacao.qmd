@@ -57,6 +57,8 @@ jupyter: python3
 -   Surgimento
 :::
 
+>Surge em 2018 junto ao Programa de Pós-graduação em Ciências Sociais (PPGCS) e o Instituto de Ciência, Tecnologia e Inovação (ICTI/UFBA)
+
 ::: fragment
 -   Objetivo principal: compreender o papel do telegram no compartilhamento de desinformação em grupos de extrema-direita
 :::
