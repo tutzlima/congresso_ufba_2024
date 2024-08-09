@@ -169,3 +169,46 @@ Por isso mesmo, trago diretamente os resultados da pesquisa até o momento, desd
 - Agradecimento
 
 - Contatos: Email e Github
+
+---
+
+## AJUSTES PARA O VÍDEO-PÔSTER
+
+- Ler o título do trabalho
+
+- Apresentar o curso, onde tem bolsa e o orientador
+
+- Objetivos: BREVE apresentação da pesquisa & Discutir o plano tendo o método como guia
+
+	- Corrijir sobre o "Surgimento" né; 
+
+	- Objetivo da pesquisa
+
+- Teoria Fundamentada
+
+	- quem criou
+
+	- ideia central
+
+	- abordagem multimétodo
+
+- Métodos na "primeira fase"
+
+	- Análise quantitativa do R para Mineração de dados, integra isso num slide só
+
+		- tira a parte do S e comentário de analise quali com R
+
+		- ETL
+
+		- Visualização com R: Deixa só o ggplot2 e o Shiny e uma imagemzinha deles
+
+	- Análise qualitativa
+
+
+		- Atlas.ti
+
+		- Recursos
+
+- Segunda fase: Um salto metodológico
+
+---
