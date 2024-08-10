@@ -9,8 +9,6 @@ format:
     transition: fade
     code-overflow: wrap
     code-copy: hover
-    fig-align: center
-    cap-location: margin
     logo: https://www.inscricaocongresso2024.ufba.br/modulos/gerenciamentodeconteudo/imagens/724_Logo_Congresso.png
     output-file: index.html
 editor: source
@@ -20,25 +18,35 @@ jupyter: python3
 
 ## Sobre mim
 
+<br>
+
 ::: fragment
--   Graduando de Ciências Sociais
+- Graduando de Ciências Sociais
 :::
+
+<br>
 
 ::: fragment
 - [Laboratório de Humanidades Digitais](https://labhdufba.github.io/)
 :::
 
+<br>
+
 ::: fragment
--   [Leonardo Fernandes Nascimento](https://github.com/leofn/)
+- [Leonardo Fernandes Nascimento](https://github.com/leofn/)
 :::
 
 ------------------------------------------------------------------------
 
 ## Objetivos
 
+<br>
+
 ::: fragment
 -   Breve contextualização da pesquisa
 :::
+
+<br>
 
 ::: fragment
 -   Discutir o plano de trabalho tendo o *método* como guia
@@ -48,9 +56,13 @@ jupyter: python3
 
 ## Resumo da pesquisa
 
+<br>
+
 ::: fragment
 -   Surgimento
 :::
+
+<br>
 
 ::: fragment
 -   Objetivo principal: compreender o papel do telegram no compartilhamento de desinformação em grupos de extrema-direita no Brasil
@@ -65,7 +77,6 @@ jupyter: python3
 ::: fragment
 -   *The discovery of grounded theory (1967)*, de Barney Glaser (1930-2022) e Anselm Strauss (1916-1996)
 
-
 [![](https://miro.medium.com/v2/resize:fit:486/1*IFaGpfJotlrUSyzlFQZ2iA.png)](https://medium.com/creditas-tech/o-que-%C3%A9-grounded-theory-e-como-aplicar-em-ux-research-f4c405a6d54a)
 :::
 
@@ -77,11 +88,14 @@ jupyter: python3
 
 ------------------------------------------------------------------------
 
-### Métodos na "primeira fase"
 
-::: fragment
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh; text-align: center;">
+  <h3>Métodos na "primeira fase"</h3>
+</div>
+
+---
+
 #### Análise Quantitativa: Linguagem `R`
-:::
 
 ::: fragment
 -   `R` é uma linguagem de programação voltada à análise estatística e visualização de gráficos
@@ -96,33 +110,41 @@ jupyter: python3
 
 ------------------------------------------------------------------------
 
-##### ETL
+<h5 style="text-align: center">ETL</h5><br>
 
-::: fragment
-[![](https://cdn.prod.website-files.com/634fa785d369cb60d80b6dd1/6393298e18f50e62a1657530_ETL%20process%20DataChannel.webp)](https://www.datachannel.co/blogs/what-is-etl-and-how-the-etl-process-works)
-:::
+<div style="text-align: center;">
+  <a href="https://www.datachannel.co/blogs/what-is-etl-and-how-the-etl-process-works">
+<img src="dados/etl_imagem-removebg-preview.png" alt="ETL">
+  </a>
+</div>
 
-------------------------------------------------------------------------
-
-##### Visualização com R
-
-::: fragment
--   `ggplot2`
-:::
-
-> COLOCA IMAGENS AQUI BOY
-
-::: fragment
--   `Shiny`
-:::
 
 ------------------------------------------------------------------------
 
-#### Análise Qualitativa: Atlas.ti
+<h5 style="text-align: center">Visualização com R</h5><br>
 
-::: fragment
-<img class="imgs-to-center" src="https://larhud.ibict.br/images/2/22/Atlas_ti.png">
-:::
+<div id="to-flex" style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+
+  <a href="https://www.nicolaromano.net/data-thoughts/plotting-with-ggplot/">
+    <img style="width: 550px; height: auto;" src="dados/ggplot2_trans.png" alt="ggplot2">
+  </a>
+
+  <a href="https://www.worldbank.org/en/events/2021/04/28/-r-shiny-days">
+    <img style="width: 550px; height: auto;" src="https://www.worldbank.org/content/dam/photos/780x439/2021/apr/Shiny-logo.png" alt="Shiny">
+  </a>
+
+</div>
+
+------------------------------------------------------------------------
+
+<h4 style="text-align: center;">Análise Qualitativa</h4>
+
+<br>
+
+<div style="display: flex; justify-content: center; align-items: center;">
+  <img style="max-width: 100%; height: auto;" src="https://larhud.ibict.br/images/2/22/Atlas_ti.png" alt="Atlas.ti">
+</div>
+
 
 ------------------------------------------------------------------------
 
@@ -138,16 +160,29 @@ Análise qualitativa de dados auxiliado por computador (*Computer Assisted Quali
 
 ------------------------------------------------------------------------
 
-### "Segunda Fase": um salto metodológico
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh; text-align: center;">
+  <h3>"Segunda Fase": um salto metodológico</h3>
+</div>
+
+---
+
+#### Particularidades do Objeto
+
+<br>
 
 ::: fragment
--   Particularidades do objeto
-
-    - "Apagões" frequentes
-
-    - Nascimento e morte de grupos e canais
-
+- "Apagões" frequentes
 :::
+
+<br>
+
+
+::: fragment
+- Nascimento e morte de grupos e canais
+:::
+
+<br>
+
 
 ::: fragment
 - Limitações do `R` e `Atlas.ti`
@@ -155,7 +190,12 @@ Análise qualitativa de dados auxiliado por computador (*Computer Assisted Quali
 
 ------------------------------------------------------------------------
 
-::: fragment
+<h4 style="display: none;">Exemplo R</h4>
+
+<div style="text-align: center;">
+
+<br>
+
 ```{r}
 ggplot(top10_grupos) +
   geom_bar(aes(x = docCount, y = reorder(keyName, docCount)), fill = "#6092C0", stat = "identity") +
@@ -174,20 +214,39 @@ ggplot(top10_grupos) +
         panel.background = element_blank())
 ```
 
-> IMAGEM DO LAYOUT DO ATLAS.TI
-
-:::
+</div>
 
 ---
 
-### `ElasticSearch` & `Kibana` <br> Impactos metodológicos para análise de Violência Política no Telegram
+<h4 style="display: none;">Exemplo Atlas.ti</h4>
+
+<div style="text-align: center;">
+
+  <img style="width: 3500px; hight: auto;" src="https://atlasti.com/media/pages/guides/qualitative-research-guide-part-2/qualitative-data-analysis/3a19f0b0d1-1720598965/atlas.ti-can-identify-concepts-that-might-be-useful-in-qualitative-data-analysis.png" alt="Atlas.ti" style="max-width: 100%; height: auto;">
+
+</div>
+---
+
+### `ElasticSearch` & `Kibana`
+
+<br>
 
 ::: fragment
 -   Melhoria no ETL em tempo real
 :::
 
+<br>
+
+
 ::: fragment
 -   Visualização otimizada
+:::
+
+<br>
+
+
+::: fragment
+-   Análise qualitativa otimizada
 :::
 
 ---
@@ -198,17 +257,15 @@ ggplot(top10_grupos) +
 
 ---
 
-::: fragment
--   Análise qualitativa otimizada
+<h4 style="display: none;">Exemplo Análise</h4>
 
 <a href="https://medium.com/databites/whats-behind-elasticsearch-unlocking-the-power-of-data-visualization-23001ecfc4a2" target="_blank">
-  <img style="width: 60%;" src="https://miro.medium.com/v2/resize:fit:1400/1*f7MCG9M_4lNXmyjLvC5t3A.png" alt="Elasticsearch Data Visualization">
+  <img style="align: center;" src="https://miro.medium.com/v2/resize:fit:1400/1*f7MCG9M_4lNXmyjLvC5t3A.png" alt="Elasticsearch Data Visualization">
 </a>
-:::
 
 ------------------------------------------------------------------------
 
-## Contribuições da pesquisa
+### Contribuições da pesquisa
 
 <!-- FAZ UM DISPLAY FLEX PRA DEIXAR NA MESMA PÁGINA BOY, BOTA OS DOIS NUMA DIV SÓ OU ACHA A DIV QUE JÁ PODE TÁ COM ELES E FÉ FI -->
 
@@ -233,21 +290,39 @@ ggplot(top10_grupos) +
 - [Métodos mistos para a antropologia digital: um relato de experiência sobre a análise de grupos bolsonaristas na plataforma Telegram](https://doi.org/10.1590/1806-9983e680407)
 :::
 
+---
+
+<h2 class="final">Referências</h2>
+
+<br>
+
+<div style="text-align: center;">
+  <img style="max-width: 100%; height: auto;" src="dados/qrcode_referencias.svg" alt="QR Code">
+<br><br><br>
+Acesse o Qr Code ou [clique aqui!](referencias.html)
+</div>
+
 ------------------------------------------------------------------------
 
 ## Obrigado pela atenção!
 
--   Email: [ruan.lima\@ufba.br](ruan.lima@ufba.br)<br>
+<br>
 
--   Github: <https://github.com/tutzlima><br>
+<div style="text-align: center; margin-bottom: 40px;">
+  <a href="https://giphy.com/portadosfundos/reacoes/tchau">
+    <img style="width: 650px;" src="https://media3.giphy.com/media/yMKC8ff4mtSow/200_d.gif" alt="Gif Tchau">
+  </a>
+</div>
 
-[![](https://media3.giphy.com/media/yMKC8ff4mtSow/200_d.gif)](https://giphy.com/portadosfundos/reacoes/tchau)
+<div style="display: flex; justify-content: center; align-items: center; gap: 50px;">
 
----
+  <!-- Ícone do Gmail -->
+  <a href="mailto:ruan.lima@ufba.br" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/512px-Gmail_icon_%282020%29.svg.png" alt="Gmail" style="width: 80px; height: auto;">
+  </a>
 
-## Referências
-
-
-<img src="qrcode_referencias.svg" style="width=90%">
-
-Acesse o Qr Code ou [clique aqui](referencias.html)!
+  <!-- Ícone do GitHub -->
+  <a href="https://github.com/tutzlima" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" style="width: 80px; height: auto;">
+  </a>
+</div>
