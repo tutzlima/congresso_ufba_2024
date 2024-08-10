@@ -1,13 +1,16 @@
 ---
 title: "ElasticSearch e linguagem R para análise de violência política na plataforma Telegram"
-subtitle: "Ruan Arthur Lima Santos"
+subtitle: "por Ruan Arthur Lima Santos"
+institute: "Universidade Federal da Bahia"
 format:
   revealjs:
     css: custom.css
-    slide-number: true
+    slide-number: false
     transition: fade
     code-overflow: wrap
     code-copy: hover
+    fig-align: center
+    cap-location: margin
     logo: https://www.inscricaocongresso2024.ufba.br/modulos/gerenciamentodeconteudo/imagens/724_Logo_Congresso.png
     output-file: index.html
 editor: source
@@ -22,27 +25,19 @@ jupyter: python3
 :::
 
 ::: fragment
-### Interesses
+- [Laboratório de Humanidades Digitais](https://labhdufba.github.io/)
 :::
 
 ::: fragment
--   Epistemologia
-:::
-
-::: fragment
--   Humanidades Digitais
-:::
-
-::: fragment
--   Extrema-direita
+-   [Leonardo Fernandes Nascimento](https://github.com/leofn/)
 :::
 
 ------------------------------------------------------------------------
 
-## Objetivos da apresentação
+## Objetivos
 
 ::: fragment
--   Contextualização da pesquisa
+-   Breve contextualização da pesquisa
 :::
 
 ::: fragment
@@ -57,18 +52,8 @@ jupyter: python3
 -   Surgimento
 :::
 
->Surge em 2018 junto ao Programa de Pós-graduação em Ciências Sociais (PPGCS) e o Instituto de Ciência, Tecnologia e Inovação (ICTI/UFBA)
-
 ::: fragment
--   Objetivo principal: compreender o papel do telegram no compartilhamento de desinformação em grupos de extrema-direita
-:::
-
-::: fragment
--   Processo de radicalização na plataforma
-:::
-
-::: fragment
--   Telegram enquanto "dobradiça"
+-   Objetivo principal: compreender o papel do telegram no compartilhamento de desinformação em grupos de extrema-direita no Brasil
 :::
 
 ------------------------------------------------------------------------
@@ -79,9 +64,7 @@ jupyter: python3
 
 ::: fragment
 -   *The discovery of grounded theory (1967)*, de Barney Glaser (1930-2022) e Anselm Strauss (1916-1996)
-:::
 
-::: fragment
 
 [![](https://miro.medium.com/v2/resize:fit:486/1*IFaGpfJotlrUSyzlFQZ2iA.png)](https://medium.com/creditas-tech/o-que-%C3%A9-grounded-theory-e-como-aplicar-em-ux-research-f4c405a6d54a)
 :::
@@ -97,25 +80,18 @@ jupyter: python3
 ### Métodos na "primeira fase"
 
 ::: fragment
-- Mineração de dados
-
-> A mineração de dados é o estudo da coleta, limpeza, processamento, análise e obtenção de insights úteis a partir dos dados. (AGGARWAL, Charu C. Data Mining. Springer, 2015, p. 1)
-:::
-
-------------------------------------------------------------------------
-
 #### Análise Quantitativa: Linguagem `R`
+:::
 
 ::: fragment
 -   `R` é uma linguagem de programação voltada à análise estatística e visualização de gráficos
 :::
 
 ::: fragment
--   Software aberto, com sintáxe e ambiente semelhante à linguagem `S`
-:::
+- Mineração de dados
 
-::: fragment
--   Possibilidade de análise qualitativa
+> A mineração de dados é o estudo da coleta, limpeza, processamento, análise e obtenção de insights úteis a partir dos dados. (AGGARWAL, Charu C. Data Mining. Springer, 2015, p. 1)
+
 :::
 
 ------------------------------------------------------------------------
@@ -128,33 +104,13 @@ jupyter: python3
 
 ------------------------------------------------------------------------
 
-::: fragment
--   Pacotes para extração: `rvest` \| `Rselenium`
-:::
-
-::: fragment
--   Biblioteca para manipulação: `tidyverse`
-:::
-
-::: fragment
--   Pacotes para armazenamento: `jsonlite` \| `readr`
-:::
-
-------------------------------------------------------------------------
-
 ##### Visualização com R
 
 ::: fragment
 -   `ggplot2`
 :::
 
-::: fragment
--   `viridis`
-:::
-
-::: fragment
--   `gridExtra`
-:::
+> COLOCA IMAGENS AQUI BOY
 
 ::: fragment
 -   `Shiny`
@@ -185,44 +141,19 @@ Análise qualitativa de dados auxiliado por computador (*Computer Assisted Quali
 ### "Segunda Fase": um salto metodológico
 
 ::: fragment
--   Particularidades do objeto & limitações do `R` e `Atlas.ti`
+-   Particularidades do objeto
+
+    - "Apagões" frequentes
+
+    - Nascimento e morte de grupos e canais
+
 :::
 
 ::: fragment
-- Elastic Stack
-:::
-
-::: fragment
--   Combinação de quatro produtos: ElasticSearch, Kibana, Beats e Logstash
-:::
-
-::: fragment
--   ElasticSearch → banco de dados não-estruturados
-:::
-
-::: fragment
--   Funciona conjuntamente com o Kibana: Visualização de gráficos e dashboards
+- Limitações do `R` e `Atlas.ti`
 :::
 
 ------------------------------------------------------------------------
-
-### Impactos metodológicos para análise de Violência Política no Telegram
-
-::: fragment
--   Melhoria no ETL em tempo real
-:::
-
-::: fragment
--   Visualização otimizada
-:::
-
----
-
-#### Exemplos
-
-::: fragment
-- Um gráfico em R
-:::
 
 ::: fragment
 ```{r}
@@ -242,23 +173,34 @@ ggplot(top10_grupos) +
         axis.text.x = element_text(angle = 45, hjust = 1),
         panel.background = element_blank())
 ```
+
+> IMAGEM DO LAYOUT DO ATLAS.TI
+
 :::
 
 ---
 
-<h5 style="display: none;">Imagem ElasticSearch</h5>
+### `ElasticSearch` & `Kibana` <br> Impactos metodológicos para análise de Violência Política no Telegram
 
 ::: fragment
-[![](https://static-www.elastic.co/v3/assets/bltefdd0b53724fa2ce/bltd01281e2aa656f58/5fa315d24e40cf53001f3b70/illustrated-screenshot-hero-dashboards.png)](https://www.elastic.co/pt/kibana/kibana-dashboard)
+-   Melhoria no ETL em tempo real
 :::
+
+::: fragment
+-   Visualização otimizada
+:::
+
+---
+
+<h4 style="display: none;">Exemplo Visualização</h4>
+
+[![](https://static-www.elastic.co/v3/assets/bltefdd0b53724fa2ce/bltd01281e2aa656f58/5fa315d24e40cf53001f3b70/illustrated-screenshot-hero-dashboards.png)](https://www.elastic.co/pt/kibana/kibana-dashboard)
 
 ---
 
 ::: fragment
 -   Análise qualitativa otimizada
-:::
 
-::: fragment
 <a href="https://medium.com/databites/whats-behind-elasticsearch-unlocking-the-power-of-data-visualization-23001ecfc4a2" target="_blank">
   <img style="width: 60%;" src="https://miro.medium.com/v2/resize:fit:1400/1*f7MCG9M_4lNXmyjLvC5t3A.png" alt="Elasticsearch Data Visualization">
 </a>
@@ -268,7 +210,7 @@ ggplot(top10_grupos) +
 
 ## Contribuições da pesquisa
 
-<br>
+<!-- FAZ UM DISPLAY FLEX PRA DEIXAR NA MESMA PÁGINA BOY, BOTA OS DOIS NUMA DIV SÓ OU ACHA A DIV QUE JÁ PODE TÁ COM ELES E FÉ FI -->
 
 ::: fragment
 ### Relatórios
@@ -278,11 +220,6 @@ ggplot(top10_grupos) +
 - [Desinformação e teorias da conspiração relacionadas à vacinação em grupos e canais extremistas do Telegram](https://drive.google.com/file/d/1OWrhQFYah651cyMC0IfQ-Wgrc8I06xH2/view?usp=sharing)
 ::: 
 
-::: fragment
-- [Análise "de parte das comunicações veiculada pelos organizadores, participantes e apoiadores" do 8 de janeiro](https://drive.google.com/file/d/1cEjfyGhqlQ5ET_5j4hWcWPXtMiWsDZmE/view)
-:::
-
----
 
 ::: fragment
 ###   Artigos
@@ -293,10 +230,6 @@ ggplot(top10_grupos) +
 :::
 
 ::: fragment
-- ["Não falo o que o povo quer, sou o que o povo quer”: 30 anos (1987-2017) de pautas políticas de Jair Bolsonaro nos jornais brasileiros](https://www.revistas.usp.br/plural/article/view/149019/146180) 
-:::
-
-::: fragment
 - [Métodos mistos para a antropologia digital: um relato de experiência sobre a análise de grupos bolsonaristas na plataforma Telegram](https://doi.org/10.1590/1806-9983e680407)
 :::
 
@@ -304,17 +237,11 @@ ggplot(top10_grupos) +
 
 ## Obrigado pela atenção!
 
-::: fragment
--   Email: [ruan.lima\@ufba.br](ruan.lima@ufba.br)
-:::
+-   Email: [ruan.lima\@ufba.br](ruan.lima@ufba.br)<br>
 
-::: fragment
--   Github: <https://github.com/tutzlima>
-:::
+-   Github: <https://github.com/tutzlima><br>
 
-::: fragment
 [![](https://media3.giphy.com/media/yMKC8ff4mtSow/200_d.gif)](https://giphy.com/portadosfundos/reacoes/tchau)
-:::
 
 ---
 
@@ -324,15 +251,3 @@ ggplot(top10_grupos) +
 <img src="qrcode_referencias.svg" style="width=90%">
 
 Acesse o Qr Code ou [clique aqui](referencias.html)!
-
----
-
-## Excluir ou não dps
-
-# Exportar gráfico como SVG
-
-svg("top_10_grupos.svg", width = 10, height = 7)
-
-print(p)
-
-dev.off()

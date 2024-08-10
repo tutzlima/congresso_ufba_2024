@@ -95,7 +95,6 @@
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="apresentacao_files/libs/revealjs/dist/theme/quarto.css">
-  <link rel="stylesheet" href="custom.css">
   <link href="apresentacao_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="apresentacao_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="apresentacao_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -392,7 +391,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">ElasticSearch e linguagem R para análise de violência política na plataforma Telegram</h1>
-  <p class="subtitle">Ruan Arthur Lima Santos</p>
+  <p class="subtitle">por Ruan Arthur Lima Santos</p>
 
 <div class="quarto-title-authors">
 </div>
@@ -406,30 +405,21 @@
 </ul>
 </div>
 <div class="fragment">
-<!-- -->
-<h3 id="interesses">Interesses</h3>
-</div>
-<div class="fragment">
 <ul>
-<li>Epistemologia</li>
+<li><a href="https://labhdufba.github.io/">Laboratório de Humanidades Digitais</a></li>
 </ul>
 </div>
 <div class="fragment">
 <ul>
-<li>Humanidades Digitais</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>Extrema-direita</li>
+<li><a href="https://github.com/leofn/">Leonardo Fernandes Nascimento</a></li>
 </ul>
 </div>
 </section>
-<section id="objetivos-da-apresentação" class="slide level2">
-<h2>Objetivos da apresentação</h2>
+<section id="objetivos" class="slide level2">
+<h2>Objetivos</h2>
 <div class="fragment">
 <ul>
-<li>Contextualização da pesquisa</li>
+<li>Breve contextualização da pesquisa</li>
 </ul>
 </div>
 <div class="fragment">
@@ -447,17 +437,7 @@
 </div>
 <div class="fragment">
 <ul>
-<li>Objetivo principal: compreender o papel do telegram no compartilhamento de desinformação em grupos de extrema-direita</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>Processo de radicalização na plataforma</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>Telegram enquanto “dobradiça”</li>
+<li>Objetivo principal: compreender o papel do telegram no compartilhamento de desinformação em grupos de extrema-direita no Brasil</li>
 </ul>
 </div>
 </section>
@@ -469,8 +449,6 @@
 <ul>
 <li><em>The discovery of grounded theory (1967)</em>, de Barney Glaser (1930-2022) e Anselm Strauss (1916-1996)</li>
 </ul>
-</div>
-<div class="fragment">
 <p><a href="https://medium.com/creditas-tech/o-que-%C3%A9-grounded-theory-e-como-aplicar-em-ux-research-f4c405a6d54a"><img data-src="https://miro.medium.com/v2/resize:fit:486/1*IFaGpfJotlrUSyzlFQZ2iA.png"></a></p>
 </div>
 <p></p>
@@ -484,17 +462,9 @@
 
 <h3 id="métodos-na-primeira-fase">Métodos na “primeira fase”</h3>
 <div class="fragment">
-<ul>
-<li>Mineração de dados</li>
-</ul>
-<blockquote>
-<p>A mineração de dados é o estudo da coleta, limpeza, processamento, análise e obtenção de insights úteis a partir dos dados. (AGGARWAL, Charu C. Data Mining. Springer, 2015, p.&nbsp;1)</p>
-</blockquote>
-</div>
-</section>
-<section class="slide level2">
-
+<!-- -->
 <h4 id="análise-quantitativa-linguagem-r">Análise Quantitativa: Linguagem <code>R</code></h4>
+</div>
 <div class="fragment">
 <ul>
 <li><code>R</code> é uma linguagem de programação voltada à análise estatística e visualização de gráficos</li>
@@ -502,13 +472,11 @@
 </div>
 <div class="fragment">
 <ul>
-<li>Software aberto, com sintáxe e ambiente semelhante à linguagem <code>S</code></li>
+<li>Mineração de dados</li>
 </ul>
-</div>
-<div class="fragment">
-<ul>
-<li>Possibilidade de análise qualitativa</li>
-</ul>
+<blockquote>
+<p>A mineração de dados é o estudo da coleta, limpeza, processamento, análise e obtenção de insights úteis a partir dos dados. (AGGARWAL, Charu C. Data Mining. Springer, 2015, p.&nbsp;1)</p>
+</blockquote>
 </div>
 </section>
 <section class="slide level2">
@@ -520,40 +488,15 @@
 </section>
 <section class="slide level2">
 
-<div class="fragment">
-<ul>
-<li>Pacotes para extração: <code>rvest</code> | <code>Rselenium</code></li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>Biblioteca para manipulação: <code>tidyverse</code></li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>Pacotes para armazenamento: <code>jsonlite</code> | <code>readr</code></li>
-</ul>
-</div>
-</section>
-<section class="slide level2">
-
 <h5 id="visualização-com-r">Visualização com R</h5>
 <div class="fragment">
 <ul>
 <li><code>ggplot2</code></li>
 </ul>
 </div>
-<div class="fragment">
-<ul>
-<li><code>viridis</code></li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li><code>gridExtra</code></li>
-</ul>
-</div>
+<blockquote>
+<p>COLOCA IMAGENS AQUI BOY</p>
+</blockquote>
 <div class="fragment">
 <ul>
 <li><code>Shiny</code></li>
@@ -586,52 +529,21 @@
 <h3 id="segunda-fase-um-salto-metodológico">“Segunda Fase”: um salto metodológico</h3>
 <div class="fragment">
 <ul>
-<li>Particularidades do objeto &amp; limitações do <code>R</code> e <code>Atlas.ti</code></li>
+<li><p>Particularidades do objeto</p>
+<ul>
+<li><p>“Apagões” frequentes</p></li>
+<li><p>Nascimento e morte de grupos e canais</p></li>
+</ul></li>
 </ul>
 </div>
 <div class="fragment">
 <ul>
-<li>Elastic Stack</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>Combinação de quatro produtos: ElasticSearch, Kibana, Beats e Logstash</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>ElasticSearch → banco de dados não-estruturados</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>Funciona conjuntamente com o Kibana: Visualização de gráficos e dashboards</li>
+<li>Limitações do <code>R</code> e <code>Atlas.ti</code></li>
 </ul>
 </div>
 </section>
 <section class="slide level2">
 
-<h3 id="impactos-metodológicos-para-análise-de-violência-política-no-telegram">Impactos metodológicos para análise de Violência Política no Telegram</h3>
-<div class="fragment">
-<ul>
-<li>Melhoria no ETL em tempo real</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>Visualização otimizada</li>
-</ul>
-</div>
-</section>
-<section class="slide level2">
-
-<h4 id="exemplos">Exemplos</h4>
-<div class="fragment">
-<ul>
-<li>Um gráfico em R</li>
-</ul>
-</div>
 <div class="fragment">
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href=""></a>ggplot(top10_grupos) +</span>
 <span id="cb1-2"><a href=""></a>  geom_bar(aes(x = docCount, y = reorder(keyName, docCount)), fill = "#6092C0", stat = "identity") +</span>
@@ -648,16 +560,31 @@
 <span id="cb1-13"><a href=""></a>        axis.ticks = element_blank(), </span>
 <span id="cb1-14"><a href=""></a>        axis.text.x = element_text(angle = 45, hjust = 1),</span>
 <span id="cb1-15"><a href=""></a>        panel.background = element_blank())</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<blockquote>
+<p>IMAGEM DO LAYOUT DO ATLAS.TI</p>
+</blockquote>
 </div>
 </section>
 <section class="slide level2">
 
-<h5 style="display: none;">
-Imagem ElasticSearch
-</h5>
+<h3 id="elasticsearch-kibana-impactos-metodológicos-para-análise-de-violência-política-no-telegram"><code>ElasticSearch</code> &amp; <code>Kibana</code> <br> Impactos metodológicos para análise de Violência Política no Telegram</h3>
 <div class="fragment">
-<p><a href="https://www.elastic.co/pt/kibana/kibana-dashboard"><img data-src="https://static-www.elastic.co/v3/assets/bltefdd0b53724fa2ce/bltd01281e2aa656f58/5fa315d24e40cf53001f3b70/illustrated-screenshot-hero-dashboards.png"></a></p>
+<ul>
+<li>Melhoria no ETL em tempo real</li>
+</ul>
 </div>
+<div class="fragment">
+<ul>
+<li>Visualização otimizada</li>
+</ul>
+</div>
+</section>
+<section class="slide level2">
+
+<h4 style="display: none;">
+Exemplo Visualização
+</h4>
+<p><a href="https://www.elastic.co/pt/kibana/kibana-dashboard"><img data-src="https://static-www.elastic.co/v3/assets/bltefdd0b53724fa2ce/bltd01281e2aa656f58/5fa315d24e40cf53001f3b70/illustrated-screenshot-hero-dashboards.png"></a></p>
 </section>
 <section class="slide level2">
 
@@ -665,14 +592,12 @@ Imagem ElasticSearch
 <ul>
 <li>Análise qualitativa otimizada</li>
 </ul>
-</div>
-<div class="fragment">
 <p><a href="https://medium.com/databites/whats-behind-elasticsearch-unlocking-the-power-of-data-visualization-23001ecfc4a2" target="_blank"> <img style="width: 60%;" src="https://miro.medium.com/v2/resize:fit:1400/1*f7MCG9M_4lNXmyjLvC5t3A.png" alt="Elasticsearch Data Visualization"> </a></p>
 </div>
 </section>
 <section id="contribuições-da-pesquisa" class="slide level2">
 <h2>Contribuições da pesquisa</h2>
-<p><br></p>
+<!-- FAZ UM DISPLAY FLEX PRA DEIXAR NA MESMA PÁGINA BOY, BOTA OS DOIS NUMA DIV SÓ OU ACHA A DIV QUE JÁ PODE TÁ COM ELES E FÉ FI -->
 <div class="fragment">
 <!-- -->
 <h3 id="relatórios">Relatórios</h3>
@@ -682,14 +607,6 @@ Imagem ElasticSearch
 <li><a href="https://drive.google.com/file/d/1OWrhQFYah651cyMC0IfQ-Wgrc8I06xH2/view?usp=sharing">Desinformação e teorias da conspiração relacionadas à vacinação em grupos e canais extremistas do Telegram</a></li>
 </ul>
 </div>
-<div class="fragment">
-<ul>
-<li><a href="https://drive.google.com/file/d/1cEjfyGhqlQ5ET_5j4hWcWPXtMiWsDZmE/view">Análise “de parte das comunicações veiculada pelos organizadores, participantes e apoiadores” do 8 de janeiro</a></li>
-</ul>
-</div>
-</section>
-<section class="slide level2">
-
 <div class="fragment">
 <!-- -->
 <h3 id="artigos">Artigos</h3>
@@ -701,44 +618,22 @@ Imagem ElasticSearch
 </div>
 <div class="fragment">
 <ul>
-<li><a href="https://www.revistas.usp.br/plural/article/view/149019/146180">“Não falo o que o povo quer, sou o que o povo quer”: 30 anos (1987-2017) de pautas políticas de Jair Bolsonaro nos jornais brasileiros</a></li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
 <li><a href="https://doi.org/10.1590/1806-9983e680407">Métodos mistos para a antropologia digital: um relato de experiência sobre a análise de grupos bolsonaristas na plataforma Telegram</a></li>
 </ul>
 </div>
 </section>
 <section id="obrigado-pela-atenção" class="slide level2">
 <h2>Obrigado pela atenção!</h2>
-<div class="fragment">
 <ul>
-<li>Email: <a href="ruan.lima@ufba.br">ruan.lima@ufba.br</a></li>
+<li><p>Email: <a href="ruan.lima@ufba.br">ruan.lima@ufba.br</a><br></p></li>
+<li><p>Github: <a href="https://github.com/tutzlima" class="uri">https://github.com/tutzlima</a><br></p></li>
 </ul>
-</div>
-<div class="fragment">
-<ul>
-<li>Github: <a href="https://github.com/tutzlima" class="uri">https://github.com/tutzlima</a></li>
-</ul>
-</div>
-<div class="fragment">
 <p><a href="https://giphy.com/portadosfundos/reacoes/tchau"><img data-src="https://media3.giphy.com/media/yMKC8ff4mtSow/200_d.gif"></a></p>
-</div>
 </section>
 <section id="referências" class="slide level2">
 <h2>Referências</h2>
-
-<img src="qrcode_referencias.svg" style="width=90%" class="r-stretch"><p>Acesse o Qr Code ou <a href="referencias.html">clique aqui</a>!</p>
-</section>
-<section id="excluir-ou-não-dps" class="slide level2">
-<h2>Excluir ou não dps</h2>
-</section>
-<section id="exportar-gráfico-como-svg" class="title-slide slide level1 center">
-<h1>Exportar gráfico como SVG</h1>
-<p>svg(“top_10_grupos.svg”, width = 10, height = 7)</p>
-<p>print(p)</p>
-<p>dev.off()</p>
+<p><img src="qrcode_referencias.svg" style="width=90%"></p>
+<p>Acesse o Qr Code ou <a href="referencias.html">clique aqui</a>!</p>
 <div class="quarto-auto-generated-content">
 <p><img src="https://www.inscricaocongresso2024.ufba.br/modulos/gerenciamentodeconteudo/imagens/724_Logo_Congresso.png" class="slide-logo"></p>
 <div class="footer footer-default">
@@ -797,7 +692,7 @@ Imagem ElasticSearch
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: 'c/t',
+        slideNumber: false,
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
