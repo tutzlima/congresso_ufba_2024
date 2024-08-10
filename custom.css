@@ -1,9 +1,43 @@
+.reveal h2{
+  text-align: center;
+}
+.reveal .slides {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 100vh; 
+}
+
+.reveal section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Necessário para o posicionamento do pseudo-elemento */
+}
+.reveal:before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://img.freepik.com/free-vector/network-mesh-wire-digital-technology-background_1017-27428.jpg?w=826&t=st=1723313710~exp=1723314310~hmac=21811e85c55bfa018b2fca63644c61a25d436b464893ca04904b742e6a235e69');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: none;
+    background-color: rgba(0, 0, 0, 0.5); /* Aplica a sobreposição preta */
+    filter: blur(8px); /* Aplica o desfoque */
+    z-index: -1; /* Mantém o fundo atrás do conteúdo */
+}
 .slide.level2 .fragment img {
   width: 100%;
   height: auto;
 }
-."slide level2 present"{
-  
+#exemplo-R{
+  justify-content: flex;
+}  
 }
 #slide-refratados{
   display: flex;
@@ -17,9 +51,6 @@
 }
 body {
   margin: 1in 1in 3in 1in; /* Margem de 1 polegada */
-}
-#públicos-refratados {
-  display: none;
 }
 .slide.level2 .fragment {
   display: flex;
@@ -48,13 +79,6 @@ body {
   max-width: 80%; /* Ajuste a largura máxima conforme necessário */
   height: auto;
 }
-#atlas.ti {
-  display: none;
-}
-#fonte-id{
-  font-size: 20px;
-  margin: 0 0 0 0px;
-}
 #referências blockquote{
   size: flex;
 }
@@ -68,7 +92,4 @@ body {
 }
 #imgs-to-center{
   display: center;
-}
-.obrigado-pela-atenção h2{
-  text-align: center;
 }
