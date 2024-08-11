@@ -1,54 +1,48 @@
 # ElasticSearch e linguagem R para análise de violência política na plataforma Telegram
 
+ADICIONAR REFERÊNCIA DAS IMAGENS: ATLAS.TI & EXEMPLO ATLAS.TI
+
+---
+
 ## Introdução
 
 ElasticSearch e linguagem R para análise de violência política na plataforma Telegram
 
 ### Sobre mim
 
-Falando brevemente sobre mim: Sou graduando em ciências sociais, estou no segundo semestre do curso, e sou bolsista do Laboratório de Humanidades Digitais com orientação do Professor Leonardo Fernandes Nascimento.
-
-- Interesses: Epistemologia, Humanidades Digitais, Extrema-direita
+Falando brevemente sobre mim: Sou graduando em ciências sociais, estou no segundo semestre do curso, sou bolsista do Laboratório de Humanidades Digitais com orientação do Professor Leonardo Fernandes Nascimento.
 
 ### Objetivos da Apresentação
 
-Bem, tenho dois objetivos nessa apresentação:
+Meus objetivos nessa apresentação:
 
 - Contextualização da pesquisa
 
 Para que seja possível tratar do meu plano de trabalho em si.
 
-- Discussão do plano de trabalho com enfoque no método
-
-Visto que é aí que reside o eixo central do meu plano.
+- Discutir o plano tendo o método como guia
 
 ## Resumo da Pesquisa
 
 - Surgimento e objetivos
 
-O laboratório surge em 2018 junto ao Programa de Pós-graduação em Ciências Sociais (PPGCS), e a pesquisa surge da observação dos fenômenos propiciados pela plataforma Telegram no ano de 2020 e 2021, começando oficialmente a partir de um edital pelo InternetLab.
+A pesquisa surge da observação dos fenômenos propiciados pela plataforma Telegram no ano de 2020 e 2021, começando oficialmente a partir de um edital pelo InternetLab.
 
 A ideia central da pesquisa é
 
   - Compreender o papel do Telegram no compartilhamento de desinformação em grupos de extrema-direita
 
-Não apenas como uma plataforma de compartilhamento mas, também, de produção de desinformação e dinâmicas próprias que torna possível os
-
-  - Processo de radicalização
-
-Além da formação do que chamamos de "ecossistema multiplataforma de desinformação", onde o Telegram opera como uma "dobradiça"
-
-- Telegram como "dobradiça"
-
-Um ponto comum de conteúdos extremistas que retroalimentam outras redes "de superfície" como o Youtube e Instagram.
-
 ## Metodologia
 
+Sobre a metodologia em si, a pesquisa está baseada na
+ 
 ### Teoria Fundamentada
 
-- Referência: *The discovery of grounded theory* (1967) por Glaser e Strauss
+Elaborada por 
 
-A pesquisa parte da *Teoria Fundamentada em dados*, inaugurada pelos sociólogos Glaser (complete o nome) e Strauss (complete o nome), cuja ideia, de forma muito resumida, é o
+- Barney Glaser e Anselm Strauss
+
+Cuja ideia central é o
 
 - Desenvolvimento da análise teórica a partir dos dados observados
 
@@ -64,47 +58,63 @@ Essa divisão não significa um abandono dos seguintes métodos, apenas uma prev
 
 Então, para começar, temos a
 
-#### Mineração de Dados
-
-- Definição e importância (AGGARWAL, Charu C.)
-
 #### Análise Quantitativa com R
 
-Depois disso, partimos para a análise quantitativa, que é onde entra a liguagem R, uma
+- Uma linguagem voltada à análise estatística e visualização gráfica, que é o que possibilita a
 
-- Linguagem voltada à análise estatística e visualização gráfica
+#### Mineração de Dados
 
-- Pacotes: `rvest`, `Rselenium`, `tidyverse`, `jsonlite`, `readr`
+- o estudo da coleta, limpeza e análise dos dados, o que culmina no processo de
+
+#### ETL
+
+Que corresponde, respectivamente, à
+
+- Extração: Seja por raspagem ou requisições via API; A
+- Transformação: Construção de variáveis que contribuam à análise do objeto, sendo portanto uma decisão metodológica e não meramente computacional; e o
+- Armazenamento: o formato no qual os dados serão armazenados, que também leva em conta uma série de questões computacionais e analíticas 
 
 #### Visualização com R
 
-O `R` tem algumas ferramentas para visualização de dados, como o
-
-- `ggplot2`, sendo o pacote mais usado pela comunidade do R
-- `viridis` e `gridExtra` para complementar a customização desses gráficos, e o
-- `Shiny`, uma ferramenta que permite criar dashboards e até mesmo aplicações
+O grandioso pacote `ggplot2`, que é a principal biblioteca para construção de gráficos no R, e o `Shiny`, uma biblioteca que lhe permite construir desde dashboards interativos até aplicações ou sites.
 
 #### Análise Qualitativa com Atlas.ti
 
-Na análise qualitativa temos o `Atlas.ti`, que é
+Na análise qualitativa temos o `Atlas.ti`, que é um
 
-- DEFINIÇÃO
+- Software que possibilita a análise qualitativa de dados com o auxílio do computador, que lhe permite analisar grandes base de dados
 
-- Principais recursos: Codes, Families e Networks
+Seus
 
-Que são recursos que dialogam diretamente com a Teoria Fundamentada.
+- Principais recursos são as codificações, as famílias e as "redes de conexões", recursos que dialogam diretamente com a abordagem da teoria fundamentada
 
 Então, entramos na
 
-### Segunda Fase: Elastic Stack
+### Segunda Fase: um salto metodológico
 
-- Introdução ao Elastic Stack: ElasticSearch, Kibana, Beats e Logstash
+e para entender por que estou dando essa ênfase é preciso tratar de algumas
 
-- ElasticSearch como banco de dados não-estruturados
+- Particularidades do objeto
 
-- Funcionalidade conjunta com Kibana para visualização de gráficos e dashboards
+Em primeiro temos 
 
-## Impactos Metodológicos
+  - "Apagões" frequentes, isto é, a partir do momento em que o discurso de ódio ou o conteúdo desinformativo cumpriu seu "papel social", estas mensagens são apagadas, uma prática que ocorre constantemente, algo próprio da dinâmica desses públicos
+
+Junto a isso temos o
+
+  - Nascimento e morte de grupos e canais, que assumem uma postura de "zumbi", como chamamos na pesquisa. Ou seja, determinado chat para de enviar mensagens e "nasce", entre aspas, um novo que contêm ou nome ou conteúdo semelhante, sendo isso uma forma de evitar a vigilância desses indivíduos
+
+Assim chegamos nas
+
+- Limitações do `R` e do `Atlas.ti`
+
+Resumidamente, o `R` não permite a realização do ETL com tanta qualidade quanto o recurso que veremos logo mais e, para qualquer análise exploratória, ele exige um mínimo de conhecimento que, para quem nunca programou, pode se tornar um grande obstáculo; No sentido do `Atlas.ti`, por mais que ele seja voltado à análise de grandes bases de dados, ele não te oferece uma visualização tão boas desses dados de forma geral, para uma análise exploratória por exemplo, além de não comportar recursos básicos de análise quantitativa.
+
+Então, trago dois breves exemplos sobre essas limitações: Isso é o código necessário para construir um simples gráfico de barras no `R`; e esta é visualização ofertada pelo `Atlas.ti`:
+
+#### ElasticSearch & Kibana
+
+Dados essas limitações, recorremos então ao uso do `ElasticSearch`, uma estrutura para bancos de dados não-estruturados, que funciona conjuntamente ao `Kibana`, responsável pela construção de gráficos e dashboards.
 
 E quais os impactos do uso dessa ferramenta? O que ele possibilita para análise de violência política no Telegram?
 
@@ -112,62 +122,34 @@ Bem, a estrutura do Elastic permite uma
 
 - Melhoria considerável no processo de ETL em tempo real
 
-O que facilita mapear, com precisão, o nascimento e morte de grupos, canais e de determinados tópicos que estejam sendo discutidos na Internet, como foi com a PL (bota o número), conhecida como "PL do Aborto"
+O que facilita mapear, com precisão, o nascimento e morte de grupos, canais e de determinados tópicos que estejam sendo discutidos na Internet; uma
 
 - Visualização otimizada
 
-Melhor do que falar, é mostrar!
+Que já mostrei como é feito um gráfico em `R` e logo veremos como é feito pelo uso do `ElasticSearch` e do `Kibana`; e uma
 
-Então eis um pequeno exemplo de como o ElasticSearch e o Kibana otimizam a visualização dos dados:
+- Análise qualitativa otimizada
+
+Que também irei demonstrar como e porquê.
+
+Então, partindo para os
 
 ## Exemplos
 
-### Gráfico em R
+Essa é a interface disponibilizada pelo `ElasticSearch` e do `Kibana`, onde você pode construir aquele mesmo gráfico de barras como aquele com alguns cliques; Além disso, a interface da plataforma lhe permite modificar o tipo de gráfico, os parâmetros, legendas, cores, tudo isso, na mesma tela sem grandes dificuldades, qualquer pessoa consegue utilizar do ElasticSearch e do Kibana para produzir seus gráficos sem a menor necessidade de qualquer conhecimento de programação.
 
-Isso é o código de um único gráfico em `R` usando `ggplot2`, ou seja, além de não ser visualmente atraente, seja à quem comece na área ou quem já está acostumado, o `R` não é o melhor meio de construção de gráficos e tabelas na frequência que uma pesquisa com grande volume de dados e em tempo real exige
+E, no âmbito da análise qualitativa, o ElasticSearch permite a visualização dos dados não-estruturados com grande facilidade como é possível perceber nessa seção (*data explore*), onde mostra os dados e já lhe oferece gráficos de barras simples; Na barra de busca, você pode pesquisar por expressões específicas em toda a base de dados e, a depender das variáveis que foram construídas no processo dito anteriormente, você pode buscar por links, imagens, nome de grupos e canais etc...
 
-- Demonstração de um gráfico utilizando `ggplot2`
-
-### Visualização ElasticSearch
-
-Por outro lado, o ElasticSearch e o Kibana permitem a construção de um gráfico de barras como aquele com alguns cliques; A interface da plataforma lhe permite modificar o tipo de gráfico, os parâmetros, legendas, cores, tudo isso, na mesma tela sem grandes dificuldades.
-
-Qualquer pessoa consegue utilizar do ElasticSearch e do Kibana para produzir seus gráficos sem a menor necessidade de qualquer conhecimento de programação.
-
-- Exemplo de dashboard do Kibana
-
-Junto a isso, gerar dashboards também se torna uma tarefa ridicularmente fácil.
-
-### Análise qualitativa
-
-E, como se isso não bastasse, o ElasticSearch permite a visualização dos dados não-estruturados com grande facilidade, permitindo-lhe buscar globalmente por expressões específicas em toda a base de dados, por links, imagens, nome de grupos e canais...
-
-Recortes essenciais para construção da análise, algo que pelo `R` ou pelo `Atlas.ti` encontra limitações técnicas e exige conhecimentos computacionais um pouco maiores.
+Por fim, temos a ferramente Períodos de tempo, algo essencial para a análise e que, pelo `R` ou pelo `Atlas.ti`, encontra limitações técnicas e exige conhecimentos computacionais um pouco maiores.
 
 ## Contribuições da Pesquisa
 
-Gostaria de dar mais exemplos concretos de como isso reflete na análise de violência política, mas, dado o tempo e questões de privacidade e conficialidade dos dados, evitei por trazer exemplos específicos.
+E gostaria de dar mais exemplos concretos de como isso reflete na análise de violência política, mas, dado o tempo e, principalmente, questões de privacidade e conficialidade dos dados, evitei por trazer exemplos explícitos com dados da pesquisa em si.
 
-Por isso mesmo, trago diretamente os resultados da pesquisa até o momento, desde a produção de relatórios à artigos que tratam desde os métodos aos impactos da desinformação e do discurso de ódio no ecossistema multiplataforma de desinformação.
-
-### Relatórios
-
-- Desinformação e teorias da conspiração no Telegram
-
-- Análise das comunicações do 8 de janeiro
-
-### Artigos
-
-- Racismo, misoginia e antisemitismo em chats do Telegram
-
-- Pautas políticas de Jair Bolsonaro nos jornais brasileiros
-
-- Métodos mistos para a análise de grupos bolsonaristas no Telegram
+Por isso mesmo, trago a produção de alguns relatórios e artigos que tratam desde os métodos aos impactos da desinformação e do discurso de ódio no ecossistema multiplataforma de desinformação.
 
 ## Conclusão
 
-- Agradecimento
-
-- Contatos: Email e Github
+Deixarei as referências à consulta pelo Qr code ou por um link externo, uma página que contêm apenas as referências, e me despeço e agradeço pela atenção!
 
 ---
