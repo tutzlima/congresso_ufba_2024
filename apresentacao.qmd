@@ -16,7 +16,7 @@ lang: pt-BR
 jupyter: python3
 ---
 
-## Sobre mim
+### Sobre mim
 
 <br>
 
@@ -38,7 +38,7 @@ jupyter: python3
 
 ------------------------------------------------------------------------
 
-## Objetivos
+### Objetivos
 
 <br>
 
@@ -54,7 +54,7 @@ jupyter: python3
 
 ------------------------------------------------------------------------
 
-## Resumo da pesquisa
+### Resumo da pesquisa
 
 <br>
 
@@ -267,20 +267,9 @@ ggplot(top10_grupos) +
 
 ### Contribuições da pesquisa
 
-<!-- FAZ UM DISPLAY FLEX PRA DEIXAR NA MESMA PÁGINA BOY, BOTA OS DOIS NUMA DIV SÓ OU ACHA A DIV QUE JÁ PODE TÁ COM ELES E FÉ FI -->
-
 ::: fragment
-### Relatórios
-:::
-
-::: fragment
-- [Desinformação e teorias da conspiração relacionadas à vacinação em grupos e canais extremistas do Telegram](https://drive.google.com/file/d/1OWrhQFYah651cyMC0IfQ-Wgrc8I06xH2/view?usp=sharing)
+- [Relatório sobre desinformação e teorias da conspiração relacionadas à vacinação em grupos e canais extremistas do Telegram](https://drive.google.com/file/d/1OWrhQFYah651cyMC0IfQ-Wgrc8I06xH2/view?usp=sharing)
 ::: 
-
-
-::: fragment
-###   Artigos
-:::
 
 ::: fragment
 - ["Intankáveis contra o Bostil”: racismo, misoginia e antisemitismo em chats do Telegram (2020-2023)](https://cgi.br/media/docs/publicacoes/1/20240522075208/4-coletanea-artigos-tic-governanca-genero-raca-diversidade.pdf) 

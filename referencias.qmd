@@ -26,6 +26,14 @@ R PROJECT. *What is R?*. Disponível em: <https://www.r-project.org/about.html>.
 
 SCHEREN, M. L.; RODRIGUES, V. S.; LÓPEZ ZAMORA, G. D.; CESARINO, L.; NASCIMENTO, L. F.; FONSECA, P.; BARRETO, T. *Métodos mistos para a antropologia digital: um relato de experiência sobre a análise de grupos bolsonaristas na plataforma Telegram*. Horizontes Antropológicos, v. 30, p. e680407, 12 fev. 2024. Disponível em: <https://doi.org/10.1590/1806-9983e680407>. Acesso em: 24 jul. 2024.
 
-https://www.freepik.com/free-vector/network-mesh-wire-digital-technology-background_10136775.htm#query=technology%20background&position=1&from_view=keyword&track=ais_hybrid&uuid=466b2291-83b7-4ada-9a14-27041352b8a5
+ROMANO, Nicola. *Plotting with ggplot*. Disponível em: <https://www.nicolaromano.net/data-thoughts/plotting-with-ggplot/>. Acesso em: 11 ago. 2024.
+
+SHINY BY RSTUDIO. *Shiny*. Disponível em: <https://www.rstudio.com/products/shiny/>. Acesso em: 11 ago. 2024.
+
+WORLDBANK. *R Shiny Days*. Disponível em: <https://www.worldbank.org/en/events/2021/04/28/-r-shiny-days>. Acesso em: 11 ago. 2024.
+
+FREEMAN, Ben. *Atlas.ti: Identifying Concepts in Qualitative Data Analysis*. Disponível em: <https://atlasti.com/media/pages/guides/qualitative-research-guide-part-2/qualitative-data-analysis/3a19f0b0d1-1720598965/atlas.ti-can-identify-concepts-that-might-be-useful-in-qualitative-data-analysis.png>. Acesso em: 11 ago. 2024.
+
+FREEPIK. *Network Mesh Wire Digital Technology Background*. Disponível em: <https://www.freepik.com/free-vector/network-mesh-wire-digital-technology-background_10136775.htm#query=technology%20background&position=1&from_view=keyword&track=ais_hybrid&uuid=466b2291-83b7-4ada-9a14-27041352b8a5>. Acesso em: 11 ago. 2024.
 
 ---
