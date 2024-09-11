@@ -4,7 +4,7 @@ subtitle: "por Ruan Arthur Lima Santos"
 institute: "Universidade Federal da Bahia"
 format:
   revealjs:
-    #css: custom.css
+    css: custom.css
     slide-number: false
     transition: fade
     code-overflow: wrap
