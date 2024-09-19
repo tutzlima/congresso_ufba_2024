@@ -9,7 +9,6 @@ rD <- rsDriver(browser = "firefox",
                chromever = NULL,
                verbose = F)
 
-
 # Interagir com o remDR
 
 remDr <- rD$client
