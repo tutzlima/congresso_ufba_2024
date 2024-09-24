@@ -66,24 +66,6 @@ jupyter: python3
 
 ------------------------------------------------------------------------
 
-### Conceitos-chave
-
-<br>
-
-::: fragment
-- Desinformação
-
-<br>
-
-- Extrema-direita
-
-<br>
-
-- Violência política
-:::
-
-------------------------------------------------------------------------
-
 <h4><p style="display: none;">TSE –</p>O que é *Desinformação?*</h4>
 
 ::: fragment
@@ -97,24 +79,21 @@ jupyter: python3
 
 ---
 
-<h4><p style="display: none;">AUTOR –</p>O que é *Desinformação?*</h4>
-
----
-
 #### Critérios recorrentes
 
+<br>
+ 
 ::: fragment
-  
-  <br>
   
   - Intencionalidade dos sujeitos
 
 :::
 
-  <br>
+<br>
 
 ::: fragment
   - Veracidade da informação
+  
 :::
 
 ---
@@ -122,12 +101,6 @@ jupyter: python3
 <h4 style="text-align: center; display: none;"> Desinformação `!=` *Fake news*</h4>
 
 ![](dados/desinformacao.png)
-
----
-
-#### Extrema-direita
-
-
 
 ------------------------------------------------------------------------
 
@@ -137,12 +110,8 @@ jupyter: python3
 
 ::: fragment
 
-[![](https://m.media-amazon.com/images/I/61LZHsgZ7FL._AC_UF894,1000_QL80_.jpg)](https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.amazon.com.br%2FDiscovery-Grounded-Theory-Strategies-Qualitative%2Fdp%2F0202302601&psig=AOvVaw3RNIX2_aM_MHKtIuu_rjjX&ust=1726090069915000&source=images&cd=vfe&opi=89978449&ved=0CBcQjhxqFwoTCLDZoN6ouYgDFQAAAAAdAAAAABAJ)
-
 [![](https://miro.medium.com/v2/resize:fit:486/1*IFaGpfJotlrUSyzlFQZ2iA.png)](https://medium.com/creditas-tech/o-que-%C3%A9-grounded-theory-e-como-aplicar-em-ux-research-f4c405a6d54a)
 :::
-
-</p>
 
 ::: fragment
 -   Desenvolver a análise teórica *a partir* dos dados observados.
@@ -158,8 +127,6 @@ jupyter: python3
 ---
 
 #### Análise Quantitativa: Linguagem `R`
-
-[![](dados/r_clean_image.png)](https://banner2.cleanpng.com/20181126/abl/kisspng-scalable-vector-graphics-cran-statgraphics-rnn-vitor-c-5bfbd66c032b81.781736061543231084013.jpg)
 
 ::: fragment
 -   `R` é uma linguagem de programação voltada à análise estatística e visualização de gráficos
@@ -198,12 +165,6 @@ jupyter: python3
   </a>
 
 </div>
-
----
-
-<h6 style="display: none;">Exemplo ggplot2</h6><br>
-
-![]
 
 ------------------------------------------------------------------------
 
