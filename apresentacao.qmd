@@ -61,42 +61,10 @@ jupyter: python3
 <br>
 
 ::: fragment
--   Objetivo principal: compreender o papel do telegram no compartilhamento de desinformação em grupos de extrema-direita no Brasil
+-   Objetivo: compreender o papel do telegram na produção e compartilhamento de desinformação em grupos de extrema-direita no Brasil
 :::
 
 ------------------------------------------------------------------------
-
-<h4><p style="display: none;">TSE –</p>O que é *Desinformação?*</h4>
-
-::: fragment
-- [TSE](https://www.justicaeleitoral.jus.br/desinformacao/arquivos/Anexo_2177865_Guia_basico_de_enfrentamento_a_desinformacao_WEB_SEPREVOK.pdf)
-
->compreende todas as declarações públicas baseadas em informações, premissas ou dados incorretos, independentemente da intenção de quem as produziu ou as encaminhou
-
->[...] o emprego de informações parcialmente verdadeiras, mas deturpadas por manipulações de conteúdo ou contexto, com o objetivo de gerar desaprovação ou debilitar a imagem das instituições eleitorais.
-
-:::
-
----
-
-#### Critérios recorrentes
-
-<br>
- 
-::: fragment
-  
-  - Intencionalidade dos sujeitos
-
-:::
-
-<br>
-
-::: fragment
-  - Veracidade da informação
-  
-:::
-
----
 
 <h4 style="text-align: center; display: none;"> Desinformação `!=` *Fake news*</h4>
 
@@ -105,6 +73,8 @@ jupyter: python3
 ------------------------------------------------------------------------
 
 #### Teoria fundamentada
+
+<br>
 
 <p class="p-px">
 
@@ -119,14 +89,7 @@ jupyter: python3
 
 ------------------------------------------------------------------------
 
-
-<div style="display: flex; justify-content: center; align-items: center; height: 100vh; text-align: center;">
-  <h3>Métodos na "primeira fase"</h3>
-</div>
-
----
-
-#### Análise Quantitativa: Linguagem `R`
+#### Análise quantitativa & Operações computacionais com `R`
 
 ::: fragment
 -   `R` é uma linguagem de programação voltada à análise estatística e visualização de gráficos
@@ -143,16 +106,19 @@ jupyter: python3
 
 <h5 style="text-align: center; display: none;">ETL</h5><br>
 
+<br>
+
 <div style="text-align: center;">
   <a href="https://www.datachannel.co/blogs/what-is-etl-and-how-the-etl-process-works">
 <img src="dados/etl_imagem-removebg-preview.png" alt="ETL">
   </a>
 </div>
 
-
 ------------------------------------------------------------------------
 
 <h5 style="text-align: center">Visualização com R</h5><br>
+
+<br>
 
 <div id="to-flex" style="display: flex; justify-content: center; align-items: center; gap: 10px;">
 
@@ -171,8 +137,9 @@ jupyter: python3
 <h4 style="text-align: center;">Análise Qualitativa</h4>
 
 <br>
+<br>
 
-<div style="display: flex; justify-content: center; align-items: center;">
+<div style="display: flex;">
   <img style="max-width: 100%; height: auto;" src="https://larhud.ibict.br/images/2/22/Atlas_ti.png" alt="Atlas.ti">
 </div>
 
@@ -181,9 +148,13 @@ jupyter: python3
 
 - O que é o Atlas.ti?
 
+<br>
+
 ::: fragment
 Análise qualitativa de dados auxiliado por computador (*Computer Assisted Qualitative Data Analisys Software*).
 :::
+
+<br>
 
 ::: fragment
 -   Principais recursos: *Codes, Families e Networks*
@@ -192,12 +163,12 @@ Análise qualitativa de dados auxiliado por computador (*Computer Assisted Quali
 ------------------------------------------------------------------------
 
 <div style="display: flex; justify-content: center; align-items: center; height: 100vh; text-align: center;">
-  <h3>"Segunda Fase": um salto metodológico</h3>
+  <h3>Melhorias no método</h3>
 </div>
 
 ---
 
-#### Particularidades do Objeto
+<h4 style="text-align: center;">Particularidades do Objeto</h4>
 
 <br>
 
@@ -209,7 +180,7 @@ Análise qualitativa de dados auxiliado por computador (*Computer Assisted Quali
 
 
 ::: fragment
-- Nascimento e morte de grupos e canais
+- Nascimento e morte de `chats`
 :::
 
 <br>
@@ -245,6 +216,8 @@ ggplot(top10_grupos) +
         panel.background = element_blank())
 ```
 
+INCLUA A PORRA DO GRÁFICO AQUI CARA
+
 </div>
 
 ---
@@ -258,7 +231,11 @@ ggplot(top10_grupos) +
 </div>
 ---
 
-### `ElasticSearch` & `Kibana`
+<h3 style="text-align: center; color: #4758AB">ElasticSearch</h3>
+
+::: fragment
+- Banco de dados não-estruturados (vê se tem esse hífen)
+:::
 
 <br>
 
@@ -310,19 +287,7 @@ ggplot(top10_grupos) +
 - [Métodos mistos para a antropologia digital: um relato de experiência sobre a análise de grupos bolsonaristas na plataforma Telegram](https://doi.org/10.1590/1806-9983e680407)
 :::
 
----
-
-<h2 class="final">Referências</h2>
-
-<br>
-
-<div style="text-align: center;">
-  <img style="max-width: 100%; height: auto;" src="dados/qrcode_referencias.svg" alt="QR Code">
-<br><br><br>
-Acesse o Qr Code ou [clique aqui!](referencias.html)
-</div>
-
-------------------------------------------------------------------------
+-----------------------------------------------------------------------
 
 ## Obrigado pela atenção!
 
@@ -345,4 +310,16 @@ Acesse o Qr Code ou [clique aqui!](referencias.html)
   <a href="https://github.com/tutzlima" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" style="width: 80px; height: auto;">
   </a>
+</div>
+
+---
+
+<h2 class="final">Referências</h2>
+
+<br>
+
+<div style="text-align: center;">
+  <img style="max-width: 100%; height: auto;" src="dados/qrcode_referencias.svg" alt="QR Code">
+<br><br><br>
+Acesse o Qr Code ou [clique aqui!](referencias.html)
 </div>

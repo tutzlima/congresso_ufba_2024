@@ -8,7 +8,7 @@
 <link href="apresentacao_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="apresentacao_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="apresentacao_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.555">
+  <meta name="generator" content="quarto-1.5.57">
 
   <title>ElasticSearch e linguagem R para análise de violência política na plataforma Telegram</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -41,7 +41,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -69,7 +69,7 @@
     code span.at { color: #657422; } /* Attribute */
     code span.bn { color: #ad0000; } /* BaseN */
     code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
     code span.ch { color: #20794d; } /* Char */
     code span.cn { color: #8f5902; } /* Constant */
     code span.co { color: #5e5e5e; } /* Comment */
@@ -83,7 +83,7 @@
     code span.fu { color: #4758ab; } /* Function */
     code span.im { color: #00769e; } /* Import */
     code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; } /* Keyword */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
     code span.op { color: #5e5e5e; } /* Operator */
     code span.ot { color: #003b4f; } /* Other */
     code span.pp { color: #ad0000; } /* Preprocessor */
@@ -444,43 +444,7 @@
 <p><br></p>
 <div class="fragment">
 <ul>
-<li>Objetivo principal: compreender o papel do telegram no compartilhamento de desinformação em grupos de extrema-direita no Brasil</li>
-</ul>
-</div>
-</section>
-<section class="slide level2">
-
-<h4>
-<p style="display: none;">
-TSE –
-</p>
-O que é <em>Desinformação?</em>
-</h4>
-<div class="fragment">
-<ul>
-<li><a href="https://www.justicaeleitoral.jus.br/desinformacao/arquivos/Anexo_2177865_Guia_basico_de_enfrentamento_a_desinformacao_WEB_SEPREVOK.pdf">TSE</a></li>
-</ul>
-<blockquote>
-<p>compreende todas as declarações públicas baseadas em informações, premissas ou dados incorretos, independentemente da intenção de quem as produziu ou as encaminhou</p>
-</blockquote>
-<blockquote>
-<p>[…] o emprego de informações parcialmente verdadeiras, mas deturpadas por manipulações de conteúdo ou contexto, com o objetivo de gerar desaprovação ou debilitar a imagem das instituições eleitorais.</p>
-</blockquote>
-</div>
-</section>
-<section class="slide level2">
-
-<h4 id="critérios-recorrentes">Critérios recorrentes</h4>
-<p><br></p>
-<div class="fragment">
-<ul>
-<li>Intencionalidade dos sujeitos</li>
-</ul>
-</div>
-<p><br></p>
-<div class="fragment">
-<ul>
-<li>Veracidade da informação</li>
+<li>Objetivo: compreender o papel do telegram na produção e compartilhamento de desinformação em grupos de extrema-direita no Brasil</li>
 </ul>
 </div>
 </section>
@@ -494,6 +458,7 @@ Desinformação <code>!=</code> <em>Fake news</em>
 <section class="slide level2">
 
 <h4 id="teoria-fundamentada">Teoria fundamentada</h4>
+<p><br></p>
 <p class="p-px">
 </p><div class="fragment">
 <p><a href="https://medium.com/creditas-tech/o-que-%C3%A9-grounded-theory-e-como-aplicar-em-ux-research-f4c405a6d54a"><img data-src="https://miro.medium.com/v2/resize:fit:486/1*IFaGpfJotlrUSyzlFQZ2iA.png"></a></p>
@@ -506,15 +471,7 @@ Desinformação <code>!=</code> <em>Fake news</em>
 </section>
 <section class="slide level2">
 
-<div style="display: flex; justify-content: center; align-items: center; height: 100vh; text-align: center;">
-<h3>
-Métodos na “primeira fase”
-</h3>
-</div>
-</section>
-<section class="slide level2">
-
-<h4 id="análise-quantitativa-linguagem-r">Análise Quantitativa: Linguagem <code>R</code></h4>
+<h4 id="análise-quantitativa-operações-computacionais-com-r">Análise quantitativa &amp; Operações computacionais com <code>R</code></h4>
 <div class="fragment">
 <ul>
 <li><code>R</code> é uma linguagem de programação voltada à análise estatística e visualização de gráficos</li>
@@ -535,6 +492,7 @@ Métodos na “primeira fase”
 ETL
 </h5>
 <p><br></p>
+<p><br></p>
 <div style="text-align: center;">
 <p><a href="https://www.datachannel.co/blogs/what-is-etl-and-how-the-etl-process-works"> <img src="dados/etl_imagem-removebg-preview.png" alt="ETL"> </a></p>
 </div>
@@ -544,6 +502,7 @@ ETL
 <h5 style="text-align: center">
 Visualização com R
 </h5>
+<p><br></p>
 <p><br></p>
 <div id="to-flex" style="display: flex; justify-content: center; align-items: center; gap: 10px;">
 <p><a href="https://www.nicolaromano.net/data-thoughts/plotting-with-ggplot/"> <img style="width: 550px; height: auto;" src="dados/ggplot2_trans.png" alt="ggplot2"> </a></p>
@@ -555,8 +514,8 @@ Visualização com R
 <h4 style="text-align: center;">
 Análise Qualitativa
 </h4>
-<p><br></p>
-<div style="display: flex; justify-content: center; align-items: center;">
+<p><br> <br></p>
+<div style="display: flex;">
 <p><img style="max-width: 100%; height: auto;" src="https://larhud.ibict.br/images/2/22/Atlas_ti.png" alt="Atlas.ti"></p>
 </div>
 </section>
@@ -565,9 +524,11 @@ Análise Qualitativa
 <ul>
 <li>O que é o Atlas.ti?</li>
 </ul>
+<p><br></p>
 <div class="fragment">
 <p>Análise qualitativa de dados auxiliado por computador (<em>Computer Assisted Qualitative Data Analisys Software</em>).</p>
 </div>
+<p><br></p>
 <div class="fragment">
 <ul>
 <li>Principais recursos: <em>Codes, Families e Networks</em></li>
@@ -578,13 +539,15 @@ Análise Qualitativa
 
 <div style="display: flex; justify-content: center; align-items: center; height: 100vh; text-align: center;">
 <h3>
-“Segunda Fase”: um salto metodológico
+Melhorias no método
 </h3>
 </div>
 </section>
 <section class="slide level2">
 
-<h4 id="particularidades-do-objeto">Particularidades do Objeto</h4>
+<h4 style="text-align: center;">
+Particularidades do Objeto
+</h4>
 <p><br></p>
 <div class="fragment">
 <ul>
@@ -594,7 +557,7 @@ Análise Qualitativa
 <p><br></p>
 <div class="fragment">
 <ul>
-<li>Nascimento e morte de grupos e canais</li>
+<li>Nascimento e morte de <code>chats</code></li>
 </ul>
 </div>
 <p><br></p>
@@ -626,6 +589,7 @@ Exemplo R
 <span id="cb1-13"><a href=""></a>        axis.ticks = element_blank(), </span>
 <span id="cb1-14"><a href=""></a>        axis.text.x = element_text(angle = 45, hjust = 1),</span>
 <span id="cb1-15"><a href=""></a>        panel.background = element_blank())</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>INCLUA A PORRA DO GRÁFICO AQUI CARA</p>
 </div>
 </section>
 <section class="slide level2">
@@ -639,7 +603,14 @@ Exemplo Atlas.ti
 </section>
 <section class="slide level2">
 
-<h3 id="elasticsearch-kibana"><code>ElasticSearch</code> &amp; <code>Kibana</code></h3>
+<h3 style="text-align: center; color: #4758AB">
+ElasticSearch
+</h3>
+<div class="fragment">
+<ul>
+<li>Banco de dados não-estruturados (vê se tem esse hífen)</li>
+</ul>
+</div>
 <p><br></p>
 <div class="fragment">
 <ul>
@@ -692,16 +663,6 @@ Exemplo Análise
 </ul>
 </div>
 </section>
-<section class="slide level2">
-
-<h2>
-Referências
-</h2>
-<p><br></p>
-<div style="text-align: center;">
-<p><img style="max-width: 100%; height: auto;" src="dados/qrcode_referencias.svg" alt="QR Code"> <br><br><br> Acesse o Qr Code ou <a href="referencias.html">clique aqui!</a></p>
-</div>
-</section>
 <section id="obrigado-pela-atenção" class="slide level2">
 <h2>Obrigado pela atenção!</h2>
 <p><br></p>
@@ -711,6 +672,16 @@ Referências
 <div style="display: flex; justify-content: center; align-items: center; gap: 50px;">
 <p><!-- Ícone do Gmail --> <a href="mailto:ruan.lima@ufba.br" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/512px-Gmail_icon_%282020%29.svg.png" alt="Gmail" style="width: 80px; height: auto;"> </a></p>
 <p><!-- Ícone do GitHub --> <a href="https://github.com/tutzlima" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" style="width: 80px; height: auto;"> </a></p>
+</div>
+</section>
+<section class="slide level2">
+
+<h2>
+Referências
+</h2>
+<p><br></p>
+<div style="text-align: center;">
+<p><img style="max-width: 100%; height: auto;" src="dados/qrcode_referencias.svg" alt="QR Code"> <br><br><br> Acesse o Qr Code ou <a href="referencias.html">clique aqui!</a></p>
 </div>
 <div class="quarto-auto-generated-content">
 <p><img src="https://www.inscricaocongresso2024.ufba.br/modulos/gerenciamentodeconteudo/imagens/724_Logo_Congresso.png" class="slide-logo"></p>
@@ -961,18 +932,7 @@ Referências
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -1004,7 +964,29 @@ Referências
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
           var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -1012,7 +994,7 @@ Referências
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }
         // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
         for (var i=0; i<links.length; i++) {
           const link = links[i];
           if (!isInternal(link.href)) {
