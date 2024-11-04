@@ -78,3 +78,36 @@ body {
 #imgs-to-center{
   display: center;
 }
+
+/*------------------------*/
+
+.texto-invisivel{
+  display: none;
+}
+.texto-centrado{
+  text-align: center;
+}
+.texto-full-centrado {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  height: 70vh; /* Altura total da viewport para centralização vertical */
+  text-align: center;
+}
+.imagem-centrada {
+  text-align: center;
+}
+.imagem-full-centrada {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  height: 75vh; /* Altura total da viewport para centralização vertical */
+  text-align: center;
+}
+.imagem-full-centrada-atlas {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  height: 85vh; /* Altura total da viewport para centralização vertical */
+  text-align: center;
+}
