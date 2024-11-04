@@ -392,7 +392,7 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">ElasticSearch e linguagem R para análise de violência política na plataforma Telegram</h1>
-  <p class="subtitle">por Ruan Arthur Lima Santos</p>
+  <p class="subtitle">Ruan Arthur Lima Santos</p>
 
 <div class="quarto-title-authors">
 </div>
@@ -450,19 +450,21 @@
 </section>
 <section class="slide level2">
 
-<h4 style="text-align: center; display: none;">
-Desinformação <code>!=</code> <em>Fake news</em>
-</h4>
-
-<img data-src="dados/desinformacao.png" class="r-stretch"></section>
+<h4 class="texto-invisivel" id="desinformação-fake-news">Desinformação <code>!=</code> Fake News</h4>
+<div class="imagem-full-centrada">
+<p><img src="dados/desinformacao.png"></p>
+</div>
+</section>
 <section class="slide level2">
 
-<h4 id="teoria-fundamentada">Teoria fundamentada</h4>
-<p><br></p>
-<p class="p-px">
-</p><div class="fragment">
-<p><a href="https://medium.com/creditas-tech/o-que-%C3%A9-grounded-theory-e-como-aplicar-em-ux-research-f4c405a6d54a"><img data-src="https://miro.medium.com/v2/resize:fit:486/1*IFaGpfJotlrUSyzlFQZ2iA.png"></a></p>
+<h4 class="texto-centrado" id="teoria-fundamentada">Teoria fundamentada</h4>
+<div class="imagem-centrada">
+<p><img src="https://miro.medium.com/v2/resize:fit:486/1*IFaGpfJotlrUSyzlFQZ2iA.png"></p>
 </div>
+<p class="texto-centrado" style="font-size: 18px;">
+</p><p>Anselm Leonard Strauss (1916-1996) &amp; Barney Galland Glaser (1930-1930–2022)</p>
+<p></p>
+<p><br></p>
 <div class="fragment">
 <ul>
 <li>Desenvolver a análise teórica <em>a partir</em> dos dados observados.</li>
@@ -488,9 +490,7 @@ Desinformação <code>!=</code> <em>Fake news</em>
 </section>
 <section class="slide level2">
 
-<h5 style="text-align: center; display: none;">
-ETL
-</h5>
+<h5 class="texto-invisivel" id="etl">ETL</h5>
 <p><br></p>
 <p><br></p>
 <div style="text-align: center;">
@@ -499,26 +499,19 @@ ETL
 </section>
 <section class="slide level2">
 
-<h5 style="text-align: center">
-Visualização com R
-</h5>
-<p><br></p>
-<p><br></p>
+<h5 class="texto-centrado" id="visualização-com-r">Visualização com R</h5>
+<p><br><br></p>
 <div id="to-flex" style="display: flex; justify-content: center; align-items: center; gap: 10px;">
-<p><a href="https://www.nicolaromano.net/data-thoughts/plotting-with-ggplot/"> <img style="width: 550px; height: auto;" src="dados/ggplot2_trans.png" alt="ggplot2"> </a></p>
-<p><a href="https://www.worldbank.org/en/events/2021/04/28/-r-shiny-days"> <img style="width: 550px; height: auto;" src="https://www.worldbank.org/content/dam/photos/780x439/2021/apr/Shiny-logo.png" alt="Shiny"> </a></p>
+<p><a href="https://www.nicolaromano.net/data-thoughts/plotting-with-ggplot/"> <img src="dados/ggplot2_trans.png" alt="ggplot2" style="width: 550px; height: auto;"> </a></p>
+<p><a href="https://www.worldbank.org/en/events/2021/04/28/-r-shiny-days"> <img src="https://www.worldbank.org/content/dam/photos/780x439/2021/apr/Shiny-logo.png" alt="Shiny" style="width: 535px; height: auto;"> </a></p>
 </div>
 </section>
 <section class="slide level2">
 
-<h4 style="text-align: center;">
-Análise Qualitativa
-</h4>
-<p><br> <br></p>
-<div style="display: flex;">
-<p><img style="max-width: 100%; height: auto;" src="https://larhud.ibict.br/images/2/22/Atlas_ti.png" alt="Atlas.ti"></p>
-</div>
-</section>
+<h4 class="texto-invisivel" id="análise-qualitativa">Análise Qualitativa</h4>
+<p><br><br><br></p>
+
+<img src="https://larhud.ibict.br/images/2/22/Atlas_ti.png" alt="Atlas.ti" class="imagem-full-centrada-atlas r-stretch"></section>
 <section class="slide level2">
 
 <ul>
@@ -537,7 +530,7 @@ Análise Qualitativa
 </section>
 <section class="slide level2">
 
-<div style="display: flex; justify-content: center; align-items: center; height: 100vh; text-align: center;">
+<div class="texto-full-centrado">
 <h3>
 Melhorias no método
 </h3>
@@ -546,7 +539,7 @@ Melhorias no método
 <section class="slide level2">
 
 <h4 style="text-align: center;">
-Particularidades do Objeto
+<p>Particularidades do Objeto</p>
 </h4>
 <p><br></p>
 <div class="fragment">
@@ -569,18 +562,18 @@ Particularidades do Objeto
 </section>
 <section class="slide level2">
 
-<h4 style="display: none;">
-Exemplo R
-</h4>
-<div style="text-align: center;">
+<h4 class="texto-centrado" id="gráfico-em-r">Gráfico em R</h4>
 <p><br></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href=""></a>ggplot(top10_grupos) +</span>
+<div class="texto-invisivel">
+<p><code>{r include=FALSE} library(tidyverse) library(scales) set.seed(123) top10_grupos &lt;- data.frame(   keyName = paste("Grupo", 1:10),   docCount = sample(500:5000, 10) ) %&gt;%    arrange(desc(docCount))</code></p>
+</div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href=""></a>grafico_exemplo &lt;- ggplot(top10_grupos) +</span>
 <span id="cb1-2"><a href=""></a>  geom_bar(aes(x = docCount, y = reorder(keyName, docCount)), fill = "#6092C0", stat = "identity") +</span>
 <span id="cb1-3"><a href=""></a>  geom_text(aes(label = number_format(decimal.mark = ",", big.mark = ".")(docCount), x = docCount, y = reorder(keyName, docCount)), position = position_stack(vjust = 0.8), size = 3, color = "black") +</span>
 <span id="cb1-4"><a href=""></a>  scale_y_discrete(expand = c(0.06, 0.06)) +</span>
 <span id="cb1-5"><a href=""></a>  scale_x_continuous(expand = expansion(c(0, 0.05)), labels = number_format(decimal.mark = ",", big.mark = ".")) +</span>
 <span id="cb1-6"><a href=""></a>  labs(y = "Grupos", x = NULL, title = NULL) +</span>
-<span id="cb1-7"><a href=""></a>  theme_classic() +</span>
+<span id="cb1-7"><a href=""></a>  theme_dark() +</span>
 <span id="cb1-8"><a href=""></a>  theme(panel.grid.minor = element_line(linetype = "dashed"), </span>
 <span id="cb1-9"><a href=""></a>        panel.grid.major = element_line(linetype = "dashed"), </span>
 <span id="cb1-10"><a href=""></a>        axis.line.x = element_line(color = "#efefef", linewidth = 0.8), </span>
@@ -589,26 +582,32 @@ Exemplo R
 <span id="cb1-13"><a href=""></a>        axis.ticks = element_blank(), </span>
 <span id="cb1-14"><a href=""></a>        axis.text.x = element_text(angle = 45, hjust = 1),</span>
 <span id="cb1-15"><a href=""></a>        panel.background = element_blank())</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>INCLUA A PORRA DO GRÁFICO AQUI CARA</p>
+<div class="texto-invisivel">
+<p><code>{r include=FALSE} ggsave("dados/grafico_exemplo.png", plot = grafico_exemplo, width = 8, height = 5, dpi = 600)</code></p>
 </div>
 </section>
 <section class="slide level2">
 
-<h4 style="display: none;">
-Exemplo Atlas.ti
-</h4>
+<h4 class="texto-centrado" id="gráfico-em-r-1">Gráfico em R</h4>
+<div class="imagem-full-centrada">
+<p><img data-src="dados/grafico_exemplo.png"></p>
+</div>
+</section>
+<section class="slide level2">
+
+<h4 class="texto-centrado" id="exemplo-atlas.ti">Exemplo Atlas.ti</h4>
 <div style="text-align: center;">
-<p><img style="width: 3500px; hight: auto;" src="https://atlasti.com/media/pages/guides/qualitative-research-guide-part-2/qualitative-data-analysis/3a19f0b0d1-1720598965/atlas.ti-can-identify-concepts-that-might-be-useful-in-qualitative-data-analysis.png" alt="Atlas.ti"></p>
+<p><img src="https://atlasti.com/media/pages/guides/qualitative-research-guide-part-2/qualitative-data-analysis/3a19f0b0d1-1720598965/atlas.ti-can-identify-concepts-that-might-be-useful-in-qualitative-data-analysis.png" alt="Atlas.ti" style="width: 3500px; hight: auto;"></p>
 </div>
 </section>
 <section class="slide level2">
 
-<h3 style="text-align: center; color: #4758AB">
-ElasticSearch
+<h3 style="color: #4758AB; text-align: center;">
+<p>ElasticSearch</p>
 </h3>
 <div class="fragment">
 <ul>
-<li>Banco de dados não-estruturados (vê se tem esse hífen)</li>
+<li>Banco de dados não estruturados</li>
 </ul>
 </div>
 <p><br></p>
@@ -632,17 +631,91 @@ ElasticSearch
 </section>
 <section class="slide level2">
 
-<h4 style="display: none;">
-Exemplo Visualização
-</h4>
+<h4 class="texto-invisivel" id="exemplo-visualização">Exemplo Visualização</h4>
 <p><a href="https://www.elastic.co/pt/kibana/kibana-dashboard"><img data-src="https://static-www.elastic.co/v3/assets/bltefdd0b53724fa2ce/bltd01281e2aa656f58/5fa315d24e40cf53001f3b70/illustrated-screenshot-hero-dashboards.png"></a></p>
 </section>
 <section class="slide level2">
 
-<h4 style="display: none;">
-Exemplo Análise
-</h4>
-<p><a href="https://medium.com/databites/whats-behind-elasticsearch-unlocking-the-power-of-data-visualization-23001ecfc4a2" target="_blank"> <img style="align: center;" src="https://miro.medium.com/v2/resize:fit:1400/1*f7MCG9M_4lNXmyjLvC5t3A.png" alt="Elasticsearch Data Visualization"> </a></p>
+<h4 class="texto-invisivel" id="exemplo-análise">Exemplo Análise</h4>
+<p><a href="https://medium.com/databites/whats-behind-elasticsearch-unlocking-the-power-of-data-visualization-23001ecfc4a2" target="_blank"> <img src="https://miro.medium.com/v2/resize:fit:1400/1*f7MCG9M_4lNXmyjLvC5t3A.png" alt="Elasticsearch Data Visualization" style="align: center;"> </a></p>
+</section>
+<section class="slide level2">
+
+<h4 class="texto-centrado" id="lula-em-chats-do-telegram">Lula em <code>chats</code> do <code>Telegram</code></h4>
+<p><br></p>
+<div class="fragment">
+<p><strong><em>query:</em></strong> <code>all_text: lula or nine or (lu*s and in*cio) or molusco</code></p>
+</div>
+<p><br></p>
+<div class="fragment">
+<p><em>período: Jan 1, 2023, 00:00h &amp; Nov 1, 2024 23:59h</em></p>
+</div>
+<p><br></p>
+<div class="fragment">
+<p><em>465.540 mensagens</em></p>
+</div>
+</section>
+<section class="slide level2">
+
+<h4 class="texto-centrado" id="lula-em-chats-do-telegram-1">Lula em <code>chats</code> do <code>Telegram</code></h4>
+<div style="width: 100%; overflow-x: auto;">
+<table>
+</table><table class="caption-top">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Mensagens</th>
+<th style="text-align: center;">Compartilhamentos</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Lula é um ladrão, corrupto, des condenado, mentiroso, cachaceiro! Kkkkk</td>
+<td style="text-align: center;">854</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Nikolas Ferreira cria TELEGRAM para postar provas que podem levar Lula à prisão. https://t.me/nikolas_ferreira ?? Divulgue o Link em todos os grupos! <span class="citation" data-cites="nikolas_ferreira">@nikolas_ferreira</span></td>
+<td style="text-align: center;">408</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">São os Gados do Bolsonaro x os Jumentos do Lula</td>
+<td style="text-align: center;">402</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Lula e Maluf: estatismo psicopata</td>
+<td style="text-align: center;">294</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Irmãos, Assine clicando no link abaixo. ?Ajude a levar o Lula para a cadeia. O futuro do Brasil depende de você! ASSINE o pedido que já conta com a assinatura de mais de 140 deputados: https://ig.me/u/liberdade_direita?extra=subscribe</td>
+<td style="text-align: center;">134</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">2- o fim da propriedade privada é uma meta ideológica da esquerda de lula e boulos. Cuidado com o que seus olhos já enxergam há muito tempo. O próximo será você, de esquerda ou de direita.</td>
+<td style="text-align: center;">88</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Lula Secreto – Quem está por trás de Lula – Quem criou Lula – Lula, a farsa, Garnero, Rothschild, Geisel, e Golbery, Soros. https://homemculto.wordpress.com/0-0-0-lula-a-farsa-garnero-rothschield-geisel-golbery-quem-esta-por-tras-de-lula/</td>
+<td style="text-align: center;">69</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Na próxima terça-feira a base de lula no Congresso vai tentar, mais uma vez, criar o crime de “fake news”, com até 5 anos de cadeia… Cobre os deputados e senadores do seu Estado para que votem SIM, pela manutenção do veto da LIBERDADE!</td>
+<td style="text-align: center;">62</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Lula</td>
+<td style="text-align: center;">62</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">ForaPT leve Lula com você</td>
+<td style="text-align: center;">59</td>
+</tr>
+</tbody>
+</table>
+
+</div>
 </section>
 <section class="slide level2">
 
@@ -667,21 +740,23 @@ Exemplo Análise
 <h2>Obrigado pela atenção!</h2>
 <p><br></p>
 <div style="text-align: center; margin-bottom: 40px;">
-<p><a href="https://giphy.com/portadosfundos/reacoes/tchau"> <img style="width: 650px;" src="https://media3.giphy.com/media/yMKC8ff4mtSow/200_d.gif" alt="Gif Tchau"> </a></p>
+<p><a href="https://giphy.com/portadosfundos/reacoes/tchau"> <img src="https://media3.giphy.com/media/yMKC8ff4mtSow/200_d.gif" alt="Gif Tchau" style="width: 650px;"> </a></p>
 </div>
 <div style="display: flex; justify-content: center; align-items: center; gap: 50px;">
-<p><!-- Ícone do Gmail --> <a href="mailto:ruan.lima@ufba.br" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/512px-Gmail_icon_%282020%29.svg.png" alt="Gmail" style="width: 80px; height: auto;"> </a></p>
-<p><!-- Ícone do GitHub --> <a href="https://github.com/tutzlima" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" style="width: 80px; height: auto;"> </a></p>
+<!-- Ícone do Gmail -->
+<p><a href="mailto:ruan.lima@ufba.br" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/512px-Gmail_icon_%282020%29.svg.png" alt="Gmail" style="width: 80px; height: auto;"> </a></p>
+<!-- Ícone do GitHub -->
+<p><a href="https://github.com/tutzlima" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" style="width: 80px; height: auto;"> </a></p>
 </div>
 </section>
 <section class="slide level2">
 
 <h2>
-Referências
+<p>Referências</p>
 </h2>
 <p><br></p>
 <div style="text-align: center;">
-<p><img style="max-width: 100%; height: auto;" src="dados/qrcode_referencias.svg" alt="QR Code"> <br><br><br> Acesse o Qr Code ou <a href="referencias.html">clique aqui!</a></p>
+<p><img src="dados/qrcode_referencias.svg" alt="QR Code" style="max-width: 100%; height: auto;"> <br><br><br> Acesse o Qr Code ou <a href="referencias.html">clique aqui!</a></p>
 </div>
 <div class="quarto-auto-generated-content">
 <p><img src="https://www.inscricaocongresso2024.ufba.br/modulos/gerenciamentodeconteudo/imagens/724_Logo_Congresso.png" class="slide-logo"></p>
