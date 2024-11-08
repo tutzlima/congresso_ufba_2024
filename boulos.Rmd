@@ -1,0 +1,231 @@
+---
+title: "ElasticSearch e linguagem R para análise de violência política na plataforma Telegram"
+subtitle: "Guilherme Boulos em `chats` do `Telegram`"
+author: "Ruan Arthur Lima Santos"
+institute: "Universidade Federal da Bahia"
+affiliation: "[LABHDUFBA](https://labhdufba.github.io/)"
+format: 
+  pdf:
+    documentclass: report
+    latex-engine: xelatex
+    fontfamily: arial
+    fontsize: 12pt
+    geometry: "margin=1in"
+    linkcolor: blue
+toc: true
+lang: pt-BR
+editor: source
+---
+
+------------------------------------------------------------------------
+
+# Critérios de busca
+
+> ***query:*** `all_text: "guilherme boulos" or boulos`
+>
+> *período: Set 9, 2023, 00:00h & Nov 3, 2024 23:59h*
+
+---
+
+# Análise de sentimento com R
+
+## Bibliotecas
+
+```{r, message=F}
+library(syuzhet)
+library(RColorBrewer)
+library(wordcloud)
+library(tm)
+library(tidyverse)
+library(extrafont)
+```
+
+## Criando objeto `mensagens_brutas`
+
+```{r}
+
+mensagens_brutas <- read.csv(file = "dados/mensagens_boulos.csv")
+
+```
+
+## Manipulando a base
+
+```{r}
+mensagens_brutas <- mensagens_brutas |> 
+  rename(mensagens = Top.values.of.all_text.keyword,
+         compartilhamentos = Count.of.records) |> 
+  filter(mensagens != "Other") |> 
+  mutate(
+    compartilhamentos = as.integer(compartilhamentos)
+  )
+
+mensagens_brutas <- mensagens_brutas |>
+  mutate(
+    mensagens = mensagens |> str_trim(side = "both")
+  )
+```
+
+## Obter `tokens`
+
+```{r}
+
+texto_palavras <- get_tokens(text_of_file = mensagens_brutas$mensagens) # pegando os tokens
+
+texto_sentencas <- get_sentences(text_of_file = mensagens_brutas$mensagens) # pegando as sentenças
+
+```
+
+## Palavras mais repetidas / Dicionário próprio (tira samerda)
+
+```{r}
+
+mensagem_palavras <- data.frame(
+  palavras = scan(text = mensagens_brutas$mensagens,
+                          what = character(),
+                          allowEscapes = T,
+                          fileEncoding = "UTF-8")
+
+)
+
+termos <- c("comunista", "esquerda", "comuna", "esquerdalha", "esquerdopata", "ladrao", "roubo", "invasao", "drogas", "maconha", "mst")
+
+dicionario <- tibble(
+  palavras = termos,
+  anger = rep(1, length(termos))
+)
+
+palavras_mais_repetidas <- mensagem_palavras |> 
+  count(palavras, sort = T)
+
+filtro <- c( "boulos", "boulo", "guilherme", "a", "o", "e", "ante", "até", "com", "contra", "de", "desde", "em", "entre", "para", "pra", "perante", "por", "sem", "sobre", "trás", "com", "num", "numa", "aquilo", "aquele", "aquela", "que", "do", "é", "no", "na", "da")
+
+palavras_mais_repetidas <- palavras_mais_repetidas |> 
+  filter(!str_to_lower(palavras) %in% filtro)
+
+```
+
+## Análise de sentimento
+
+```{r}
+
+sentimentos_tokens <- get_nrc_sentiment(char_v = texto_palavras, language = "portuguese")
+
+sentimentos_sentencas <- get_nrc_sentiment(char_v = texto_sentencas, language = "portuguese")
+
+
+summary(sentimentos_sentencas)
+```
+
+### Gráfico de sentimentos com sentenças
+
+#### Manipulando os dados
+
+```{r}
+
+# Transformando os sentimentos em proporções
+
+sentimentos_sentencas_prop <- as.data.frame(colSums(prop.table(sentimentos_sentencas))) # criando o dataframe
+
+colnames(sentimentos_sentencas_prop) <- "Proporção" # Renomeando a coluna
+
+sentimentos_sentencas_prop$Emoções <- rownames(sentimentos_sentencas_prop) # Criando nova coluna "Emoções"
+
+rownames(sentimentos_sentencas_prop) <- NULL # Resetando o index
+
+pn_sentencas <- sentimentos_sentencas_prop |> 
+  filter(Emoções == "negative" | Emoções == "positive")|> # Selecionando apenas os sentimentos
+  mutate(
+    Sentimentos = Emoções |> recode("positive" = "Positivo",
+                                    "negative" = "Negativo")
+  ) |> 
+  select(-Emoções)
+
+sentimentos_sentencas_prop <- sentimentos_sentencas_prop |>
+  filter(Emoções != "negative" & Emoções != "positive") |> # Retirando apenas os sentimentos
+  mutate(Emoções = recode( # renomeando as emoções
+    Emoções,
+    "anger" = "Raiva",
+    "anticipation" = "Antecipação",
+    "disgust" = "Nojo",
+    "fear" = "Medo",
+    "joy" = "Alegria",
+    "sadness" = "Tristeza",
+    "surprise" = "Surpresa",
+    "trust" = "Confiança"
+  ))
+
+```
+
+#### Produzindo o gráfico
+
+```{r echo=FALSE}
+
+# Filtrando apenas as emoções com resultados
+
+sentimentos_sentencas_prop |> 
+  filter(Proporção > 0L) |> # Filtrando as emoções com proporção maior que 0
+
+# Construindo o gráfico de barras
+
+ggplot(aes(x = reorder(Emoções, Proporção), y = Proporção, fill = Emoções)) +
+  geom_bar(stat = "identity", width = 0.7) +
+  scale_fill_brewer(palette = "Set3") +
+  labs(
+    title = "Análise de Sentimento",
+    subtitle = "Guilherme Boulos em chats do Telegram",
+    x = "Emoções",
+    y = "Proporção",
+    caption = "Gráfico em R com ggplot2"
+  ) +
+  scale_y_continuous(labels = scales::percent_format(accuracy = 2, decimal.mark = ","), expand = expansion(mult = c(0.05, 0.05))) +
+  theme_dark() +
+  theme(
+    plot.title = element_text(face = "bold", hjust = 0.5, size = 14),
+    plot.subtitle = element_text(hjust = 0.5, size = 12),
+    axis.title.x = element_text(angle = 0, hjust = 0.5, vjust = -2.5, size = 10),
+    axis.title.y = element_text(angle = 0, hjust = -2.5, vjust = 0.5, size = 10),
+    plot.caption = element_text(face = "italic", size = 10),
+    axis.title = element_text(size = 12),
+    legend.position = "none"
+  )
+
+```
+
+Nem falarei d'`Alegria`, me incomoda mais pensar em como diabos `Confiança` alcançou um valor tão alto visto que extraímos mensagens de `chats` de extrema-direita sobre *Guilherme Boulos?* Veremos:
+
+### Nuvem de palavras
+
+```{r}
+
+palavras_raiva <- texto_palavras[sentimentos_tokens$anger > 0]
+
+tabela_raiva <- palavras_raiva |> 
+  table() |> sort(decreasing = T) |> head(10)
+  
+palavras_confianca <- texto_palavras[sentimentos_tokens$trust > 0]
+
+tabela_confianca <- palavras_confianca |> 
+  table() |> sort(decreasing = T) |> head(10)
+
+nuvem_emocoes_vetor <- c(
+paste(texto_palavras[sentimentos_tokens$sadness> 0], collapse = " "),
+paste(texto_palavras[sentimentos_tokens$joy > 0], collapse = " "),
+paste(texto_palavras[sentimentos_tokens$anger > 0], collapse = " "),
+paste(texto_palavras[sentimentos_tokens$fear > 0], collapse = " "))
+
+nuvem_emocoes_vetor <- iconv(nuvem_emocoes_vetor, "latin1", "UTF-8")
+
+nuvem_corpus <- Corpus(VectorSource(nuvem_emocoes_vetor))
+
+nuvem_tdm <- TermDocumentMatrix(nuvem_corpus)
+
+nuvem_tdm <- as.matrix(nuvem_tdm)
+
+colnames(nuvem_tdm) <- c('tristeza', 'felicidade', 'raiva', 'confiança')
+
+set.seed(757) # pode ser qualquer número
+
+comparison.cloud(nuvem_tdm, random.order = FALSE,
+                 colors = c("green", "red", "orange", "blue"),
+                 title.size = 1, max.words = 50, scale = c(2.5, 1), rot.per = 0.4)
+```
