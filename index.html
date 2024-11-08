@@ -473,7 +473,7 @@
 </section>
 <section class="slide level2">
 
-<h4 id="análise-quantitativa-operações-computacionais-com-r">Análise quantitativa &amp; Operações computacionais com <code>R</code></h4>
+<h4 class="texto-centrado" id="análise-quantitativa-e-operações-computacionais-com-r">Análise quantitativa e<br>Operações computacionais com <code>R</code></h4>
 <div class="fragment">
 <ul>
 <li><code>R</code> é uma linguagem de programação voltada à análise estatística e visualização de gráficos</li>
@@ -487,6 +487,11 @@
 <p>A mineração de dados é o estudo da coleta, limpeza, processamento, análise e obtenção de insights úteis a partir dos dados. (AGGARWAL, Charu C. Data Mining. Springer, 2015, p.&nbsp;1)</p>
 </blockquote>
 </div>
+<div class="fragment">
+<ul>
+<li><a href="https://docs.pyrogram.org/"><code>Pyrogram</code></a></li>
+</ul>
+</div>
 </section>
 <section class="slide level2">
 
@@ -496,6 +501,36 @@
 <div style="text-align: center;">
 <p><a href="https://www.datachannel.co/blogs/what-is-etl-and-how-the-etl-process-works"> <img src="dados/etl_imagem-removebg-preview.png" alt="ETL"> </a></p>
 </div>
+</section>
+<section class="slide level2">
+
+<h5 class="texto-centrado" id="elt-do-telegram">ELT do Telegram</h5>
+<div class="fragment">
+<ul>
+<li>Extração por meio do <code>Pyrogram</code></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>PostgreeSQL</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Transformação no SQL</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Ingestão dos dados no <code>ElasticSearch</code></li>
+</ul>
+</div>
+</section>
+<section class="slide level2">
+
+<h5 class="texto-invisivel" id="imagem-elt-do-telegram">Imagem ELT do Telegram</h5>
+<p><br></p>
+<p><a href="https://revista.internetlab.org.br/publicos-refratados-grupos-de-extrema-direita-brasileiros-na-plataforma-telegram/"><img data-src="https://revista.internetlab.org.br/wp-content/uploads/2023/01/Captura-de-Tela-2023-01-16-a%CC%80s-13.13.20-1024x392.png"></a></p>
 </section>
 <section class="slide level2">
 
@@ -514,12 +549,12 @@
 <img src="https://larhud.ibict.br/images/2/22/Atlas_ti.png" alt="Atlas.ti" class="imagem-full-centrada-atlas r-stretch"></section>
 <section class="slide level2">
 
-<ul>
-<li>O que é o Atlas.ti?</li>
-</ul>
+<h5 class="texto-centrado" id="o-que-é-o-atlas.ti">O que é o Atlas.ti?</h5>
 <p><br></p>
 <div class="fragment">
-<p>Análise qualitativa de dados auxiliado por computador (<em>Computer Assisted Qualitative Data Analisys Software</em>).</p>
+<ul>
+<li>Análise qualitativa de dados auxiliado por computador (<em>CAQDAS: Computer Assisted Qualitative Data Analisys Software</em>)</li>
+</ul>
 </div>
 <p><br></p>
 <div class="fragment">
@@ -572,7 +607,7 @@ Melhorias no método
 <span id="cb1-3"><a href=""></a>  geom_text(aes(label = number_format(decimal.mark = ",", big.mark = ".")(docCount), x = docCount, y = reorder(keyName, docCount)), position = position_stack(vjust = 0.8), size = 3, color = "black") +</span>
 <span id="cb1-4"><a href=""></a>  scale_y_discrete(expand = c(0.06, 0.06)) +</span>
 <span id="cb1-5"><a href=""></a>  scale_x_continuous(expand = expansion(c(0, 0.05)), labels = number_format(decimal.mark = ",", big.mark = ".")) +</span>
-<span id="cb1-6"><a href=""></a>  labs(y = "Grupos", x = NULL, title = NULL) +</span>
+<span id="cb1-6"><a href=""></a>  labs(y = NULL, x = "Mensagens", title = NULL) +</span>
 <span id="cb1-7"><a href=""></a>  theme_dark() +</span>
 <span id="cb1-8"><a href=""></a>  theme(panel.grid.minor = element_line(linetype = "dashed"), </span>
 <span id="cb1-9"><a href=""></a>        panel.grid.major = element_line(linetype = "dashed"), </span>
@@ -588,7 +623,8 @@ Melhorias no método
 </section>
 <section class="slide level2">
 
-<h4 class="texto-centrado" id="gráfico-em-r-1">Gráfico em R</h4>
+<h4 class="texto-invisivel" id="gráfico-em-r-1">Gráfico em R</h4>
+<p><br></p>
 <div class="imagem-full-centrada">
 <p><img data-src="dados/grafico_exemplo.png"></p>
 </div>
@@ -613,7 +649,7 @@ Melhorias no método
 <p><br></p>
 <div class="fragment">
 <ul>
-<li>Melhoria no ETL em tempo real</li>
+<li>Melhoria no ELT em tempo real</li>
 </ul>
 </div>
 <p><br></p>
@@ -641,80 +677,41 @@ Melhorias no método
 </section>
 <section class="slide level2">
 
-<h4 class="texto-centrado" id="lula-em-chats-do-telegram">Lula em <code>chats</code> do <code>Telegram</code></h4>
+<h4 class="texto-centrado" id="guilherme-boulos-em-chats-do-telegram">Guilherme Boulos em <code>chats</code> do <code>Telegram</code></h4>
 <p><br></p>
 <div class="fragment">
-<p><strong><em>query:</em></strong> <code>all_text: lula or nine or (lu*s and in*cio) or molusco</code></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="dados/query_exemplo.png"></p>
+<figcaption>query_exemplo</figcaption>
+</figure>
 </div>
-<p><br></p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="dados/time_exemplo.png"></p>
+<figcaption>time_exemplo</figcaption>
+</figure>
+</div>
+</div>
 <div class="fragment">
-<p><em>período: Jan 1, 2023, 00:00h &amp; Nov 1, 2024 23:59h</em></p>
+<ul>
+<li><strong><em>query:</em></strong> <code>all_text: "guilherme boulos" or boulos</code></li>
+</ul>
 </div>
-<p><br></p>
 <div class="fragment">
-<p><em>465.540 mensagens</em></p>
+<ul>
+<li><em>período: Set 9, 2023, 00:00h &amp; Nov 3, 2024 23:59h</em></li>
+</ul>
 </div>
-</section>
-<section class="slide level2">
-
-<h4 class="texto-centrado" id="lula-em-chats-do-telegram-1">Lula em <code>chats</code> do <code>Telegram</code></h4>
-<div style="width: 100%; overflow-x: auto;">
-<table>
-</table><table class="caption-top">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th style="text-align: center;">Mensagens</th>
-<th style="text-align: center;">Compartilhamentos</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: center;">Lula é um ladrão, corrupto, des condenado, mentiroso, cachaceiro! Kkkkk</td>
-<td style="text-align: center;">854</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Nikolas Ferreira cria TELEGRAM para postar provas que podem levar Lula à prisão. https://t.me/nikolas_ferreira ?? Divulgue o Link em todos os grupos! <span class="citation" data-cites="nikolas_ferreira">@nikolas_ferreira</span></td>
-<td style="text-align: center;">408</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">São os Gados do Bolsonaro x os Jumentos do Lula</td>
-<td style="text-align: center;">402</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Lula e Maluf: estatismo psicopata</td>
-<td style="text-align: center;">294</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">Irmãos, Assine clicando no link abaixo. ?Ajude a levar o Lula para a cadeia. O futuro do Brasil depende de você! ASSINE o pedido que já conta com a assinatura de mais de 140 deputados: https://ig.me/u/liberdade_direita?extra=subscribe</td>
-<td style="text-align: center;">134</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">2- o fim da propriedade privada é uma meta ideológica da esquerda de lula e boulos. Cuidado com o que seus olhos já enxergam há muito tempo. O próximo será você, de esquerda ou de direita.</td>
-<td style="text-align: center;">88</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">Lula Secreto – Quem está por trás de Lula – Quem criou Lula – Lula, a farsa, Garnero, Rothschild, Geisel, e Golbery, Soros. https://homemculto.wordpress.com/0-0-0-lula-a-farsa-garnero-rothschield-geisel-golbery-quem-esta-por-tras-de-lula/</td>
-<td style="text-align: center;">69</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">Na próxima terça-feira a base de lula no Congresso vai tentar, mais uma vez, criar o crime de “fake news”, com até 5 anos de cadeia… Cobre os deputados e senadores do seu Estado para que votem SIM, pela manutenção do veto da LIBERDADE!</td>
-<td style="text-align: center;">62</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">Lula</td>
-<td style="text-align: center;">62</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;">ForaPT leve Lula com você</td>
-<td style="text-align: center;">59</td>
-</tr>
-</tbody>
-</table>
-
+<div class="fragment">
+<ul>
+<li><em>7.119 mensagens</em></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><em><a href="dados/boulos.pdf">Guilherme Boulos</a></em></li>
+</ul>
 </div>
 </section>
 <section class="slide level2">
