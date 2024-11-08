@@ -5,7 +5,7 @@ institute: "Universidade Federal da Bahia"
 format:
   revealjs:
     css: custom.css
-    slide-number: false
+    slide-number: true
     transition: fade
     code-overflow: wrap
     code-copy: hover
@@ -94,7 +94,7 @@ Anselm Leonard Strauss (1916-1996) & Barney Galland Glaser (1930-1930–2022)
 
 ------------------------------------------------------------------------
 
-#### Análise quantitativa & Operações computacionais com `R`
+#### Análise quantitativa e<br>Operações computacionais com `R` {.texto-centrado}
 
 ::: fragment
 -   `R` é uma linguagem de programação voltada à análise estatística e visualização de gráficos
@@ -104,6 +104,10 @@ Anselm Leonard Strauss (1916-1996) & Barney Galland Glaser (1930-1930–2022)
 -   Mineração de dados
 
 > A mineração de dados é o estudo da coleta, limpeza, processamento, análise e obtenção de insights úteis a partir dos dados. (AGGARWAL, Charu C. Data Mining. Springer, 2015, p. 1)
+:::
+
+::: fragment
+- [`Pyrogram`](https://docs.pyrogram.org/)
 :::
 
 ------------------------------------------------------------------------
@@ -117,6 +121,34 @@ Anselm Leonard Strauss (1916-1996) & Barney Galland Glaser (1930-1930–2022)
 ::: {style="text-align: center;"}
 <a href="https://www.datachannel.co/blogs/what-is-etl-and-how-the-etl-process-works"> <img src="dados/etl_imagem-removebg-preview.png" alt="ETL"/> </a>
 :::
+
+------------------------------------------------------------------------
+
+##### ELT do Telegram {.texto-centrado}
+
+::: fragment
+- Extração por meio do `Pyrogram`
+:::
+
+::: fragment
+- PostgreeSQL
+:::
+
+::: fragment
+- Transformação no SQL
+:::
+
+::: fragment
+- Ingestão dos dados no `ElasticSearch`
+:::
+
+------------------------------------------------------------------------
+
+##### Imagem ELT do Telegram {.texto-invisivel}
+
+<br>
+
+[![](https://revista.internetlab.org.br/wp-content/uploads/2023/01/Captura-de-Tela-2023-01-16-a%CC%80s-13.13.20-1024x392.png)](https://revista.internetlab.org.br/publicos-refratados-grupos-de-extrema-direita-brasileiros-na-plataforma-telegram/)
 
 ------------------------------------------------------------------------
 
@@ -140,12 +172,12 @@ Anselm Leonard Strauss (1916-1996) & Barney Galland Glaser (1930-1930–2022)
 
 ------------------------------------------------------------------------
 
--   O que é o Atlas.ti?
+##### O que é o Atlas.ti? {.texto-centrado}
 
 <br>
 
 ::: fragment
-Análise qualitativa de dados auxiliado por computador (*Computer Assisted Qualitative Data Analisys Software*).
+- Análise qualitativa de dados auxiliado por computador (*CAQDAS: Computer Assisted Qualitative Data Analisys Software*)
 :::
 
 <br>
@@ -211,7 +243,7 @@ grafico_exemplo <- ggplot(top10_grupos) +
   geom_text(aes(label = number_format(decimal.mark = ",", big.mark = ".")(docCount), x = docCount, y = reorder(keyName, docCount)), position = position_stack(vjust = 0.8), size = 3, color = "black") +
   scale_y_discrete(expand = c(0.06, 0.06)) +
   scale_x_continuous(expand = expansion(c(0, 0.05)), labels = number_format(decimal.mark = ",", big.mark = ".")) +
-  labs(y = "Grupos", x = NULL, title = NULL) +
+  labs(y = NULL, x = "Mensagens", title = NULL) +
   theme_dark() +
   theme(panel.grid.minor = element_line(linetype = "dashed"), 
         panel.grid.major = element_line(linetype = "dashed"), 
@@ -231,7 +263,9 @@ ggsave("dados/grafico_exemplo.png", plot = grafico_exemplo, width = 8, height = 
 
 ------------------------------------------------------------------------
 
-#### Gráfico em R {.texto-centrado}
+#### Gráfico em R {.texto-invisivel}
+
+<br>
 
 ::: imagem-full-centrada
 ![](dados/grafico_exemplo.png)
@@ -260,7 +294,7 @@ ElasticSearch
 <br>
 
 ::: fragment
--   Melhoria no ETL em tempo real
+-   Melhoria no ELT em tempo real
 :::
 
 <br>
@@ -289,50 +323,31 @@ ElasticSearch
 
 ------------------------------------------------------------------------
 
-#### Lula em `chats` do `Telegram` {.texto-centrado}
+#### Guilherme Boulos em `chats` do `Telegram` {.texto-centrado}
 
 <br>
 
 ::: fragment
-***query:*** `all_text: lula or nine or (lu*s and in*cio) or molusco`
-:::
+![query_exemplo](dados/query_exemplo.png)
 
-<br>
+![time_exemplo](dados/time_exemplo.png)
+:::
 
 ::: fragment
-*período: Jan 1, 2023, 00:00h & Nov 1, 2024 23:59h*
+- ***query:*** `all_text: "guilherme boulos" or boulos`
 :::
-
-<br>
 
 ::: fragment
-*465.540 mensagens*
+- *período: Set 9, 2023, 00:00h & Nov 3, 2024 23:59h*
 :::
 
-------------------------------------------------------------------------
+::: fragment
+- *7.119 mensagens*
+:::
 
-#### Lula em `chats` do `Telegram` {.texto-centrado}
-
-<div style="width: 100%; overflow-x: auto;">
-
-  <table>
-  
-| Mensagens | Compartilhamentos |
-|:----------------------------------:|:----------------------------------:|
-| Lula é um ladrão, corrupto, des condenado, mentiroso, cachaceiro! Kkkkk | 854 |
-| Nikolas Ferreira cria TELEGRAM para postar provas que podem levar Lula à prisão. https://t.me/nikolas_ferreira ?? Divulgue o Link em todos os grupos! @nikolas_ferreira | 408 |
-| São os Gados do Bolsonaro x os Jumentos do Lula | 402 |
-| Lula e Maluf: estatismo psicopata | 294 |
-| Irmãos, Assine clicando no link abaixo. ?Ajude a levar o Lula para a cadeia. O futuro do Brasil depende de você! ASSINE o pedido que já conta com a assinatura de mais de 140 deputados: https://ig.me/u/liberdade_direita?extra=subscribe | 134 |
-| 2- o fim da propriedade privada é uma meta ideológica da esquerda de lula e boulos. Cuidado com o que seus olhos já enxergam há muito tempo. O próximo será você, de esquerda ou de direita. | 88 |
-| Lula Secreto – Quem está por trás de Lula – Quem criou Lula – Lula, a farsa, Garnero, Rothschild, Geisel, e Golbery, Soros. https://homemculto.wordpress.com/0-0-0-lula-a-farsa-garnero-rothschield-geisel-golbery-quem-esta-por-tras-de-lula/ | 69 |
-| Na próxima terça-feira a base de lula no Congresso vai tentar, mais uma vez, criar o crime de “fake news”, com até 5 anos de cadeia… Cobre os deputados e senadores do seu Estado para que votem SIM, pela manutenção do veto da LIBERDADE! | 62 |
-| Lula | 62 |
-| ForaPT leve Lula com você | 59 |
-
-  </table>
-  
-</div>
+::: fragment
+- *[Guilherme Boulos](dados/boulos.pdf)*
+:::
 
 ------------------------------------------------------------------------
 
