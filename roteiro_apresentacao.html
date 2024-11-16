@@ -358,21 +358,17 @@ plataforma Telegram</h1>
 <hr />
 <div id="introdução" class="section level2">
 <h2>Introdução</h2>
-<p>Boa tarde, me chamo Arthur e vou apresentá-los ao plano de trabalho
+<p>Boa tarde, me chamo Arthur e vou apresentá-los o plano de trabalho
 que realizei na Iniciação Científica:</p>
 <p><strong>ElasticSearch e linguagem R para análise de violência
 política na plataforma Telegram</strong></p>
-<p>Falando brevemente sobre mim: Sou graduando em ciências sociais,
-estou no terceiro semestre do curso, sou membro do Laboratório de
-Humanidades Digitais com orientação do Professor Leonardo Fernandes
-Nascimento.</p>
 <div id="objetivos-da-apresentação" class="section level3">
 <h3>Objetivos da Apresentação</h3>
 <p>Meus objetivos nessa apresentação dois:</p>
 <p>Breve contextualização da pesquisa, para que seja possível tratar do
 meu plano de trabalho em si.</p>
-<p>Discutí-lo tendo o método como guia, visto que esse é o foco do
-plano.</p>
+<p>Apresentar as potencialidades do R e do ElasticSearch numa pesquisa
+em ciências sociais computacionais.</p>
 </div>
 </div>
 <div id="resumo-da-pesquisa" class="section level2">
@@ -409,15 +405,11 @@ metodologia essencialmente <em>indutiva</em>.</p>
 não estruturados, que englobam textos, vídeos, áudios e imagens, por
 exemplo.</p>
 <p>A pesquisa é feita, então, numa abordagem multimétodo.</p>
-</div>
-<div id="métodos-na-primeira-fase" class="section level3">
-<h3>Métodos na Primeira Fase</h3>
 <div id="análise-quantitativa-com-r" class="section level4">
 <h4>Análise Quantitativa com R</h4>
 <p>R é Uma linguagem voltada à análise estatística e visualização
-gráfica mas não se limita a isso. Apesar da coleta da pesquisa se basear
-no <code>Pyrogram</code>, um framework em Python, o R também possibilita
-esse processo.</p>
+gráfica mas não se limita a isso. O R permite ralizarmos, por exemplo,
+a</p>
 </div>
 <div id="mineração-de-dados" class="section level4">
 <h4>Mineração de Dados</h4>
@@ -430,37 +422,19 @@ que culmina no processo de</li>
 <h4>ETL</h4>
 <p>Que corresponde, respectivamente, à</p>
 <ul>
-<li><p>Extração: Seja por raspagem da web ou requisições via API (<a href="https://aws.amazon.com/pt/what-is/api/">“APIs são mecanismos que
-permitem que dois componentes de software se comuniquem usando um
-conjunto de definições e protocolos”</a>), que tanto o Python quanto o R
-fazem;</p></li>
+<li><p>Extração: Seja por raspagem da web ou requisições via
+API</p></li>
 <li><p>Transformação ou manipulação dos dados: que diz respeito a
 filtragem dos dados ou construção de variáveis que contribuam à análise
 do objeto. Ou seja, a construção de categorias analíticas, sendo uma
 decisão metodológica e não meramente computacional;</p></li>
+<li><p>Armazenamento: que também leva em conta uma série de questões
+computacionais, como o tamanho dos dados, e analíticas, pois o formato
+dos dados refletem neles mesmos e, a depender, o formato implica algumas
+dificuldades numa próxima análise.</p></li>
 </ul>
-<p>Para exemplificar, pense que você quer coletar mensagens de um grupo
-no WhatsApp e quer saber quais os indivíduos que mais interagem entre si
-naquele grupo, caso essa variável não exista no conjunto de variáveis
-que a API lhe fornece, você terá que fazê-la.</p>
-<ul>
-<li>Armazenamento: o formato no qual os dados serão armazenados, que
-também leva em conta uma série de questões computacionais, como o
-tamanho dos dados, e analíticas, pois o formato dos dados refletem neles
-mesmos e, a depender, o formato implica algumas dificuldades numa
-próxima análise.</li>
-</ul>
-<p>No caso da pesquisa, os dados são extraídos pela API; armazenados “em
-sua forma original numa instância do PostgreSQL”, um “sistema de banco
-de dados relacional”, um banco de dados que organizam os dados em
-relações predefinidas, armazenado-os em uma ou mais tabelas; depois são
-transformados nesse mesmo SQL.</p>
-<p>Antes, o processo de ELT da pesquisa finalizava aí, hoje em dia, essa
-etapa de armazenamento deveria estar subdivida em: armazenamento no SQL,
-transformação dos dados no SQL e, então, ingestão dos dados no
-ElasticSearch.</p>
-<p>Então, o R entra precisamente nessa parte da análise quantitativa,
-como eu disse, ele é uma linguagem de análise estátistica e visualização
+<p>Então, o R entra precisamente nessa parte da análise quantitativa, na
+mineração de dados, na análise estátistica e na visualização
 gráfica.</p>
 </div>
 <div id="visualização-com-r" class="section level4">
@@ -479,9 +453,8 @@ computador, que lhe permite analisar grandes volumes de dados</p></li>
 “redes de conexões”, recursos que dialogam diretamente com a abordagem
 da teoria fundamentada.</p></li>
 </ul>
-<p>ARANTES AQUI!!</p>
 <p>Porém, dada as condições da pesquisa, foram necessárias algumas
-melhorias no método, tanto no ELT quanto na análise qualitativa.</p>
+melhorias no método, tanto no ETL quanto na análise qualitativa.</p>
 </div>
 </div>
 <div id="melhorias-no-método" class="section level3">
@@ -500,48 +473,46 @@ públicos</li>
 </ul>
 <p>Junto a isso temos o</p>
 <ul>
-<li>(Re)nascimento e morte de grupos e canais, que frequentemente
-assumem uma postura de “zumbi”, como chamamos na pesquisa. Ou seja,
-determinado chat para de enviar mensagens, cessa o funcionamento, e
-“nasce”, entre aspas, um novo que contêm nome ou conteúdo semelhante,
-sendo isso uma forma de evitar a vigilância e o rastreamento dessas
-pessoas</li>
+<li>Nascimento e morte de grupos e canais, que frequentemente assumem
+uma postura de “zumbi”, como chamamos na pesquisa. Ou seja, determinado
+chat para de enviar mensagens, cessa o funcionamento, e “nasce”, entre
+aspas, um novo que contêm nome ou conteúdo semelhante, sendo isso uma
+forma de evitar a vigilância do conteúdo compartilhado e o rastreamento
+dessas pessoas</li>
 </ul>
 <p>Então, como se não bastasse lidarmos com grandes volumes de dados,
-produzidos diariamente, são dados extremamente frágeis, são voláteis a
-ponto de coletarmos um chat hoje e amanhã nada daquilo existir.</p>
-<p>Assim chegamos nas</p>
+produzidos diariamente, são dados efêmeros, voláteis a ponto de
+coletarmos um chat hoje e amanhã nada daquilo existir.</p>
+<p>Disso temos as</p>
 <ul>
 <li>Limitações do <code>R</code> e do <code>Atlas.ti</code></li>
 </ul>
-<p>Resumidamente, o <code>R</code> por si só não permite a realização do
-ETL com tanta qualidade, sobretudo na etapa do armazenamento, e, para
-qualquer análise exploratória, ele exige um mínimo de conhecimento que,
-para quem nunca programou, é um grande obstáculo; No sentido do
+<p>No <code>R</code>m resumidamente, para tanto o ETL quanto qualquer
+análise exploratória , é necessário um mínimo de conhecimento que, para
+quem nunca programou, é um grande obstáculo; No sentido do
 <code>Atlas.ti</code>, por mais que ele seja voltado à análise de
-grandes bases de dados, ele não te oferece uma visualização tão boas
-desses dados de forma geral, e ele náo é a ferramente ideal para
-lidarmos com dados tão efêmeros.</p>
-<p>Então, trago dois breves exemplos sobre essas limitações:</p>
-<ul>
-<li><p>Esse é o código necessário para construir um gráfico de barras
-minimamente bonito no <code>R</code>;</p></li>
-<li><p>E esta é visualização ofertada pelo <code>Atlas.ti</code>, no
-caso uma simples nuvem de palavras.</p></li>
-</ul>
+grandes bases de dados, ele não te oferece uma visualização tão boa
+desses dados de forma geral, e ele náo é a ferramenta ideal para
+lidarmos com dados tão efêmeros e que exigem não só a coleta e o
+armazenamento, mas a análise em tempo real.</p>
+<p>Assim chegamos no uso do</p>
 <div id="elasticsearch-kibana" class="section level4">
 <h4>ElasticSearch &amp; Kibana</h4>
-<p>Dados essas limitações, recorremos então ao uso do
-<code>ElasticSearch</code>, uma estrutura para bancos de dados não
-estruturados, que funciona conjuntamente ao <code>Kibana</code>,
-responsável pela construção de gráficos e dashboards.</p>
-<p>E quais os impactos do uso dessa ferramenta? O que ele possibilita
-para análise de violência política no Telegram?</p>
+<p><code>ElasticSearch</code> é um bancos de dados não estruturados, que
+funciona conjuntamente ao <code>Kibana</code>, responsável pela
+construção de gráficos e dashboards.</p>
+<p>Quero argumentar como o ElasticSearch (e o Kibana) dão conta, em boa
+medida, dessas limitações que falei, e por consequência vou mostrar a
+potencialidade do ElasticSearch numa pesquisa em Ciências Sociais
+Computacional, expondo os impactos dessas ferramentas, o que elas
+possibilitam para análise de violência política no Telegram, por
+exemplo.</p>
 <p>Bem, a estrutura do Elastic permite uma</p>
 <ul>
 <li>Melhoria considerável no processo de ETL, especialmente no
 armazenamento em tempo real, aquela limitação que apontei no uso
-exclusivo do R</li>
+exclusivo do R e mesmo na inserção dos dados no Atlas.ti para análise
+qualitativa</li>
 </ul>
 <p>O que facilita mapear, com precisão, o nascimento e morte de grupos,
 canais e de determinados tópicos que estejam sendo discutidos na
@@ -552,24 +523,16 @@ Internet; uma</p>
 <p>Que já mostrei como é feito um gráfico em <code>R</code> e logo
 veremos como é feito pelo uso do <code>ElasticSearch</code> e do
 <code>Kibana</code>; e uma</p>
-<ul>
-<li>Análise qualitativa otimizada</li>
-</ul>
-<p>Que também irei demonstrar como e porquê.</p>
-<p>Então, partindo para os</p>
-</div>
-</div>
-</div>
-<div id="exemplos" class="section level2">
-<h2>Exemplos</h2>
 <p>Essa é uma imagem que compila os recursos ofertados pelo
 ElasticSearch e o Kibana, mostrando que você pode fazer aquele mesmo
 gráfico de barras como aquele com alguns cliques; Além disso, a
 interface da plataforma lhe permite modificar o tipo de gráfico, os
 parâmetros, legendas, cores, tudo isso, na mesma tela sem grandes
-dificuldades, qualquer pessoa consegue utilizar do ElasticSearch e do
-Kibana para produzir seus gráficos sem a menor necessidade de qualquer
-conhecimento de programação.</p>
+dificuldades, qualquer pessoa consegue utilizar o ElasticSearch e o
+Kibana sem qualquer conhecimento de programação.</p>
+<ul>
+<li>Análise qualitativa otimizada</li>
+</ul>
 <p>E, no âmbito da análise qualitativa, o ElasticSearch permite a
 visualização dos dados não estruturados com grande facilidade como é
 possível perceber nessa seção (<em>data explore</em>), onde mostra os
@@ -583,15 +546,17 @@ análise e que, pelo <code>R</code> ou pelo <code>Atlas.ti</code>,
 encontra limitações técnicas e exige conhecimentos computacionais um
 pouco maiores.</p>
 </div>
+</div>
+</div>
 <div id="contribuições-da-pesquisa" class="section level2">
 <h2>Contribuições da Pesquisa</h2>
 <p>E gostaria de dar mais exemplos concretos de como isso reflete na
 análise de violência política, mas, dado o tempo e, principalmente,
-questões de privacidade e conficialidade dos dados, evitei por trazer
+questões de privacidade e fragilidade dos dados, evitei por trazer
 exemplos explícitos com dados da pesquisa em si.</p>
 <p>Por isso mesmo, trago a produção de alguns relatórios e artigos que
 tratam desde os métodos aos impactos da desinformação e do discurso de
-ódio no ecossistema multiplataforma de desinformação.</p>
+ódio no ecossistema multiplataforma de desinformação observado.</p>
 </div>
 <div id="conclusão" class="section level2">
 <h2>Conclusão</h2>
@@ -599,6 +564,12 @@ tratam desde os métodos aos impactos da desinformação e do discurso de
 externo, uma página que contêm apenas as referências, e me despeço e
 agradeço pela atenção!</p>
 <hr />
+<p>No lugar do exemplo do Boulos, poderíamos demonstrar tudo isso que
+falamos reproduzindo a metodologia da pesquisa mesmo: entramos num GRUPO
+(mais interessante), raspamos as mensagens (via RSelenium,
+provavelmente), armazenamos isso, e ou fazemos tudo pelo atlas.ti &amp;
+R ou vemos como subir tudo isso pro elastic mesmo, um elastic nosso
+(caso ele tenha uma versão gratuita).</p>
 </div>
 <div id="referências-soltas" class="section level2">
 <h2>Referências soltas</h2>
