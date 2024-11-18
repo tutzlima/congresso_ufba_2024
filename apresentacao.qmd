@@ -16,24 +16,6 @@ lang: pt-BR
 jupyter: python3
 ---
 
-### Sobre mim
-
-<br>
-
-::: fragment
--   Graduando de Ciências Sociais
-
-<br>
-
--   [Laboratório de Humanidades Digitais](https://labhdufba.github.io/)
-
-<br>
-
--   [Leonardo Fernandes Nascimento](https://github.com/leofn/)
-:::
-
-------------------------------------------------------------------------
-
 ### Objetivos
 
 <br>
@@ -45,7 +27,13 @@ jupyter: python3
 <br>
 
 ::: fragment
--   Discutir o plano de trabalho tendo o *método* como guia
+-   Métodos utilizados
+:::
+
+<br>
+
+::: fragment
+-   Apresentar as potencialidades do R e do ElasticSearch
 :::
 
 ------------------------------------------------------------------------
@@ -61,15 +49,7 @@ jupyter: python3
 <br>
 
 ::: fragment
--   Objetivo: compreender o papel do telegram na produção e compartilhamento de desinformação em grupos de extrema-direita no Brasil
-:::
-
-------------------------------------------------------------------------
-
-#### Desinformação `!=` Fake News {.texto-invisivel}
-
-::: imagem-full-centrada
-<img src="dados/desinformacao.png"/>
+-   Objetivo: compreender o papel do telegram na produção e compartilhamento de desinformação em brasileiros de extrema-direita
 :::
 
 ------------------------------------------------------------------------
@@ -78,9 +58,11 @@ jupyter: python3
 
 ::: imagem-centrada
 <img src="https://miro.medium.com/v2/resize:fit:486/1*IFaGpfJotlrUSyzlFQZ2iA.png"/>
+
+A DESCOBERTA DA TEORIA FUNDAMENTADA
 :::
 
-<p class="texto-centrado" style="font-size: 18px;">
+<p class="texto-centrado" style="font-size: 12px;">
 
 Anselm Leonard Strauss (1916-1996) & Barney Galland Glaser (1930-1930–2022)
 
@@ -94,20 +76,16 @@ Anselm Leonard Strauss (1916-1996) & Barney Galland Glaser (1930-1930–2022)
 
 ------------------------------------------------------------------------
 
-#### Análise quantitativa e<br>Operações computacionais com `R` {.texto-centrado}
+#### Análise quantitativa com `R` {.texto-centrado}
 
 ::: fragment
--   `R` é uma linguagem de programação voltada à análise estatística e visualização de gráficos
+-   `R` é uma linguagem de programação voltada à análise estatística e visualização gráfica
 :::
 
 ::: fragment
 -   Mineração de dados
 
 > A mineração de dados é o estudo da coleta, limpeza, processamento, análise e obtenção de insights úteis a partir dos dados. (AGGARWAL, Charu C. Data Mining. Springer, 2015, p. 1)
-:::
-
-::: fragment
-- [`Pyrogram`](https://docs.pyrogram.org/)
 :::
 
 ------------------------------------------------------------------------
@@ -124,34 +102,6 @@ Anselm Leonard Strauss (1916-1996) & Barney Galland Glaser (1930-1930–2022)
 
 ------------------------------------------------------------------------
 
-##### ELT do Telegram {.texto-centrado}
-
-::: fragment
-- Extração por meio do `Pyrogram`
-:::
-
-::: fragment
-- PostgreeSQL
-:::
-
-::: fragment
-- Transformação no SQL
-:::
-
-::: fragment
-- Ingestão dos dados no `ElasticSearch`
-:::
-
-------------------------------------------------------------------------
-
-##### Imagem ELT do Telegram {.texto-invisivel}
-
-<br>
-
-[![](https://revista.internetlab.org.br/wp-content/uploads/2023/01/Captura-de-Tela-2023-01-16-a%CC%80s-13.13.20-1024x392.png)](https://revista.internetlab.org.br/publicos-refratados-grupos-de-extrema-direita-brasileiros-na-plataforma-telegram/)
-
-------------------------------------------------------------------------
-
 ##### Visualização com R {.texto-centrado}
 
 <br><br>
@@ -160,6 +110,20 @@ Anselm Leonard Strauss (1916-1996) & Barney Galland Glaser (1930-1930–2022)
 <a href="https://www.nicolaromano.net/data-thoughts/plotting-with-ggplot/"> <img src="dados/ggplot2_trans.png" alt="ggplot2" style="width: 550px; height: auto;"/> </a>
 
 <a href="https://www.worldbank.org/en/events/2021/04/28/-r-shiny-days"> <img src="https://www.worldbank.org/content/dam/photos/780x439/2021/apr/Shiny-logo.png" alt="Shiny" style="width: 535px; height: auto;"/> </a>
+:::
+
+------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+
+##### Resumo R {.texto-centrado}
+
+::: fragment
+- Análise exploratória
+
+- Mineração de dados
+
+- Visualização gráfica
 :::
 
 ------------------------------------------------------------------------
@@ -194,11 +158,7 @@ Anselm Leonard Strauss (1916-1996) & Barney Galland Glaser (1930-1930–2022)
 
 ------------------------------------------------------------------------
 
-<h4 style="text-align: center;">
-
-Particularidades do Objeto
-
-</h4>
+#### Particularidades do Objeto {.texto-centrado}
 
 <br>
 
@@ -216,6 +176,14 @@ Particularidades do Objeto
 
 ::: fragment
 -   Limitações do `R` e `Atlas.ti`
+:::
+
+
+
+#### Exemplo Atlas.ti {.texto-centrado}
+
+::: {style="text-align: center;"}
+<img src="https://atlasti.com/media/pages/guides/qualitative-research-guide-part-2/qualitative-data-analysis/3a19f0b0d1-1720598965/atlas.ti-can-identify-concepts-that-might-be-useful-in-qualitative-data-analysis.png" alt="Atlas.ti" style="width: 3500px; hight: auto;"/>
 :::
 
 ------------------------------------------------------------------------
@@ -273,14 +241,6 @@ ggsave("dados/grafico_exemplo.png", plot = grafico_exemplo, width = 8, height = 
 
 ------------------------------------------------------------------------
 
-#### Exemplo Atlas.ti {.texto-centrado}
-
-::: {style="text-align: center;"}
-<img src="https://atlasti.com/media/pages/guides/qualitative-research-guide-part-2/qualitative-data-analysis/3a19f0b0d1-1720598965/atlas.ti-can-identify-concepts-that-might-be-useful-in-qualitative-data-analysis.png" alt="Atlas.ti" style="width: 3500px; hight: auto;"/>
-:::
-
-------------------------------------------------------------------------
-
 <h3 style="color: #4758AB; text-align: center;">
 
 ElasticSearch
@@ -294,7 +254,7 @@ ElasticSearch
 <br>
 
 ::: fragment
--   Melhoria no ELT em tempo real
+-   Melhoria no ETL em tempo real
 :::
 
 <br>
