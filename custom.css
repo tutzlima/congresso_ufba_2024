@@ -1,14 +1,20 @@
 #title-slide{
   text-align: center;
-  font-size: 18px;
+  font-size: 22px;
 }
 #title-slide > p{
-  font-size: 24px;
+  font-size: 35px;
 }
-
-.reveal h2{
-  text-align: center;
+/*
+.reveal {
+  background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
+              url('https://congresso2024.ufba.br/wordpress/wp-content/uploads/2024/07/SLIDE6congufba.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
 }
+*/
 .reveal .slides {
     display: flex;
     justify-content: center;
@@ -30,9 +36,6 @@
 #exemplo-R{
   justify-content: flex;
 }  
-}
-#slide-refratados{
-  display: flex;
 }
 body {
   margin: 1in 1in 3in 1in; /* Margem de 1 polegada */
@@ -75,9 +78,6 @@ body {
   margin: 0 0 0 0;
   padding: 0 0 0 0;
 }
-#imgs-to-center{
-  display: center;
-}
 
 /*------------------------*/
 
@@ -87,14 +87,18 @@ body {
 .texto-centrado{
   text-align: center;
 }
-.texto-full-centrado {
-  display: flex;
-  justify-content: center; /* Centraliza horizontalmente */
-  align-items: center; /* Centraliza verticalmente */
-  height: 70vh; /* Altura total da viewport para centralização vertical */
-  text-align: center;
+.texto-full-centrado h2{
+      display: flex;
+      text-align: center;
+      justify-content: center; /* Centraliza horizontalmente */
+      align-items: center; /* Centraliza verticalmente */
+      height: 100vh; /* Altura de 70% da viewport */
 }
-.imagem-centrada {
+.tfd-autores {
+  margin: auto;
+  display: block;
+}
+.tfd-autores p{
   text-align: center;
 }
 .imagem-full-centrada {

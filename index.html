@@ -439,13 +439,16 @@
 <section class="slide level2">
 
 <h4 class="texto-centrado" id="teoria-fundamentada">Teoria fundamentada</h4>
-<div class="imagem-centrada">
+<div class="fragment">
+<div class="tfd-autores">
 <p><img src="https://miro.medium.com/v2/resize:fit:486/1*IFaGpfJotlrUSyzlFQZ2iA.png"></p>
-<p>A DESCOBERTA DA TEORIA FUNDAMENTADA</p>
 </div>
-<p class="texto-centrado" style="font-size: 12px;">
-</p><p>Anselm Leonard Strauss (1916-1996) &amp; Barney Galland Glaser (1930-1930–2022)</p>
-<p></p>
+<div style="margin: auto;">
+<p style="font-size: 30px;">
+Anselm Leonard Strauss (1916-1996) &amp; Barney Galland Glaser (1930–2022)
+</p>
+</div>
+</div>
 <p><br></p>
 <div class="fragment">
 <ul>
@@ -481,7 +484,7 @@
 </section>
 <section class="slide level2">
 
-<h5 class="texto-centrado" id="visualização-com-r">Visualização com R</h5>
+<h5 class="texto-centrado" id="visualização-com-r">Visualização com <code>R</code></h5>
 <p><br><br></p>
 <div id="to-flex" style="display: flex; justify-content: center; align-items: center; gap: 10px;">
 <p><a href="https://www.nicolaromano.net/data-thoughts/plotting-with-ggplot/"> <img src="dados/ggplot2_trans.png" alt="ggplot2" style="width: 550px; height: auto;"> </a></p>
@@ -490,15 +493,23 @@
 </section>
 <section class="slide level2">
 
-</section>
-<section class="slide level2">
-
-<h5 class="texto-centrado" id="resumo-r">Resumo R</h5>
+<h5 class="texto-centrado" id="resumo"><code>R</code>esumo</h5>
+<p><br></p>
 <div class="fragment">
 <ul>
-<li><p>Análise exploratória</p></li>
-<li><p>Mineração de dados</p></li>
-<li><p>Visualização gráfica</p></li>
+<li>Análise exploratória</li>
+</ul>
+</div>
+<p><br></p>
+<div class="fragment">
+<ul>
+<li>Mineração de dados</li>
+</ul>
+</div>
+<p><br></p>
+<div class="fragment">
+<ul>
+<li>Visualização gráfica</li>
 </ul>
 </div>
 </section>
@@ -524,17 +535,12 @@
 </ul>
 </div>
 </section>
-<section class="slide level2">
-
-<div class="texto-full-centrado">
-<h3>
-Melhorias no método
-</h3>
-</div>
+<section id="melhorias-no-método" class="slide level2 texto-full-centrado">
+<h2>Melhorias no método</h2>
 </section>
 <section class="slide level2">
 
-<h4 class="texto-centrado" id="particularidades-do-objeto">Particularidades do Objeto</h4>
+<h3 class="texto-centrado" id="particularidades-do-objeto">Particularidades do Objeto</h3>
 <p><br></p>
 <div class="fragment">
 <ul>
@@ -553,40 +559,39 @@ Melhorias no método
 <li>Limitações do <code>R</code> e <code>Atlas.ti</code></li>
 </ul>
 </div>
-<h4 class="texto-centrado" id="exemplo-atlas.ti">Exemplo Atlas.ti</h4>
-<div style="text-align: center;">
-<p><img src="https://atlasti.com/media/pages/guides/qualitative-research-guide-part-2/qualitative-data-analysis/3a19f0b0d1-1720598965/atlas.ti-can-identify-concepts-that-might-be-useful-in-qualitative-data-analysis.png" alt="Atlas.ti" style="width: 3500px; hight: auto;"></p>
-</div>
 </section>
 <section class="slide level2">
 
-<h4 class="texto-centrado" id="gráfico-em-r">Gráfico em R</h4>
+<h3 class="texto-centrado" id="gráfico-em-r">Gráfico em R</h3>
 <p><br></p>
 <div class="texto-invisivel">
 <p><code>{r include=FALSE} library(tidyverse) library(scales) set.seed(123) top10_grupos &lt;- data.frame(   keyName = paste("Grupo", 1:10),   docCount = sample(500:5000, 10) ) %&gt;%    arrange(desc(docCount))</code></p>
 </div>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource {r} number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a href=""></a>grafico_exemplo &lt;- ggplot(top10_grupos) +</span>
-<span id="cb1-2"><a href=""></a>  geom_bar(aes(x = docCount, y = reorder(keyName, docCount)), fill = "#6092C0", stat = "identity") +</span>
-<span id="cb1-3"><a href=""></a>  geom_text(aes(label = number_format(decimal.mark = ",", big.mark = ".")(docCount), x = docCount, y = reorder(keyName, docCount)), position = position_stack(vjust = 0.8), size = 3, color = "black") +</span>
-<span id="cb1-4"><a href=""></a>  scale_y_discrete(expand = c(0.06, 0.06)) +</span>
-<span id="cb1-5"><a href=""></a>  scale_x_continuous(expand = expansion(c(0, 0.05)), labels = number_format(decimal.mark = ",", big.mark = ".")) +</span>
-<span id="cb1-6"><a href=""></a>  labs(y = NULL, x = "Mensagens", title = NULL) +</span>
-<span id="cb1-7"><a href=""></a>  theme_dark() +</span>
-<span id="cb1-8"><a href=""></a>  theme(panel.grid.minor = element_line(linetype = "dashed"), </span>
-<span id="cb1-9"><a href=""></a>        panel.grid.major = element_line(linetype = "dashed"), </span>
-<span id="cb1-10"><a href=""></a>        axis.line.x = element_line(color = "#efefef", linewidth = 0.8), </span>
-<span id="cb1-11"><a href=""></a>        axis.line.y = element_line(color = "#efefef", linewidth = 0.8), </span>
-<span id="cb1-12"><a href=""></a>        axis.text.y = element_text(size = 8), </span>
-<span id="cb1-13"><a href=""></a>        axis.ticks = element_blank(), </span>
-<span id="cb1-14"><a href=""></a>        axis.text.x = element_text(angle = 45, hjust = 1),</span>
-<span id="cb1-15"><a href=""></a>        panel.background = element_blank())</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href=""></a>  geom_bar(aes(x = docCount, y = reorder(keyName, docCount)), </span>
+<span id="cb1-3"><a href=""></a>           fill = "#6092C0", stat = "identity") +</span>
+<span id="cb1-4"><a href=""></a>  geom_text(aes(label = number_format(decimal.mark = ",", big.mark = ".")(docCount), x = docCount, y = reorder(keyName, docCount)), </span>
+<span id="cb1-5"><a href=""></a>            position = position_stack(vjust = 0.8), size = 3, color = "black") +</span>
+<span id="cb1-6"><a href=""></a>  scale_y_discrete(expand = c(0.06, 0.06)) +</span>
+<span id="cb1-7"><a href=""></a>  scale_x_continuous(expand = expansion(c(0, 0.05)), </span>
+<span id="cb1-8"><a href=""></a>                     labels = number_format(decimal.mark = ",", big.mark = ".")) +</span>
+<span id="cb1-9"><a href=""></a>  labs(y = NULL, x = "Mensagens", title = NULL) +</span>
+<span id="cb1-10"><a href=""></a>  theme_dark() +</span>
+<span id="cb1-11"><a href=""></a>  theme(panel.grid.minor = element_line(linetype = "dashed"), </span>
+<span id="cb1-12"><a href=""></a>        panel.grid.major = element_line(linetype = "dashed"), </span>
+<span id="cb1-13"><a href=""></a>        axis.line.x = element_line(color = "#efefef", linewidth = 0.8), </span>
+<span id="cb1-14"><a href=""></a>        axis.line.y = element_line(color = "#efefef", linewidth = 0.8), </span>
+<span id="cb1-15"><a href=""></a>        axis.text.y = element_text(size = 8), </span>
+<span id="cb1-16"><a href=""></a>        axis.ticks = element_blank(), </span>
+<span id="cb1-17"><a href=""></a>        axis.text.x = element_text(angle = 45, hjust = 1),</span>
+<span id="cb1-18"><a href=""></a>        panel.background = element_blank())</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="texto-invisivel">
 <p><code>{r include=FALSE} ggsave("dados/grafico_exemplo.png", plot = grafico_exemplo, width = 8, height = 5, dpi = 600)</code></p>
 </div>
 </section>
 <section class="slide level2">
 
-<h4 class="texto-invisivel" id="gráfico-em-r-1">Gráfico em R</h4>
+<h3 class="texto-invisivel" id="gráfico-em-r-1">Gráfico em R</h3>
 <p><br></p>
 <div class="imagem-full-centrada">
 <p><img data-src="dados/grafico_exemplo.png"></p>
@@ -594,9 +599,13 @@ Melhorias no método
 </section>
 <section class="slide level2">
 
-<h3 style="color: #4758AB; text-align: center;">
-<p>ElasticSearch</p>
-</h3>
+<h3 class="texto-centrado" id="exemplo-atlas.ti">Exemplo Atlas.ti</h3>
+<div style="text-align: center;">
+<p><img src="https://atlasti.com/media/pages/guides/qualitative-research-guide-part-2/qualitative-data-analysis/3a19f0b0d1-1720598965/atlas.ti-can-identify-concepts-that-might-be-useful-in-qualitative-data-analysis.png" alt="Atlas.ti" style="width: 3500px; hight: auto;"></p>
+</div>
+</section>
+<section id="elastichsearch" class="slide level2 texto-centrado">
+<h2><code>ElastichSearch</code></h2>
 <div class="fragment">
 <ul>
 <li>Banco de dados não estruturados</li>
@@ -623,18 +632,16 @@ Melhorias no método
 </section>
 <section class="slide level2">
 
-<h4 class="texto-invisivel" id="exemplo-visualização">Exemplo Visualização</h4>
+<h3 class="texto-invisivel" id="exemplo-visualização">Exemplo Visualização</h3>
 <p><a href="https://www.elastic.co/pt/kibana/kibana-dashboard"><img data-src="https://static-www.elastic.co/v3/assets/bltefdd0b53724fa2ce/bltd01281e2aa656f58/5fa315d24e40cf53001f3b70/illustrated-screenshot-hero-dashboards.png"></a></p>
 </section>
 <section class="slide level2">
 
-<h4 class="texto-invisivel" id="exemplo-análise">Exemplo Análise</h4>
+<h3 class="texto-invisivel" id="exemplo-análise">Exemplo Análise</h3>
 <p><a href="https://medium.com/databites/whats-behind-elasticsearch-unlocking-the-power-of-data-visualization-23001ecfc4a2" target="_blank"> <img src="https://miro.medium.com/v2/resize:fit:1400/1*f7MCG9M_4lNXmyjLvC5t3A.png" alt="Elasticsearch Data Visualization" style="align: center;"> </a></p>
 </section>
-<section class="slide level2">
-
-<h4 class="texto-centrado" id="guilherme-boulos-em-chats-do-telegram">Guilherme Boulos em <code>chats</code> do <code>Telegram</code></h4>
-<p><br></p>
+<section id="guilherme-boulos-em-chats-do-telegram" class="slide level2 texto-centrado">
+<h2>Guilherme Boulos em <code>chats</code> do <code>Telegram</code></h2>
 <div class="fragment">
 <div class="quarto-figure quarto-figure-center">
 <figure>
@@ -666,13 +673,12 @@ Melhorias no método
 </div>
 <div class="fragment">
 <ul>
-<li><em><a href="dados/boulos.pdf">Guilherme Boulos</a></em></li>
+<li><em><a href="dados/boulos.pdf" target="_blank">Guilherme Boulos</a></em></li>
 </ul>
 </div>
 </section>
-<section class="slide level2">
-
-<h3 id="contribuições-da-pesquisa">Contribuições da pesquisa</h3>
+<section id="contribuições-da-pesquisa" class="slide level2 texto-centrado">
+<h2>Contribuições da pesquisa</h2>
 <div class="fragment">
 <ul>
 <li><a href="https://drive.google.com/file/d/1OWrhQFYah651cyMC0IfQ-Wgrc8I06xH2/view?usp=sharing">Relatório sobre desinformação e teorias da conspiração relacionadas à vacinação em grupos e canais extremistas do Telegram</a></li>
@@ -689,27 +695,19 @@ Melhorias no método
 </ul>
 </div>
 </section>
-<section id="obrigado-pela-atenção" class="slide level2">
+<section id="obrigado-pela-atenção" class="slide level2 texto-centrado">
 <h2>Obrigado pela atenção!</h2>
-<p><br></p>
 <div style="text-align: center; margin-bottom: 40px;">
 <p><a href="https://giphy.com/portadosfundos/reacoes/tchau"> <img src="https://media3.giphy.com/media/yMKC8ff4mtSow/200_d.gif" alt="Gif Tchau" style="width: 650px;"> </a></p>
+</div>
+<div class="texto-centrado">
+<p><a href="referencias.html">Acesse as referências aqui!</a></p>
 </div>
 <div style="display: flex; justify-content: center; align-items: center; gap: 50px;">
 <!-- Ícone do Gmail -->
 <p><a href="mailto:ruan.lima@ufba.br" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/512px-Gmail_icon_%282020%29.svg.png" alt="Gmail" style="width: 80px; height: auto;"> </a></p>
 <!-- Ícone do GitHub -->
 <p><a href="https://github.com/tutzlima" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" style="width: 80px; height: auto;"> </a></p>
-</div>
-</section>
-<section class="slide level2">
-
-<h2>
-<p>Referências</p>
-</h2>
-<p><br></p>
-<div style="text-align: center;">
-<p><img src="dados/qrcode_referencias.svg" alt="QR Code" style="max-width: 100%; height: auto;"> <br><br><br> Acesse o Qr Code ou <a href="referencias.html">clique aqui!</a></p>
 </div>
 <div class="quarto-auto-generated-content">
 <p><img src="https://www.inscricaocongresso2024.ufba.br/modulos/gerenciamentodeconteudo/imagens/724_Logo_Congresso.png" class="slide-logo"></p>

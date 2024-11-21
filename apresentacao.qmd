@@ -56,17 +56,16 @@ jupyter: python3
 
 #### Teoria fundamentada {.texto-centrado}
 
-::: imagem-centrada
+::: fragment
+
+<div class="tfd-autores">
 <img src="https://miro.medium.com/v2/resize:fit:486/1*IFaGpfJotlrUSyzlFQZ2iA.png"/>
+</div>
 
-A DESCOBERTA DA TEORIA FUNDAMENTADA
+<div style="margin: auto;">
+<p style="font-size: 30px;">Anselm Leonard Strauss (1916-1996) & Barney Galland Glaser (1930–2022)</p>
+</div>
 :::
-
-<p class="texto-centrado" style="font-size: 12px;">
-
-Anselm Leonard Strauss (1916-1996) & Barney Galland Glaser (1930-1930–2022)
-
-</p>
 
 <br>
 
@@ -102,7 +101,7 @@ Anselm Leonard Strauss (1916-1996) & Barney Galland Glaser (1930-1930–2022)
 
 ------------------------------------------------------------------------
 
-##### Visualização com R {.texto-centrado}
+##### Visualização com `R` {.texto-centrado}
 
 <br><br>
 
@@ -114,15 +113,23 @@ Anselm Leonard Strauss (1916-1996) & Barney Galland Glaser (1930-1930–2022)
 
 ------------------------------------------------------------------------
 
-------------------------------------------------------------------------
+##### `R`esumo {.texto-centrado}
 
-##### Resumo R {.texto-centrado}
+<br>
 
 ::: fragment
 - Análise exploratória
+:::
 
+<br>
+
+::: fragment
 - Mineração de dados
+:::
 
+<br>
+
+::: fragment
 - Visualização gráfica
 :::
 
@@ -152,13 +159,11 @@ Anselm Leonard Strauss (1916-1996) & Barney Galland Glaser (1930-1930–2022)
 
 ------------------------------------------------------------------------
 
-::: texto-full-centrado
-<h3>Melhorias no método</h3>
-:::
+## Melhorias no método {.texto-full-centrado}
 
 ------------------------------------------------------------------------
 
-#### Particularidades do Objeto {.texto-centrado}
+### Particularidades do Objeto {.texto-centrado}
 
 <br>
 
@@ -178,17 +183,9 @@ Anselm Leonard Strauss (1916-1996) & Barney Galland Glaser (1930-1930–2022)
 -   Limitações do `R` e `Atlas.ti`
 :::
 
-
-
-#### Exemplo Atlas.ti {.texto-centrado}
-
-::: {style="text-align: center;"}
-<img src="https://atlasti.com/media/pages/guides/qualitative-research-guide-part-2/qualitative-data-analysis/3a19f0b0d1-1720598965/atlas.ti-can-identify-concepts-that-might-be-useful-in-qualitative-data-analysis.png" alt="Atlas.ti" style="width: 3500px; hight: auto;"/>
-:::
-
 ------------------------------------------------------------------------
 
-#### Gráfico em R {.texto-centrado}
+### Gráfico em R {.texto-centrado}
 
 <br>
 
@@ -207,10 +204,13 @@ top10_grupos <- data.frame(
 
 ```{r}
 grafico_exemplo <- ggplot(top10_grupos) +
-  geom_bar(aes(x = docCount, y = reorder(keyName, docCount)), fill = "#6092C0", stat = "identity") +
-  geom_text(aes(label = number_format(decimal.mark = ",", big.mark = ".")(docCount), x = docCount, y = reorder(keyName, docCount)), position = position_stack(vjust = 0.8), size = 3, color = "black") +
+  geom_bar(aes(x = docCount, y = reorder(keyName, docCount)), 
+           fill = "#6092C0", stat = "identity") +
+  geom_text(aes(label = number_format(decimal.mark = ",", big.mark = ".")(docCount), x = docCount, y = reorder(keyName, docCount)), 
+            position = position_stack(vjust = 0.8), size = 3, color = "black") +
   scale_y_discrete(expand = c(0.06, 0.06)) +
-  scale_x_continuous(expand = expansion(c(0, 0.05)), labels = number_format(decimal.mark = ",", big.mark = ".")) +
+  scale_x_continuous(expand = expansion(c(0, 0.05)), 
+                     labels = number_format(decimal.mark = ",", big.mark = ".")) +
   labs(y = NULL, x = "Mensagens", title = NULL) +
   theme_dark() +
   theme(panel.grid.minor = element_line(linetype = "dashed"), 
@@ -231,7 +231,7 @@ ggsave("dados/grafico_exemplo.png", plot = grafico_exemplo, width = 8, height = 
 
 ------------------------------------------------------------------------
 
-#### Gráfico em R {.texto-invisivel}
+### Gráfico em R {.texto-invisivel}
 
 <br>
 
@@ -241,11 +241,15 @@ ggsave("dados/grafico_exemplo.png", plot = grafico_exemplo, width = 8, height = 
 
 ------------------------------------------------------------------------
 
-<h3 style="color: #4758AB; text-align: center;">
+### Exemplo Atlas.ti {.texto-centrado}
 
-ElasticSearch
+::: {style="text-align: center;"}
+<img src="https://atlasti.com/media/pages/guides/qualitative-research-guide-part-2/qualitative-data-analysis/3a19f0b0d1-1720598965/atlas.ti-can-identify-concepts-that-might-be-useful-in-qualitative-data-analysis.png" alt="Atlas.ti" style="width: 3500px; hight: auto;"/>
+:::
 
-</h3>
+------------------------------------------------------------------------
+
+## `ElastichSearch` {.texto-centrado}
 
 ::: fragment
 -   Banco de dados não estruturados
@@ -271,21 +275,19 @@ ElasticSearch
 
 ------------------------------------------------------------------------
 
-#### Exemplo Visualização {.texto-invisivel}
+### Exemplo Visualização {.texto-invisivel}
 
 [![](https://static-www.elastic.co/v3/assets/bltefdd0b53724fa2ce/bltd01281e2aa656f58/5fa315d24e40cf53001f3b70/illustrated-screenshot-hero-dashboards.png)](https://www.elastic.co/pt/kibana/kibana-dashboard)
 
 ------------------------------------------------------------------------
 
-#### Exemplo Análise {.texto-invisivel}
+### Exemplo Análise {.texto-invisivel}
 
 <a href="https://medium.com/databites/whats-behind-elasticsearch-unlocking-the-power-of-data-visualization-23001ecfc4a2" target="_blank"> <img src="https://miro.medium.com/v2/resize:fit:1400/1*f7MCG9M_4lNXmyjLvC5t3A.png" alt="Elasticsearch Data Visualization" style="align: center;"/> </a>
 
 ------------------------------------------------------------------------
 
-#### Guilherme Boulos em `chats` do `Telegram` {.texto-centrado}
-
-<br>
+## Guilherme Boulos em `chats` do `Telegram` {.texto-centrado}
 
 ::: fragment
 ![query_exemplo](dados/query_exemplo.png)
@@ -306,12 +308,12 @@ ElasticSearch
 :::
 
 ::: fragment
-- *[Guilherme Boulos](dados/boulos.pdf)*
+- *<a href="dados/boulos.pdf" target="_blank">Guilherme Boulos</a>*
 :::
 
 ------------------------------------------------------------------------
 
-### Contribuições da pesquisa
+## Contribuições da pesquisa {.texto-centrado}
 
 ::: fragment
 -   [Relatório sobre desinformação e teorias da conspiração relacionadas à vacinação em grupos e canais extremistas do Telegram](https://drive.google.com/file/d/1OWrhQFYah651cyMC0IfQ-Wgrc8I06xH2/view?usp=sharing)
@@ -327,12 +329,14 @@ ElasticSearch
 
 ------------------------------------------------------------------------
 
-## Obrigado pela atenção!
-
-<br>
+## Obrigado pela atenção! {.texto-centrado}
 
 ::: {style="text-align: center; margin-bottom: 40px;"}
 <a href="https://giphy.com/portadosfundos/reacoes/tchau"> <img src="https://media3.giphy.com/media/yMKC8ff4mtSow/200_d.gif" alt="Gif Tchau" style="width: 650px;"/> </a>
+:::
+
+::: texto-centrado
+[Acesse as referências aqui!](referencias.html)
 :::
 
 ::: {style="display: flex; justify-content: center; align-items: center; gap: 50px;"}
@@ -343,18 +347,4 @@ ElasticSearch
 <!-- Ícone do GitHub -->
 
 <a href="https://github.com/tutzlima" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" style="width: 80px; height: auto;"/> </a>
-:::
-
-------------------------------------------------------------------------
-
-<h2 class="final">
-
-Referências
-
-</h2>
-
-<br>
-
-::: {style="text-align: center;"}
-<img src="dados/qrcode_referencias.svg" alt="QR Code" style="max-width: 100%; height: auto;"/> <br><br><br> Acesse o Qr Code ou [clique aqui!](referencias.html)
 :::
