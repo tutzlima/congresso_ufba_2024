@@ -308,7 +308,7 @@ ggsave("dados/grafico_exemplo.png", plot = grafico_exemplo, width = 8, height = 
 :::
 
 ::: fragment
-- *<a href="dados/boulos.pdf" target="_blank">Guilherme Boulos</a>*
+- *[Guilherme Boulos](boulos.pdf)*
 :::
 
 ------------------------------------------------------------------------

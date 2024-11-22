@@ -1,105 +1,68 @@
 ---
-title: "ElasticSearch e linguagem R para análise de violência política na plataforma Telegram"
+title: "UNIVERSIDADE FEDERAL DA BAHIA"
+subtitle: "ElasticSearch e linguagem R para análise de violência política na plataforma Telegram"
 author: "Ruan Arthur Lima Santos"
 institute: "Universidade Federal da Bahia"
 affiliation: "[LABHDUFBA](https://labhdufba.github.io/)"
 format: 
   pdf:
     documentclass: report
-    latex-engine: xelatex
+    latex-engine: pdflatex
     fontfamily: times
     fontsize: 12pt
-    geometry: margin=2.5cm
+    geometry: "margin=2.5cm"
     linkcolor: blue
     toc: true
     number-sections: true
-    css: "ab"
+    css: "abnt.css"
 lang: pt-BR
 editor: source
 toc-depth: 2
 ---
 
-
-
 # Introdução
 
-Meus objetivos nessa apresentação são três:
+Dada a contextualização da pesquisa do Telegram [^1] e exposição da "evolução" dos métodos utilizados, o documento em questão tem por objetivo, exclusivamente, aprofundar no uso do R e do ElasticSearch numa pesquisa em Ciências Sociais Computacionais - por isso mesmo não entitulei o exemplo de Boulos como um "estudo de caso".
 
-- Breve contextualização da pesquisa, para que seja possível tratar do meu plano de trabalho em si.
+[^1]: Caso não se recorde, basta ler a seção três dO seguinte trabalho, que fornece um resumo suficientemente satisfatório aos interesses desse documento: [Públicos refratados: grupos de extrema-direita brasileiros na plataforma Telegram](https://revista.internetlab.org.br/publicos-refratados-grupos-de-extrema-direita-brasileiros-na-plataforma-telegram/).
 
-- Expôr a "evolução" dos métodos utilizados e, por fim, 
+Ainda assim, é válido relembrar que a pesquisa se fundamenta na Teoria Fundamentada em dados, cuja ideia *central* é o desenvolvimento da teoria *a partir* das particularidades e dinâmicas dos dados ou, nos termos de Charmaz (2009), os métodos da TFD estabelecem uma série de "diretrizes sistemáticas" que
 
-- Apresentar as potencialidades do R e do ElasticSearch numa pesquisa em ciências sociais computacionais, visto a ênfase do plano de trabalho na questão metodológica.
+>**fornecem um conjunto de princípios gerais e dispositivos heurísticos, em vez de regras pré-formuladas (ver também Atkinson, Coffey e Delamont, 2003). Assim, os dados formam a base da nossa teoria, e a nossa análise desses dados origina os conceitos que construímos. Os pesquisadores que utilizam a teoria fundamentada reúnem dados para elaborar análises teóricas desde o início de um projeto** (p. 15, ênfase nossa)
 
-- Surgimento e objetivos
+Junto a isso, tendo em vista que estamos tratando da análise de dados não estruturados [^2] (textos, vídeos, áudios e imagens), a pesquisa recorre à uma abordagem multimetodológica, tanto *quanti* quanto *quali*, prevalecendo o uso da linguagem `R` e do `ElasticSearch`, respectivamente. Com isso exposto, vejamos, finalmente, o que cada ferramenta nos oferece. 
 
-A pesquisa surge da observação de determinados fenômenos ocorridos pela ou na plataforma Telegram, que já tem o histórico de ser uma plataforma que propicia processos de radicalização e diversas atividades ilegais visto seus mecanismos de automação e privacidade, mas o interesse principal da pesquisa surge pelo impacto do Telegram nos anos de 2020 e 2021 no Brasil, como a presença do aplicativo em mais da metade dos celulares no país [^1] unida à movimentação ou retorno ao app por figuras da direita [^2], a suspenção das contas de Donald Trump no Instagram e no Facebook [^3] que acabou minando a imagem do WhatsApp, fora atualizações de privacidade realizadas na época... enfim, uma série de fatores que influenciaram na movimentação da direita e da extrema-direita no Telegram. A pesquisa começa oficialmente a partir de um edital pelo InternetLab, em junho de 2021.
-
-A ideia central da pesquisa é compreender o papel do Telegram na produção e compartilhamento de desinformação em chats brasileiros de extrema-direita.
-
-Sobre a metodologia em si, a pesquisa se baseia na
-
-Elaborada por Anselm Strauss e Barney Glaser no "A descoberta da teoria fundamentada", cuja ideia central é o
-
-- Desenvolver a análise a partir dos dados observados
-
-Os dados formam a base da teoria e a partir da análise desses dados que nossos conceitos são construídos. Ou seja, se realiza um esforço de, primeiro, observar as dinâmicas dos dados e suas particularidades e desenvolvermos a partir daí, uma teoria essencialmente *indutiva*.
-
-Sobre os dados, é importante destacar que estamos tratando de dados não estruturados, que englobam textos, vídeos, áudios e imagens, por exemplo.
-
-A pesquisa é feita, então, numa abordagem multimetodológica e, na análise quantitativa, temos o `R`.
+[^2]: Dados que não são organizados - sobretudo no sentido da *produção* desses dados -, que não possuem uma estrutura prévia. O site do próprio ElasticSearch possui uma boa exposição a respeito disso: https://www.elastic.co/pt/what-is/unstructured-data
 
 ## Linguagem R para Ciências Sociais
 
-R é uma linguagem voltada à análise estatística e visualização gráfica mas não se limita a isso. O R permite ralizarmos, por exemplo, a
+De acordo o *The Comprehensive R Archive Network*, `R` é um ambiente de software [^4] voltada à análise estatística e visualização gráfica. Contudo, diferentes sites [^5] e livros [^6] a definem como uma linguagem de programação, um conjunto específico de regras e símbolos que nos permite interagir com o computador[^3].
 
-- o estudo da coleta, limpeza, processamento e análise dos dados, o que culmina no processo de
+Não nos interessa discutir a definição do `R` [^6], mas expôr como o R pode ser usado para além da estatística ou ciência de dados, mas também para as ciências sociais. Visto a necessidade de adaptação e, até mesmo, elaboração de novos métodos de pesquisa nas ciências sociais, o R é comporta um conjunto de ferramentas poderosas, como os seguintes pacotes: 
 
-Que desagua no processo de
+- `rvest` ou `RSelenium` para raspagem de dados
 
-- Extração: Seja por raspagem da web ou requisições via API
+- `tidyverse` é uma coleção de pacotes (biblioteca) que permite diferentes atividades da ciência de dados
 
-- Transformação ou manipulação dos dados: que diz respeito ao tratamento dos dados ou construção de variáveis que contribuam à análise do objeto, ou seja, a construção de categorias analíticas, sendo uma decisão metodológica e não meramente computacional;
+- `tidytext` carrega vários léxicos de sentimentos, como `AFINN`, `bing` e `nrc`
 
-- Armazenamento: que também leva em conta uma série de questões computacionais, como o tamanho dos dados, e, de novo, metodológicas, pois o formato dos dados refletem neles mesmos e, a depender, o formato implica algumas dificuldades numa próxima análise.
+- coloca mais uns dois exemplo aí boy
 
-O R comporta o `ggplot2`, um sistema de criação declarada de gráficos disponibilizado como pacote, e o `Shiny`, uma pacote que para construção de dashboards interativos ou webApps.
 
-Então, o R entra precisamente nessa parte da análise exploratória, visualizar medidas de posição ("são utilizadas para resumir, em um único número, o conjunto de dados observados da variável em estudo") e dispersão ("variabilidade" dos dados), na mineração de dados e na visualização gráfica.
+Se organizássemos esses pacotes na disposição do processo de ETL (Extract, Transform and Load), teríamos algo próximo disso:
 
-O R também permite análise qualitativa mas não é a melhor ferramenta pra isso.
+|Extração|Transformação|Armazenamento|
+|`rvest`<br>`RSelenium`|`tidyverse` (separar os pacotes pra isso é interessante no lugar de só colocar tidyverse!)|coloca exemplos de pacotes aqui vá, mesmo que sejam do tidyverse|
+
+A transformação dos dados, por exemplo, é uma etapa fundamenal à análise exploratória, pois é a partir disso - orientada pela TFD - que tratamos os dados e construimos de variáveis que contribuam à análise do objeto.
+
+Além disso, têm-se os pacotes `ggplot2`, um sistema de criação declarada de gráficos disponibilizado, e o `Shiny`, voltado à construção de dashboards interativos ou webApps.
+
+Em suma, o R contribui, precisamente, na análise exploratória - análise das particularidades de *produção* e coleta dos dados -, na visualização de medidas de posição e dispersão - que nos permite compreender a "dinâmica" e variabilidade dos dados -, na mineração de dados e, por fim, na visualização gráfica.
+
+Entretanto, visto o uso do `ElasticSearch` na pesquisa, a mineração de dados e, por consequência, o processo de ETL não serão expostos aqui, somente o uso do R na análise exploratória, visualização gráfica e, também, irei demonstrar a *possibilidade* do R na análise qualitativa, embora não seja o foco.
 
 ## ElasticSearch
-
-E para entendermos isso vou destacar duas
-
-- Particularidades do objeto
-
-Em primeiro temos 
-
-  - "Apagões" frequentes, isto é, a partir do momento em que o discurso de ódio ou o conteúdo desinformativo cumpriu seu "papel social", produziu o efeito que se pretendia, estas mensagens são apagadas, uma prática que ocorre constantemente, algo próprio da dinâmica desses públicos
-
-Junto a isso temos o
-
-  - Nascimento e morte de grupos e canais que, quando não são deletados mesmos, frequentemente assumem uma postura de "zumbi", como chamamos na pesquisa. Ou seja, determinado chat para de enviar mensagens, cessa o funcionamento, e "nasce", entre aspas, um novo que contêm nome ou conteúdo semelhante, sendo isso uma forma de driblar a vigilância do conteúdo compartilhado e o rastreamento dessas pessoas
-
-Então, como se não bastasse lidarmos com grandes volumes de dados, produzidos diariamente, são dados efêmeros, voláteis a ponto de coletarmos um chat hoje e amanhã nada daquilo existir.
-
-Disso temos as
-
-- Limitações do `R` e do `Atlas.ti`
-
-No `R` resumidamente, para tanto o ETL quanto qualquer análise exploratória , é necessário um mínimo de conhecimento que, para quem nunca programou, é um grande obstáculo; No sentido do `Atlas.ti`, por mais que ele seja voltado à análise de grandes bases de dados, ele não te oferece uma visualização tão boa desses dados de forma geral, e ele náo é a ferramenta ideal para lidarmos com dados tão efêmeros e que exigem não só a coleta e o armazenamento, mas a análise em "tempo real".
-
-Para demonstrar rapidamente essas limitações, eu separei dois exemplos:
-
-- Esse é o código necessário pra um gráfico de barras minimamente bonito no R
-
-- E uma imagem genérica da interface do Atlas, que tem ao lado os documentos primários selecionados e à direita os trechos codificados, com essa nuvem de palavras
-
-Retomando a questão, é justamente na visualização dos dados, na forma na qual os acessamos que o Atlas encontra limitações
-
-Assim chegamos no uso do
 
 `ElasticSearch` é um bancos de dados não estruturados, que funciona conjuntamente ao `Kibana`, responsável pela construção de gráficos e dashboards.
 
@@ -127,11 +90,11 @@ Portanto, o documento em questão pretende aprofundar os recursos e aplicabicabi
 
 # Guilherme Boulos em `chats` de extrema-direita do Telegram
 
-A escolha de Boulos não surge de grandes questionamentos, considerei apenas que a temática de exemplo deve ser atual e de destaque na política brasileira. Assim, as eleições municipais de 2024 se apresentam como tema bastante relevante, visto o destaque das eleições de São Paulo - destaque que se deu tanto de forma *memética* [^1] quanto em discussões acirradas no campo da esquerda quanto o rumo da cidade em caso a reeleição de Ricardo Nunes (PARTIDO) ou, mais problemático ainda, o avanço de Pablo Marçal (PARTIDO) e seus impactos no *modus operandi* da política brasileira, no *fazer político* em nossos tempos digitais [^2].
+A escolha de Boulos não surge de grandes questionamentos, considerei apenas que a temática de exemplo deve ser atual e de destaque na política brasileira. Assim, as eleições municipais de 2024 se apresentam como tema bastante relevante, sobretudo as eleições de São Paulo, que se destacaram nas redes - destaque que se deu tanto de forma *memética* [X] quanto em discussões acirradas no campo da esquerda quanto o rumo da cidade em caso a reeleição de Ricardo Nunes (PARTIDO) ou, mais problemático ainda, o avanço de Pablo Marçal (PARTIDO) e seus impactos no *modus operandi* da política brasileira, no *fazer político* em nossos tempos digitais [Y].
 
-[^1]: O QUE É MEME E MEMÉTICA?
+[X]: O QUE É MEME E MEMÉTICA?
 
-[^2]: Obviamente, isso não se limita a Pablo Marçal, mas a extrema-direita de forma geral.: não tenho a pretensão de determinar a prevalência de *um* aspecto da realidade na mudança do "fazer político" em nossos tempos. Apesar da relevância das redes sociais, isso não deve ser apartado de uma materialidade. O avanço da extrema-direita 
+[Y]: Obviamente, isso não se limita a Pablo Marçal, mas a extrema-direita de forma geral.: não tenho a pretensão de determinar a prevalência de *um* aspecto da realidade na mudança do "fazer político" em nossos tempos. Apesar da relevância das redes sociais, isso não deve ser apartado de uma materialidade. O avanço da extrema-direita 
 
 Então, tão válido quanto a análise de Boulos nesses `chats`, poderíamos analisar o que foi dito a respeito de Marçal nas eleições municipais, esqueci o que ia dizer depois disso, kek.
 
@@ -142,14 +105,13 @@ Então, tão válido quanto a análise de Boulos nesses `chats`, poderíamos ana
 Por padrão, a *sintaxe* de busca do `ElasticSearch` espera uma estrutura próxima da seguinte:
 
 |VARIÁVEL|\:|TERMO(S)|
-|:---:|:---:|:---:|
 
 No caso, `all_text` é uma variável da base de dados que recolhe todo tipo de texto contido nas mensagens, como textos "comuns", isolados, quanto legendas, textos que acompanham outro conteúdo contido nas mensagens (como mensagens com imagens). Por exemplo:
 
 ![](dados/boulos/all_text_exemplo.png)
-Como pode-se observar, as variáveis selecionadas a serem **exibidas** em `data explore` foram `text` (texto isolado), `message_caption` (legendas), `message_id` e `image_hash` a fim de identificarmos as mensagens e imagens. 
+Como pode-se observar, as variáveis selecionadas a serem **exibidas** em `data explore` foram `text` (texto isolado), `message_caption` (legendas), `message_id` e `image_hash` a fim de identificarmos as mensagens, e `all_text`. 
 
-Se observarmos, tanto `message_id 234,670` e `message_id 40,910` são legendas, mas apenas a última é legenda *de uma [imagem*](https://telegram.metodosdigitais.org/media/a1ff81ff95bf2db77a00fe01ff00d4005acacb4035dddb4a028ab4216d067eb3.jpg). De qualquer forma, o ponto é demonstrar que `all_text` expõe tanto `text` quanto `message_caption`, tanto `message_id 208,429` quanto `message_id 40,910`.
+Se observarmos, tanto `message_id 234,670` e `message_id 40,910` são legendas, mas apenas a última é legenda *de uma [imagem](https://telegram.metodosdigitais.org/media/a1ff81ff95bf2db77a00fe01ff00d4005acacb4035dddb4a028ab4216d067eb3.jpg)*. De qualquer forma, o ponto é demonstrar que `all_text` expõe tanto `text` quanto `message_caption`, tanto `message_id 208,429` quanto `message_id 40,910`.
 
 1. Período: Set 9, 2023, 00:00h & Nov 3, 2024 23:59h
 
@@ -166,3 +128,15 @@ user_id: mensagem de canal (do admin)
 ## Uma possibilidade: análise automatizada de texto com `R`
 
 # Conclusões
+
+# Referências
+
+https://books.google.com.br/books?id=offC0wDYzC4C&pg=PA9&hl=pt-BR#v=onepage&q&f=false
+
+[^3]: O conjunto de regras e símbolos que permite interagir com o computador, de forma que forneçamos instruções detalhadas do quê, como e quando fazer. https://www.alura.com.br/artigos/linguagem-programacao 
+
+[^4]: Segundo Vangie Beal (ANO), um ambiente de software seria "uma coleção de programas, bibliotecas e utilitários que permitem aos usuários realizar tarefas específicas"
+
+[^5]: ; https://code.visualstudio.com/docs/languages/r; https://www.w3schools.com/r/; https://edisciplinas.usp.br/pluginfile.php/7376061/mod_resource/content/1/Cien%20de%20Dados%20com%20R%20%20-%20Introd.pdf
+
+[^6]: Esse site fornece uma boa definição: https://www.datacamp.com/blog/all-about-r
