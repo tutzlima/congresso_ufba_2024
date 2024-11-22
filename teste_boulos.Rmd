@@ -1,0 +1,110 @@
+---
+title: "ElasticSearch e linguagem R para análise de violência política na plataforma Telegram"
+author: "Ruan Arthur Lima Santos"
+institute: "Universidade Federal da Bahia"
+affiliation: "[LABHDUFBA](https://labhdufba.github.io/)"
+format: 
+  pdf:
+    documentclass: abntex2
+    latex-engine: xelatex
+    fontfamily: times
+    fontsize: 12pt
+    geometry: a4paper,top=3cm,bottom=2cm,left=3cm,right=2cm
+    number-sections: true
+    linkcolor: black
+lang: pt-BR
+toc: true
+abstract: "true"
+editor: source
+header-includes:
+  - \usepackage{indentfirst} % Indentar primeiro parágrafo
+  - \usepackage{setspace} % Ajustar espaçamento entre linhas
+  - \setstretch{1.5} % Espaçamento entre linhas
+  - \usepackage{abntex2cite} % Citações no formato ABNT
+---
+
+# Capa
+
+\begin{titlepage}
+\begin{center}
+    \vspace*{1cm}
+    {\Large \textbf{ElasticSearch e linguagem R para análise de violência política na plataforma Telegram}} \\[1.5cm]
+    Ruan Arthur Lima Santos \\
+    Universidade Federal da Bahia \\
+    [LABHDUFBA](https://labhdufba.github.io/) \\
+    Salvador, BA \\
+    2024
+\end{center}
+\end{titlepage}
+
+# Resumo
+
+\chapter*{Resumo}
+
+Este trabalho apresenta uma análise de violência política na plataforma Telegram utilizando ElasticSearch e linguagem R, com foco nas dinâmicas de coleta, transformação e análise de dados em pesquisa aplicada às ciências sociais computacionais.
+
+\textbf{Palavras-chave:} ElasticSearch, R, violência política, Telegram.
+
+# Abstract
+
+\chapter*{Abstract}
+
+This study analyzes political violence on the Telegram platform using ElasticSearch and R language, focusing on data collection, transformation, and analysis dynamics in computational social science research.
+
+\textbf{Keywords:} ElasticSearch, R, political violence, Telegram.
+
+# Sumário
+
+\tableofcontents
+\clearpage
+
+# Introdução
+
+\chapter{Introdução}
+
+Meus objetivos nesta apresentação são três: contextualizar brevemente a pesquisa, expor a evolução dos métodos utilizados e apresentar as potencialidades do R e do ElasticSearch numa pesquisa em ciências sociais computacionais, com ênfase no aspecto metodológico.
+
+(...)
+
+# Metodologia
+
+\chapter{Metodologia}
+
+A ideia central da pesquisa é compreender o papel do Telegram na produção e compartilhamento de desinformação em chats brasileiros de extrema-direita, utilizando uma abordagem multimetodológica.
+
+(...)
+
+# Linguagem R para Ciências Sociais
+
+\chapter{Linguagem R para Ciências Sociais}
+
+O R é uma linguagem voltada à análise estatística e visualização gráfica, mas suas capacidades vão além, permitindo extração, transformação e armazenamento de dados para análise quantitativa e exploratória.
+
+(...)
+
+# ElasticSearch
+
+\chapter{ElasticSearch}
+
+ElasticSearch, combinado com o Kibana, oferece um ambiente poderoso para análise qualitativa de grandes volumes de dados não estruturados, superando limitações de ferramentas como o R e o Atlas.ti.
+
+(...)
+
+# Estudos de Caso
+
+\chapter{Estudos de Caso}
+
+Análise de interações no Telegram com foco em tópicos específicos, como a menção a Guilherme Boulos em chats de extrema-direita.
+
+(...)
+
+# Conclusão
+
+\chapter{Conclusão}
+
+A combinação do R e do ElasticSearch mostrou-se fundamental para superar desafios metodológicos em pesquisa de ciências sociais computacionais, oferecendo ferramentas robustas para análise quantitativa e qualitativa.
+
+# Referências
+
+\renewcommand{\bibname}{Referências}
+\bibliography{bibliografia}

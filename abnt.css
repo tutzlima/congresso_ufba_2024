@@ -1,0 +1,62 @@
+/* Geral */
+body {
+    font-family: "Times New Roman", serif;
+    font-size: 12pt;
+    margin: 2.5cm;
+    line-height: 1.5;
+    text-align: justify;
+}
+
+/* Cabeçalhos */
+h1, h2, h3, h4, h5, h6 {
+    text-align: left;
+    font-weight: bold;
+    line-height: 1.5;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+}
+
+/* Parágrafos */
+p {
+    line-height: 1.5;
+    margin: 0 0 1em 0;
+    text-indent: 1.25cm;
+}
+
+/* Listas */
+ul, ol {
+    margin-left: 1.25cm;
+}
+
+/* Links */
+a {
+    color: blue;
+    text-decoration: none;
+}
+
+/* Tabelas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1em;
+}
+table th, table td {
+    border: 1px solid #000;
+    padding: 0.5em;
+    text-align: left;
+}
+
+/* Notas de rodapé */
+.footnote {
+    font-size: 10pt;
+    line-height: 1.2;
+}
+
+/* Referências bibliográficas */
+.references {
+    font-size: 12pt;
+    margin-top: 2em;
+    line-height: 1.5;
+    text-indent: -1.25cm;
+    padding-left: 1.25cm;
+}

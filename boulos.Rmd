@@ -1,25 +1,125 @@
 ---
 title: "ElasticSearch e linguagem R para análise de violência política na plataforma Telegram"
-subtitle: "Guilherme Boulos em `chats` do `Telegram`"
 author: "Ruan Arthur Lima Santos"
 institute: "Universidade Federal da Bahia"
 affiliation: "[LABHDUFBA](https://labhdufba.github.io/)"
 format: 
   pdf:
     documentclass: report
-    latex-engine: pdflatex
-    fontfamily: Arial
+    latex-engine: xelatex
+    fontfamily: times
     fontsize: 12pt
-    geometry: "margin=1in"
+    geometry: margin=2.5cm
     linkcolor: blue
-toc: true
+    toc: true
+    number-sections: true
+    css: "ab"
 lang: pt-BR
 editor: source
+toc-depth: 2
 ---
 
-------------------------------------------------------------------------
+
 
 # Introdução
+
+Meus objetivos nessa apresentação são três:
+
+- Breve contextualização da pesquisa, para que seja possível tratar do meu plano de trabalho em si.
+
+- Expôr a "evolução" dos métodos utilizados e, por fim, 
+
+- Apresentar as potencialidades do R e do ElasticSearch numa pesquisa em ciências sociais computacionais, visto a ênfase do plano de trabalho na questão metodológica.
+
+- Surgimento e objetivos
+
+A pesquisa surge da observação de determinados fenômenos ocorridos pela ou na plataforma Telegram, que já tem o histórico de ser uma plataforma que propicia processos de radicalização e diversas atividades ilegais visto seus mecanismos de automação e privacidade, mas o interesse principal da pesquisa surge pelo impacto do Telegram nos anos de 2020 e 2021 no Brasil, como a presença do aplicativo em mais da metade dos celulares no país [^1] unida à movimentação ou retorno ao app por figuras da direita [^2], a suspenção das contas de Donald Trump no Instagram e no Facebook [^3] que acabou minando a imagem do WhatsApp, fora atualizações de privacidade realizadas na época... enfim, uma série de fatores que influenciaram na movimentação da direita e da extrema-direita no Telegram. A pesquisa começa oficialmente a partir de um edital pelo InternetLab, em junho de 2021.
+
+A ideia central da pesquisa é compreender o papel do Telegram na produção e compartilhamento de desinformação em chats brasileiros de extrema-direita.
+
+Sobre a metodologia em si, a pesquisa se baseia na
+
+Elaborada por Anselm Strauss e Barney Glaser no "A descoberta da teoria fundamentada", cuja ideia central é o
+
+- Desenvolver a análise a partir dos dados observados
+
+Os dados formam a base da teoria e a partir da análise desses dados que nossos conceitos são construídos. Ou seja, se realiza um esforço de, primeiro, observar as dinâmicas dos dados e suas particularidades e desenvolvermos a partir daí, uma teoria essencialmente *indutiva*.
+
+Sobre os dados, é importante destacar que estamos tratando de dados não estruturados, que englobam textos, vídeos, áudios e imagens, por exemplo.
+
+A pesquisa é feita, então, numa abordagem multimetodológica e, na análise quantitativa, temos o `R`.
+
+## Linguagem R para Ciências Sociais
+
+R é uma linguagem voltada à análise estatística e visualização gráfica mas não se limita a isso. O R permite ralizarmos, por exemplo, a
+
+- o estudo da coleta, limpeza, processamento e análise dos dados, o que culmina no processo de
+
+Que desagua no processo de
+
+- Extração: Seja por raspagem da web ou requisições via API
+
+- Transformação ou manipulação dos dados: que diz respeito ao tratamento dos dados ou construção de variáveis que contribuam à análise do objeto, ou seja, a construção de categorias analíticas, sendo uma decisão metodológica e não meramente computacional;
+
+- Armazenamento: que também leva em conta uma série de questões computacionais, como o tamanho dos dados, e, de novo, metodológicas, pois o formato dos dados refletem neles mesmos e, a depender, o formato implica algumas dificuldades numa próxima análise.
+
+O R comporta o `ggplot2`, um sistema de criação declarada de gráficos disponibilizado como pacote, e o `Shiny`, uma pacote que para construção de dashboards interativos ou webApps.
+
+Então, o R entra precisamente nessa parte da análise exploratória, visualizar medidas de posição ("são utilizadas para resumir, em um único número, o conjunto de dados observados da variável em estudo") e dispersão ("variabilidade" dos dados), na mineração de dados e na visualização gráfica.
+
+O R também permite análise qualitativa mas não é a melhor ferramenta pra isso.
+
+## ElasticSearch
+
+E para entendermos isso vou destacar duas
+
+- Particularidades do objeto
+
+Em primeiro temos 
+
+  - "Apagões" frequentes, isto é, a partir do momento em que o discurso de ódio ou o conteúdo desinformativo cumpriu seu "papel social", produziu o efeito que se pretendia, estas mensagens são apagadas, uma prática que ocorre constantemente, algo próprio da dinâmica desses públicos
+
+Junto a isso temos o
+
+  - Nascimento e morte de grupos e canais que, quando não são deletados mesmos, frequentemente assumem uma postura de "zumbi", como chamamos na pesquisa. Ou seja, determinado chat para de enviar mensagens, cessa o funcionamento, e "nasce", entre aspas, um novo que contêm nome ou conteúdo semelhante, sendo isso uma forma de driblar a vigilância do conteúdo compartilhado e o rastreamento dessas pessoas
+
+Então, como se não bastasse lidarmos com grandes volumes de dados, produzidos diariamente, são dados efêmeros, voláteis a ponto de coletarmos um chat hoje e amanhã nada daquilo existir.
+
+Disso temos as
+
+- Limitações do `R` e do `Atlas.ti`
+
+No `R` resumidamente, para tanto o ETL quanto qualquer análise exploratória , é necessário um mínimo de conhecimento que, para quem nunca programou, é um grande obstáculo; No sentido do `Atlas.ti`, por mais que ele seja voltado à análise de grandes bases de dados, ele não te oferece uma visualização tão boa desses dados de forma geral, e ele náo é a ferramenta ideal para lidarmos com dados tão efêmeros e que exigem não só a coleta e o armazenamento, mas a análise em "tempo real".
+
+Para demonstrar rapidamente essas limitações, eu separei dois exemplos:
+
+- Esse é o código necessário pra um gráfico de barras minimamente bonito no R
+
+- E uma imagem genérica da interface do Atlas, que tem ao lado os documentos primários selecionados e à direita os trechos codificados, com essa nuvem de palavras
+
+Retomando a questão, é justamente na visualização dos dados, na forma na qual os acessamos que o Atlas encontra limitações
+
+Assim chegamos no uso do
+
+`ElasticSearch` é um bancos de dados não estruturados, que funciona conjuntamente ao `Kibana`, responsável pela construção de gráficos e dashboards.
+
+E o que eu quero mostrar aqui é como o ElasticSearch (e o Kibana) dão conta, em boa medida, dessas limitações que falei, e mostrar a potencialidade do ElasticSearch numa pesquisa em Ciências Sociais Computacionais, expondo os impactos dessas ferramentas, o que elas possibilitam para análise de violência política no Telegram, por exemplo.
+
+Bem, a estrutura do Elastic permite uma
+
+- Melhoria considerável no processo de ETL, especialmente no armazenamento em tempo real, que supera ao problema da inserção dos dados no Atlas.ti para análise qualitativa
+
+E isso facilita "mapear", com precisão, o nascimento e morte de grupos, canais e de determinados tópicos que estejam sendo discutidos na Internet; e uma
+
+- visualização e anaálise qualitativa otimizada
+
+- Visualização otimizada
+
+Essa é uma imagem que compila os recursos ofertados pelo ElasticSearch e o Kibana, mostrando que você pode fazer aquele mesmo gráfico de barras como aquele com alguns cliques; Além disso, a interface da plataforma lhe permite modificar o tipo de gráfico, os parâmetros, legendas, cores, tudo isso, na mesma tela sem grandes dificuldades, qualquer pessoa consegue utilizar o ElasticSearch e o Kibana sem qualquer conhecimento de **programação**.
+
+- Análise qualitativa otimizada
+
+E, no âmbito da análise qualitativa, o ElasticSearch facilita a visualização dos dados, como é possível perceber nessa seção (*data explore*), onde mostra os dados e já lhe oferece gráficos de barras simples; Na barra de busca, você pode pesquisar por expressões específicas em toda a base de dados e, a depender das variáveis que foram construídas no processo dito anteriormente, você pode buscar por links, imagens, nome de grupos e canais... Temos também a ferramenta de Períodos de tempo, algo essencial para a análise e que, pelo `R` exige conhecimentos computacionais e pelo `Atlas.ti` requer um novo recorte, uma nova seleção dos documentos primários.
 
 Como demonstrei na apresentação, a linguagem `R` nos permite analisar os dados e verificarmos suas características, bem como extrair, transformar e armazenar dados retirados de páginas da web, via `web scraping`, por exemplo.  Além disso, o `ElasticSearch` se faz uma ferramenta valiosa de análise qualitativa de dados, como expus brevemente.
 
@@ -41,16 +141,28 @@ Então, tão válido quanto a análise de Boulos nesses `chats`, poderíamos ana
 
 Por padrão, a *sintaxe* de busca do `ElasticSearch` espera uma estrutura próxima da seguinte:
 
-|VARIÁVEL|`:`|TERMO(S)|
-|:---:|:---:|
+|VARIÁVEL|\:|TERMO(S)|
+|:---:|:---:|:---:|
 
 No caso, `all_text` é uma variável da base de dados que recolhe todo tipo de texto contido nas mensagens, como textos "comuns", isolados, quanto legendas, textos que acompanham outro conteúdo contido nas mensagens (como mensagens com imagens). Por exemplo:
 
 ![](dados/boulos/all_text_exemplo.png)
 Como pode-se observar, as variáveis selecionadas a serem **exibidas** em `data explore` foram `text` (texto isolado), `message_caption` (legendas), `message_id` e `image_hash` a fim de identificarmos as mensagens e imagens. 
 
-Se observarmos, tanto `message_id 234,670` e `message_id 40,910` são legendas, mas apenas a última é legenda [*de uma imagem*](https://telegram.metodosdigitais.org/media/a1ff81ff95bf2db77a00fe01ff00d4005acacb4035dddb4a028ab4216d067eb3.jpg). De qualquer forma, o ponte é demonstrar que `all_text` expõe tanto `text` quanto `message_caption`, tanto `message_id 208,429` quanto `message_id 40,910`.
+Se observarmos, tanto `message_id 234,670` e `message_id 40,910` são legendas, mas apenas a última é legenda *de uma [imagem*](https://telegram.metodosdigitais.org/media/a1ff81ff95bf2db77a00fe01ff00d4005acacb4035dddb4a028ab4216d067eb3.jpg). De qualquer forma, o ponto é demonstrar que `all_text` expõe tanto `text` quanto `message_caption`, tanto `message_id 208,429` quanto `message_id 40,910`.
 
 1. Período: Set 9, 2023, 00:00h & Nov 3, 2024 23:59h
 
 O tempo selecionado abrange tanto uma semana antes quanto uma semana depois das eleições municipais de 2024, realizadas entre o dia 6 de outubro (1º turno) e 27 de outubro (2º turno).
+
+## Análise Exploratória com `R`
+
+## Visualização com `ElasticSearch` + `Kibana`
+
+TALKATIVES E GRUPOS QUE PARTICIPAM
+
+user_id: mensagem de canal (do admin)
+
+## Uma possibilidade: análise automatizada de texto com `R`
+
+# Conclusões
