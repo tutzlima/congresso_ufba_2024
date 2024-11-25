@@ -1,0 +1,73 @@
+---
+title: "Referências"
+---
+
+<style>
+  h2{
+  text-align: left;
+  }
+  body{
+  text-align: justify;
+  line-height: 1.5;
+  }
+</style>
+
+AGGARWAL, Charu C. *Data Mining: The Textbook*. Springer, 2015. Disponível em: <https://books.google.com.br/books?id=cfNICAAAQBAJ&printsec=copyright&redir_esc=y#v=onepage&q&f=true>. Acesso em: 24 jul. 2024.
+
+ATLAS.TI. *What is Atlas.ti?*. Disponível em: <https://www.atlasti.com/>. Acesso em: 24 jul. 2024.
+
+CHARMAZ, Kathy. *A construção da teoria fundamentada: Guia Prático para Análise Qualitativa*. Disponível em: <https://books.google.com.br/books?id=offC0wDYzC4C&hl=pt-BR&source=gbs_book_other_versions>. Acesso em: 24 jul. 2024.
+
+DATA CHANNEL. *What is ETL and How the ETL Process Works*. Disponível em: <https://www.datachannel.co/blogs/what-is-etl-and-how-the-etl-process-works>. Acesso em: 24 jul. 2024.
+
+ELASTIC. *Kibana Dashboard*. Disponível em: <https://www.elastic.co/pt/kibana/kibana-dashboard>. Acesso em: 24 jul. 2024.
+
+MEDIUM. *O que é Grounded Theory e como aplicar em UX Research*. Disponível em: <https://medium.com/creditas-tech/o-que-%C3%A9-grounded-theory-e-como-aplicar-em-ux-research-f4c405a6d54a>. Acesso em: 24 jul. 2024.
+
+MEDIUM. *What's Behind Elasticsearch: Unlocking the Power of Data Visualization*. Disponível em: <https://medium.com/databites/whats-behind-elasticsearch-unlocking-the-power-of-data-visualization-23001ecfc4a2>. Acesso em: 24 jul. 2024.
+
+*Relatório sobre desinformação e teorias da conspiração relacionadas à vacinação em grupos e canais extremistas do Telegram*. Disponível em: <https://drive.google.com/file/d/1OWrhQFYah651cyMC0IfQ-Wgrc8I06xH2/view?usp=sharing>. Acesso em: 24 jul. 2024.
+
+NASCIMENTO, L. F.; ALECRIM, M.; COSTA, S.; OLIVEIRA, J.; OLIVEIRA, M. *“Não falo o que o povo quer, sou o que o povo quer”: 30 anos (1987-2017) de pautas políticas de Jair Bolsonaro nos jornais brasileiros*. Plural: Revista de Ciências Sociais, v. 25, n. 1, p. 135-171, 2018. Disponível em: <https://www.revistas.usp.br/plural/article/view/149019/146180>. Acesso em: 24 jul. 2024.
+
+NASCIMENTO, L. F.; CESARINO, L.; FONSECA, P.; WEDDERBURN, R.; BARRETO, T.; JESUS, J. *“Intankáveis contra o Bostil”: racismo, misoginia e antisemitismo em chats do Telegram (2020-2023)*. In: 4ª Coletânea de Artigos - TIC, Governança da Internet, Gênero, Raça e Diversidade - Tendências e Desafios. São Paulo: Núcleo de Informação e Coordenação do Ponto BR, 2024. p. 153-198. Disponível em: <https://cgi.br/media/docs/publicacoes/1/20240522075208/4-coletanea-artigos-tic-governanca-genero-raca-diversidade.pdf>. Acesso em: 01 ago. 2024.
+
+R PROJECT. *What is R?*. Disponível em: <https://www.r-project.org/about.html>. Acesso em: 24 jul. 2024.
+
+SCHEREN, M. L.; RODRIGUES, V. S.; LÓPEZ ZAMORA, G. D.; CESARINO, L.; NASCIMENTO, L. F.; FONSECA, P.; BARRETO, T. *Métodos mistos para a antropologia digital: um relato de experiência sobre a análise de grupos bolsonaristas na plataforma Telegram*. Horizontes Antropológicos, v. 30, p. e680407, 12 fev. 2024. Disponível em: <https://doi.org/10.1590/1806-9983e680407>. Acesso em: 24 jul. 2024.
+
+ROMANO, Nicola. *Plotting with ggplot*. Disponível em: <https://www.nicolaromano.net/data-thoughts/plotting-with-ggplot/>. Acesso em: 11 ago. 2024.
+
+SHINY BY RSTUDIO. *Shiny*. Disponível em: <https://www.rstudio.com/products/shiny/>. Acesso em: 11 ago. 2024.
+
+WORLDBANK. *R Shiny Days*. Disponível em: <https://www.worldbank.org/en/events/2021/04/28/-r-shiny-days>. Acesso em: 11 ago. 2024.
+
+FREEMAN, Ben. *Atlas.ti: Identifying Concepts in Qualitative Data Analysis*. Disponível em: <https://atlasti.com/media/pages/guides/qualitative-research-guide-part-2/qualitative-data-analysis/3a19f0b0d1-1720598965/atlas.ti-can-identify-concepts-that-might-be-useful-in-qualitative-data-analysis.png>. Acesso em: 11 ago. 2024.
+
+FREEPIK. *Network Mesh Wire Digital Technology Background*. Disponível em: <https://www.freepik.com/free-vector/network-mesh-wire-digital-technology-background_10136775.htm#query=technology%20background&position=1&from_view=keyword&track=ais_hybrid&uuid=466b2291-83b7-4ada-9a14-27041352b8a5>. Acesso em: 11 ago. 2024.
+
+AGGARWAL, C. C. *Data Mining: The Textbook*. [S. l.]: Springer, 2015.
+
+ANÁLISE DESCRITIVA. [S. l.], [s. d.]. Disponível em: <http://www.uel.br/projetos/experimental/pages/arquivos/Comandos_basicos_para_analise_descritiva.html>. Acesso em: 18 nov. 2024.
+
+ANDRÉ LUÍS WOLOSZYN: A ERA DA DESINFORMAÇÃO. [S. l.], 2018. Disponível em: <https://gauchazh.clicrbs.com.br/opiniao/noticia/2018/02/andre-luis-woloszyn-a-era-da-desinformacao-cjdc1clps07dn01keehsyfhtu.html>. Acesso em: 18 set. 2024.
+
+ATLAS.TI | THE #1 SOFTWARE FOR QUALITATIVE DATA ANALYSIS. [S. l.], [s. d.]. Disponível em: <https://atlasti.com>. Acesso em: 18 nov. 2024.
+
+CHARMAZ, K. *A construção da teoria fundamentada: Guia Prático para Análise Qualitativa*. [S. l.]: Bookman Editora, 2009.
+
+DASHBOARD DO KIBANA. [S. l.], [s. d.]. Disponível em: <https://www.elastic.co/pt/kibana/kibana-dashboard>. Acesso em: 18 nov. 202pt.
+
+DESINFORMAÇÃO DISFARÇADA DE CIÊNCIA. [S. l.], 2023. Disponível em: <https://jornal.usp.br/atualidades/desinformacao-disfarcada-de-ciencia/>. Acesso em: 18 set. 2024.
+
+DESINFORMAÇÃO, INFORMAÇÃO ERRADA E MÁ INFORMAÇÃO: ENTENDA A DIFERENÇA! Direção: Justiça Eleitoral. [S. l.: s. n.], 2024. (2:01). Disponível em: <https://www.youtube.com/watch?v=C6Ki5IPk3sY>. Acesso em: 18 set. 2024.
+
+ELEITORAL, B. T. S. *Guia básico de enfrentamento à desinformação*. Brasília, DF: Tribunal Superior Eleitoral, 2022.
+
+ENTREVISTA: A EPIDEMIA DA DESINFORMAÇÃO. [S. l.], [s. d.]. Disponível em: <https://www.museudavida.fiocruz.br/index.php/noticias/1587-entrevista-a-epidemia-da-desinformacao>. Acesso em: 18 set. 2024.
+
+EXÉRCITO NAS RUAS E CAMINHONEIROS TRAVANDO O PAÍS: MENSAGENS FALSAS INFLAMAM BOLSONARISTAS NO TELEGRAM. BBC News Brasil, [S. l.], [s. d.]. Disponível em: <https://www.bbc.com/portuguese/brasil-58468165>. Acesso em: 18 nov. 2024.
+
+FERRAZ, F. P. *Análise de Discurso* [S. l.], [s. d.]. Disponível em: <https://www.machadodeassociados.com.br>. Acesso em: 18 nov. 2024.
+
+---

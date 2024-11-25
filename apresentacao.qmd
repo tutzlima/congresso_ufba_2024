@@ -1,0 +1,390 @@
+---
+title: "ElasticSearch e linguagem R para análise de violência política na plataforma Telegram"
+subtitle: "Ruan Arthur Lima Santos"
+institute: "Universidade Federal da Bahia"
+format:
+  revealjs:
+    css: custom.css
+    slide-number: true
+    transition: fade
+    code-overflow: wrap
+    code-copy: hover
+    output-file: index.html
+editor: source
+lang: pt-BR
+jupyter: python3
+slide-number: true
+---
+
+<br>
+
+### Objetivos
+
+<br>
+
+::: fragment
+-   Contextualização da pesquisa
+:::
+
+<br>
+
+::: fragment
+-   Métodos utilizados
+:::
+
+<br>
+
+::: fragment
+-   Apresentar as potencialidades do R e do ElasticSearch
+:::
+
+------------------------------------------------------------------------
+
+<br>
+
+### Resumo da pesquisa
+
+<br>
+
+::: fragment
+-   Surgimento
+:::
+
+<br>
+
+::: fragment
+-   Objetivo: compreender o papel do telegram na produção e compartilhamento de desinformação em chats brasileiros de extrema-direita
+:::
+
+------------------------------------------------------------------------
+
+<br>
+
+#### Análise quantitativa com `R` {.texto-centrado}
+
+::: fragment
+- [R é um sistema gráfico e estatístico composto de duas partes: a própria linguagem R e um ambiente de software](https://www.datacamp.com/blog/all-about-r)
+:::
+
+::: fragment
+-   Mineração de dados
+
+> A mineração de dados é o estudo da coleta, limpeza, processamento, análise e obtenção de insights úteis a partir dos dados. (AGGARWAL, Charu C. Data Mining. Springer, 2015, p. 1)
+:::
+
+------------------------------------------------------------------------
+
+##### ETL {.texto-invisivel}
+
+<br><br><br>
+
+::: {style="text-align: center;"}
+<a href="https://www.datachannel.co/blogs/what-is-etl-and-how-the-etl-process-works"> <img src="dados/etl_imagem-removebg-preview.png" alt="ETL"/> </a>
+:::
+
+------------------------------------------------------------------------
+
+<br>
+
+##### Visualização com `R` {.texto-centrado}
+
+<br><br>
+
+::: {#to-flex style="display: flex; justify-content: center; align-items: center; gap: 10px;"}
+<a href="https://www.nicolaromano.net/data-thoughts/plotting-with-ggplot/"> <img src="dados/ggplot2_trans.png" alt="ggplot2" style="width: 550px; height: auto;"/> </a>
+
+<a href="https://www.worldbank.org/en/events/2021/04/28/-r-shiny-days"> <img src="https://www.worldbank.org/content/dam/photos/780x439/2021/apr/Shiny-logo.png" alt="Shiny" style="width: 535px; height: auto;"/> </a>
+:::
+
+------------------------------------------------------------------------
+
+<br>
+
+##### `R`esumo {.texto-centrado}
+
+<br>
+
+::: fragment
+- Análise exploratória
+:::
+
+<br>
+
+::: fragment
+- Mineração de dados
+:::
+
+<br>
+
+::: fragment
+- Visualização gráfica
+:::
+
+------------------------------------------------------------------------
+
+#### Análise Qualitativa {.texto-invisivel}
+
+<br><br><br><br>
+
+<img src="https://larhud.ibict.br/images/2/22/Atlas_ti.png" alt="Atlas.ti" class="imagem-full-centrada-atlas"/>
+
+------------------------------------------------------------------------
+
+<br>
+
+##### O que é o Atlas.ti? {.texto-centrado}
+
+<br>
+
+::: fragment
+- Análise qualitativa de dados auxiliado por computador (*CAQDAS: Computer Assisted Qualitative Data Analisys Software*)
+:::
+
+<br>
+
+::: fragment
+-   Principais recursos: *Codes, Families e Networks*
+:::
+
+------------------------------------------------------------------------
+
+## Melhorias no método {.texto-full-centrado}
+
+------------------------------------------------------------------------
+
+<br>
+
+### Particularidades do Objeto {.texto-centrado}
+
+<br>
+
+::: fragment
+-   "Apagões" frequentes
+:::
+
+<br>
+
+::: fragment
+-   Nascimento e morte de `chats`
+:::
+
+<br>
+
+::: fragment
+-   Limitações do `R` e `Atlas.ti`
+:::
+
+------------------------------------------------------------------------
+
+<br>
+
+### Gráfico em R {.texto-centrado}
+
+::: texto-invisivel
+```{r include=FALSE}
+library(tidyverse)
+library(scales)
+set.seed(123)
+top10_grupos <- data.frame(
+  keyName = paste("Grupo", 1:10),
+  docCount = sample(500:5000, 10)
+) %>% 
+  arrange(desc(docCount))
+```
+:::
+
+```{r}
+grafico_exemplo <- ggplot(top10_grupos) +
+  geom_bar(aes(x = docCount, y = reorder(keyName, docCount)), 
+           fill = "#6092C0", stat = "identity") +
+  geom_text(aes(label = number_format(decimal.mark = ",", big.mark = ".")(docCount), x = docCount, y = reorder(keyName, docCount)), 
+            position = position_stack(vjust = 0.8), size = 3, color = "black") +
+  scale_y_discrete(expand = c(0.06, 0.06)) +
+  scale_x_continuous(expand = expansion(c(0, 0.05)), 
+                     labels = number_format(decimal.mark = ",", big.mark = ".")) +
+  labs(y = NULL, x = "Mensagens", title = NULL) +
+  theme_dark() +
+  theme(panel.grid.minor = element_line(linetype = "dashed"), 
+        panel.grid.major = element_line(linetype = "dashed"), 
+        axis.line.x = element_line(color = "#efefef", linewidth = 0.8), 
+        axis.line.y = element_line(color = "#efefef", linewidth = 0.8), 
+        axis.text.y = element_text(size = 8), 
+        axis.ticks = element_blank(), 
+        axis.text.x = element_text(angle = 45, hjust = 1),
+        panel.background = element_blank())
+```
+
+::: texto-invisivel
+```{r include=FALSE}
+ggsave("dados/grafico_exemplo.png", plot = grafico_exemplo, width = 8, height = 5, dpi = 600)
+```
+:::
+
+------------------------------------------------------------------------
+
+### Gráfico em R {.texto-invisivel}
+
+<br><br>
+
+::: imagem-full-centrada
+![](dados/grafico_exemplo.png)
+:::
+
+------------------------------------------------------------------------
+
+<br>
+
+### Exemplo Atlas.ti {.texto-centrado}
+
+::: {style="text-align: center;"}
+<img src="https://atlasti.com/media/pages/guides/qualitative-research-guide-part-2/qualitative-data-analysis/3a19f0b0d1-1720598965/atlas.ti-can-identify-concepts-that-might-be-useful-in-qualitative-data-analysis.png" alt="Atlas.ti" style="width: 3500px; hight: auto;"/>
+:::
+
+------------------------------------------------------------------------
+
+## <br>`ElastichSearch` {.texto-centrado}
+
+<div class="small-space"></div>
+
+::: fragment
+-   Banco de dados não estruturados
+:::
+
+<div class="small-space"></div>
+
+::: fragment
+-   Melhoria no ETL em tempo real
+:::
+
+<div class="small-space"></div>
+
+::: fragment
+-   Visualização otimizada
+:::
+
+<div class="small-space"></div>
+
+::: fragment
+-   Análise qualitativa otimizada
+:::
+
+------------------------------------------------------------------------
+
+### Exemplo Visualização {.texto-invisivel}
+
+<div class="small-space"></div>
+
+[![](https://static-www.elastic.co/v3/assets/bltefdd0b53724fa2ce/bltd01281e2aa656f58/5fa315d24e40cf53001f3b70/illustrated-screenshot-hero-dashboards.png)](https://www.elastic.co/pt/kibana/kibana-dashboard)
+
+------------------------------------------------------------------------
+
+### Exemplo Análise {.texto-invisivel}
+
+<br>
+
+<div style="text-align: center;">
+  <a href="https://medium.com/databites/whats-behind-elasticsearch-unlocking-the-power-of-data-visualization-23001ecfc4a2" target="_blank">
+    <img src="https://miro.medium.com/v2/resize:fit:1400/1*f7MCG9M_4lNXmyjLvC5t3A.png" alt="Elasticsearch Data Visualization" style="width: 90%;"/>
+  </a>
+</div>
+
+------------------------------------------------------------------------
+
+## <br>Guilherme Boulos em `chats` brasileiros de Extrema-direita {.texto-centrado}
+
+<div style="text-align: center; display: flex; flex-direction: row; gap: 2px; justify-content: center;">
+  <span>![query_exemplo](dados/query_exemplo.png)</span>
+  <span>![time_exemplo](dados/time_exemplo.png)</span>
+</div>
+
+::: fragment
+- ***query:*** `all_text: "guilherme boulos" or boulos`
+:::
+
+::: fragment
+- *período: Set 29, 2024, 00:00h & Nov 3, 2024 23:59h*
+:::
+
+::: fragment
+- *7.121 mensagens*
+:::
+
+------------------------------------------------------------------------
+
+## Visualização básica no ElasticSearch {.texto-full-centrado}
+
+------------------------------------------------------------------------
+
+<h3 style="display: none;">Exemplo `Lens`</h3>
+
+<br><br><br>
+
+<div style="text-align: center; display: flex; transform: scale(1.3);">
+
+::: fragment
+![](dados/boulos/at_1.png)
+:::
+
+::: fragment
+![](dados/boulos/at_2.png)
+:::
+
+::: fragment
+![](dados/boulos/at_3.png)
+:::
+
+</div>
+
+------------------------------------------------------------------------
+
+## <br><br> [Dashboard com `Kibana`](https://telegram.metodosdigitais.org/app/dashboards?auth_provider_hint=anonymous1#/view/bb4b4720-a9f1-11ef-8aba-970b9d41e431?embed=true&_g=(filters%3A!()%2CrefreshInterval%3A(pause%3A!t%2Cvalue%3A0)%2Ctime%3A(from%3A'2024-09-29T03%3A00%3A00.000Z'%2Cto%3A'2024-11-04T02%3A59%3A59.999Z'))&show-top-menu=true&show-query-input=true&show-time-filter=true&hide-filter-bar=true) {.texto-centrado}
+
+<br>
+
+::: fragment
+- [Versão em PDF (paia)](dashboard_kibana.pdf)
+:::
+
+<br>
+
+::: fragment
+- [Versão estática (muito paia)](dashboard_kibana.htm)
+:::
+
+------------------------------------------------------------------------
+
+## <br>Contribuições da pesquisa {.texto-centrado}
+
+::: fragment
+-   [Relatório sobre desinformação e teorias da conspiração relacionadas à vacinação em grupos e canais extremistas do Telegram](https://drive.google.com/file/d/1OWrhQFYah651cyMC0IfQ-Wgrc8I06xH2/view?usp=sharing)
+:::
+
+::: fragment
+-   ["Intankáveis contra o Bostil”: racismo, misoginia e antisemitismo em chats do Telegram (2020-2023)](https://cgi.br/media/docs/publicacoes/1/20240522075208/4-coletanea-artigos-tic-governanca-genero-raca-diversidade.pdf)
+:::
+
+::: fragment
+-   [Métodos mistos para a antropologia digital: um relato de experiência sobre a análise de grupos bolsonaristas na plataforma Telegram](https://doi.org/10.1590/1806-9983e680407)
+:::
+
+------------------------------------------------------------------------
+
+## <br>Obrigado pela atenção! {.texto-centrado}
+
+::: {style="text-align: center; margin-bottom: 40px;"}
+<a href="https://giphy.com/portadosfundos/reacoes/tchau"> <img src="https://media3.giphy.com/media/yMKC8ff4mtSow/200_d.gif" alt="Gif Tchau" style="width: 550px;"/></a>
+:::
+
+::: texto-centrado
+[Acesse as referências aqui!](referencias.html)
+:::
+
+::: {style="display: flex; justify-content: center; align-items: center; gap: 50px;"}
+<!-- Ícone do Gmail -->
+
+<a href="mailto:ruan.lima@ufba.br" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Gmail_icon_%282020%29.svg/512px-Gmail_icon_%282020%29.svg.png" alt="Gmail" style="width: 80px; height: auto;"/> </a>
+
+<!-- Ícone do GitHub -->
+
+<a href="https://github.com/tutzlima" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" style="width: 80px; height: auto;"/> </a>
+:::
