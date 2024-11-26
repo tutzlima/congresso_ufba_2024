@@ -35,7 +35,7 @@ slide-number: true
 <br>
 
 ::: fragment
--   Apresentar as potencialidades do R e do ElasticSearch
+-   Apresentar as potencialidades do `R` e do `ElasticSearch`
 :::
 
 ------------------------------------------------------------------------
@@ -137,7 +137,7 @@ slide-number: true
 <br>
 
 ::: fragment
-- Análise qualitativa de dados auxiliado por computador (*CAQDAS: Computer Assisted Qualitative Data Analisys Software*)
+- Software de análise qualitativa de dados auxiliado por computador (*CAQDAS: Computer Assisted Qualitative Data Analisys Software*)
 :::
 
 <br>
@@ -178,7 +178,7 @@ slide-number: true
 
 <br>
 
-### Gráfico em R {.texto-centrado}
+### Gráfico em `R` {.texto-centrado}
 
 ::: texto-invisivel
 ```{r include=FALSE}
@@ -222,7 +222,7 @@ ggsave("dados/grafico_exemplo.png", plot = grafico_exemplo, width = 8, height = 
 
 ------------------------------------------------------------------------
 
-### Gráfico em R {.texto-invisivel}
+### Gráfico em `R` {.texto-invisivel}
 
 <br><br>
 
@@ -290,7 +290,7 @@ ggsave("dados/grafico_exemplo.png", plot = grafico_exemplo, width = 8, height = 
 
 ------------------------------------------------------------------------
 
-## <br>Guilherme Boulos em `chats` brasileiros de Extrema-direita {.texto-centrado}
+## <br>Guilherme Boulos em `chats` brasileiros de extrema-direita {.texto-centrado}
 
 <div style="text-align: center; display: flex; flex-direction: row; gap: 2px; justify-content: center;">
   <span>![query_exemplo](dados/query_exemplo.png)</span>
@@ -311,7 +311,7 @@ ggsave("dados/grafico_exemplo.png", plot = grafico_exemplo, width = 8, height = 
 
 ------------------------------------------------------------------------
 
-## Visualização básica no ElasticSearch {.texto-full-centrado}
+## Visualização básica no&nbsp;<span style="color: #4758AB;">ElasticSearch</span> {.texto-full-centrado}
 
 ------------------------------------------------------------------------
 
